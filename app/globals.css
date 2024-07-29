@@ -3,37 +3,61 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 18, 18, 18;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --background-menu: 104, 29, 124;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 18, 18, 18;
+  --primary-rgb: 104, 29, 124;
+  --accent-rgb: 156, 39, 176;
+  --secondary-accent-rgb: 74, 14, 86;
+  --light-accent-rgb: 225, 190, 231;
+  --contrast-rgb: 76, 175, 80;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: rgb(var(--foreground-rgb));
-  /*background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));*/
+  background-color: rgb(var(--background-rgb));
 }
 
 nav.top-menu {
-  background-color: rgb(var(--background-menu));
+  background-color: rgb(var(--primary-rgb));
+}
+
+@layer base {
+  h1 {
+    color: rgb(145, 96, 159);
+    @apply pt-4 pb-8 md:pt-8 lg:pt-[52px]
+    text-xl font-semibold
+    sm:text-2xl
+    md:text-3xl
+    lg:text-4xl
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .hover-bg-rgb {
+    @apply hover:bg-[rgb(var(--background-rgb))];
+  }  
+  
+  .bg-primary {
+    background-color: rgb(var(--primary-rgb));
+  }
+  
+  .bg-accent {
+    background-color: rgb(var(--accent-rgb));
+  }
+  
+  .bg-secondary-accent {
+    background-color: rgb(var(--secondary-accent-rgb));
+  }
+  
+  .text-light-accent {
+    color: rgb(var(--light-accent-rgb));
+  }
+  
+  .text-contrast {
+    color: rgb(var(--contrast-rgb));
   }
 }

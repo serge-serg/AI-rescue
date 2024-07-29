@@ -11,7 +11,7 @@ const menuItems = [
 ];
 
 const NavLink = ({ href, text }: { href: string; text: string }) => (
-  <Link href={href} className="text-white block py-2 px-4 hover:bg-black">
+  <Link href={href} className="text-white block py-2 px-4 hover-bg-rgb">
     {text}
   </Link>
 );
@@ -32,14 +32,14 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="text-white font-bold text-xl">AI Rescue</Link>
         <Menu className="hidden md:flex space-x-4" />
-        <button 
-          className="md:hidden text-white"
+        <button
+          className="md:hidden text-white bg-secondary-accent px-3 py-1 rounded"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? 'Close' : 'Menu'}
         </button>
       </div>
-      {isOpen && <Menu className="md:hidden" />}
+      {isOpen && <Menu className="md:hidden mt-2" />}
     </nav>
   );
 };
