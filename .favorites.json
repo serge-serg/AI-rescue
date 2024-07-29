@@ -1,0 +1,26 @@
+[
+    {
+        "type": "Group",
+        "name": "Styles",
+        "parent_id": null,
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "SQXhpBGTzxmcNYZj"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sergei.klevtsov/Documents/Projects/AI-rescue/app/globals.css",
+        "parent_id": "SQXhpBGTzxmcNYZj",
+        "workspaceRoot": "/Users/sergei.klevtsov/Documents/Projects/AI-rescue",
+        "workspacePath": "app/globals.css",
+        "id": "48JDrSAYZK1cNV39"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sergei.klevtsov/Documents/Projects/AI-rescue/tailwind.config.ts",
+        "parent_id": "SQXhpBGTzxmcNYZj",
+        "workspaceRoot": "/Users/sergei.klevtsov/Documents/Projects/AI-rescue",
+        "workspacePath": "tailwind.config.ts",
+        "id": "5nm6L3Mcioh9TvZD"
+    }
+]
