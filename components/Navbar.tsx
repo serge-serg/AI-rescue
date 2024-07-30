@@ -2,13 +2,8 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import menuItems from '@/components/menuItems';
 
-const menuItems = [
-  { href: '/', text: 'Home' },
-  { href: '/what-is-super-ai', text: 'What is Super AI' },
-  { href: '/dangers', text: 'Dangers' },
-  { href: '/rescue-approaches', text: 'Rescue approaches' },
-];
 
 const NavLink = ({ href, text }: { href: string; text: string }) => (
   <Link href={href} className="text-white block py-2 px-4 hover-bg-rgb">
