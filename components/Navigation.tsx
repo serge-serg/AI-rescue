@@ -18,7 +18,7 @@ const Navigation = () => {
     }
   }, [])
 
-  const LogoText = () => <p className="logo-text">/ <span style={{ fontWeight: 600 }}>Super-AI Challenge</span> /</p>;
+  const LogoText = () => <Link href="/" className="logo-text">/ <span style={{ fontWeight: 600 }}>Super-AI Challenge</span> /</Link>;
 
   const renderMenuItem = (item: string | (string | JSX.Element)[]) => {
     if (Array.isArray(item)) {
