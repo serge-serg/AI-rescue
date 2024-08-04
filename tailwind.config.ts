@@ -10,6 +10,9 @@ const config: Config = {
     extend: {
       backgroundImage: {
       },
+      screens: {
+        'lg+': '1303px',
+      }
     },
     maxWidth: {
       '1/4': '25%',

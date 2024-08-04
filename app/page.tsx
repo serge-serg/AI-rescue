@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import imgBostrom from '@/assets/images/bostrom.jpg'
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
         После появления ChatGPT в конце 2022 г. ИИ перестал быть научной фантастикой. Практически никто из специалистов, работающих над проблемой ИИ, уже не сомневается, что машины, способные думать на человеческом уровне и даже превосходящем его, будут созданы.
       </p>
       <div className="float-to-right">
-        <Image src="/bostrom.jpg" alt="Nick Bostrom" width={394} height={394} />
+        <Image src={imgBostrom} alt="Nick Bostrom" width={394} height={394} />
       </div>
       <p>
         ИИ, достигший такого уровня развития, называют Суперинтеллектом. Этот термин популяризировал шведский философ Н. Бостром в своей книге 2014 г. Superintelligence: Paths, Dangers, Strategies. Он и множество других мыслителей считают, что Суперинтеллект будет способен к рекурсивному самоулучшению, и этот процесс будет невозможно контролировать извне.

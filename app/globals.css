@@ -26,13 +26,24 @@ img {
   @apply border-none opacity-65 hover:opacity-100;
 }
 
+main {
+  padding: 4rem 5vw 2rem 6vw;
+}
+
 .container {
   @apply flex min-h-screen;
+  max-width: none;
+}
+
+.sidebar-container {
+  @media screen and (min-width: 769px) {
+    width: 40%;
+  }
 }
 
 .sidebar {
-  @apply w-1/4 max-w-[500px] h-screen p-4 flex flex-col justify-between;
-  background-image: url('/13th-floor.png');
+  @apply h-screen p-4 flex flex-col justify-between;
+  background-image: url('../assets/images/13th-floor.png');
   background-color: #333;
   background-size: 500px;
   background-position: right -94px;
@@ -40,7 +51,7 @@ img {
 }
 
 .sidebar-header {
-  @apply flex items-end justify-center pt-16;
+  @apply  hidden md:flex items-end justify-center pt-16;
 }
 
 .logo-text {
@@ -81,7 +92,7 @@ p {
 }
 
 .float-to-right {
-  @apply float-right mb-8 -mr-16 mt-8 ml-8;
+  @apply float-right mb-8 lg+:-mr-16 mt-8 ml-8;
 }
 
 .float-to-left {
