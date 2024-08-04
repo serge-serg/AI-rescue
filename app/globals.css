@@ -55,12 +55,16 @@ main {
 }
 
 .logo-text {
-  @apply text-4xl text-[var(--accent-color)] font-bold relative pr-8 text-right;
+  @apply text-4xl text-[var(--accent-color)] relative pr-4 text-right;
 }
 
 .logo-text::before {
-  content: " ";
-  @apply block border-4 border-[var(--accent-color)] h-3 w-3 absolute top-3 right-0 rotate-45;
+  content: "...";
+  @apply block absolute right-0;
+  font-size: 1.75rem;
+  opacity: 0.75;
+  top: 0.25rem;
+  width: 0.75rem;
 }
 
 nav ul {

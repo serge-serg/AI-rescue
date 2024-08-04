@@ -7,11 +7,13 @@ import menuItems from '@/components/menuItems'
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
 
+  const LogoText = () => <p className="logo-text">/ <span style={{ fontWeight: 600 }}>Super AI Challenge</span> /</p>;
+
   return (
     <div className="md:max-w-[500px] sidebar-container">
       {/* Hamburger menu для мобильных устройств */}
       <div className="md:hidden p-4 flex justify-between items-center bg-[#333]">
-        <p className="logo-text">Super AI Challenge</p>
+        <LogoText/>
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="text-white"
@@ -21,9 +23,9 @@ const Navigation = () => {
       </div>
 
       {/* Содержимое меню (как для мобильных, так и для десктопа) */}
-      <aside className={`sidebar ${isOpen ? 'block' : 'hidden'} md:block`}>
+      {<aside className={`sidebar ${isOpen ? 'flex' : 'hidden'}`}>
         <div className="sidebar-header">
-          <p className="logo-text">Super AI Challenge</p>
+        <LogoText/>
         </div>
         <nav>
           <ul>
@@ -36,7 +38,7 @@ const Navigation = () => {
             ))}
           </ul>
         </nav>
-      </aside>
+      </aside>}
     </div>
   )
 }
