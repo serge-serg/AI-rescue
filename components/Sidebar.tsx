@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import menuItems from '@/components/menuItems';
 
 const Sidebar = () => {
   return (
@@ -7,14 +8,11 @@ const Sidebar = () => {
         <p className="logo-text">AI Rescue</p>
       </div>
       <nav>
-        <ul>
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/what-is-super-ai">What is Super AI</Link></li>
-          <li><Link href="/why-is-it-needed">Why is it needed?</Link></li>
-          <li><Link href="/perilous-scenarios">Perilous scenarios</Link></li>
-          <li><Link href="/rescue-approaches">Rescue approaches</Link></li>
-          <li><Link href="/hall9000">HALL-9000 vs Matrix</Link></li>
-          <li><Link href="/opinion">We need your opinion!</Link></li>
+        <ul>{menuItems.map((item) => (
+          <li>
+            <Link key={item.href} href={item.href}>{item.text}</Link>
+          </li>
+        ))}
         </ul>
       </nav>
     </aside>

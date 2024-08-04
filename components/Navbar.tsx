@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
 import menuItems from '@/components/menuItems';
 
 
@@ -19,24 +18,10 @@ const Menu = ({ className }: { className?: string }) => (
   </div>
 );
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
+const Navbar = () => (
     <nav className="top-menu p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-white font-bold text-xl">AI Rescue</Link>
-        <Menu className="hidden md:flex space-x-4" />
-        <button
-          className="md:hidden text-white bg-secondary-accent px-3 py-1 rounded"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? 'Close' : 'Menu'}
-        </button>
-      </div>
-      {isOpen && <Menu className="md:hidden mt-2" />}
+      <Menu className="md:hidden mt-2" />
     </nav>
   );
-};
 
 export default Navbar;
