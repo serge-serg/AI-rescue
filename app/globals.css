@@ -61,6 +61,7 @@ main {
 }
 
 .sidebar-container {
+  background-color: #333;
   @media screen and (min-width: 769px) {
     width: 40%;
   }
@@ -69,10 +70,28 @@ main {
 .sidebar {
   @apply h-screen px-12 flex flex-col justify-between;
   background-image: url("../assets/images/13th-floor.png");
-  background-color: #333;
+  /* background-color: #333; */
   background-size: 500px;
   background-position: right -80px;
   background-repeat: no-repeat;
+  position: relative;
+}
+
+.sidebar ul {
+  @apply list-none text-right mb-10;
+}
+
+.sidebar nav {
+  position: fixed;
+  bottom: 0;
+}
+
+.sidebar nav ul li {
+  @apply py-2 px-4 hover:bg-[var(--main-bg-color)];
+}
+
+.sidebar nav ul li a {
+  @apply text-[var(--text-color)] no-underline;
 }
 
 .sidebar-header {
@@ -103,18 +122,6 @@ main ol {
 
 main ul {
   list-style: square;
-}
-
-nav ul {
-  @apply list-none text-right mb-10;
-}
-
-nav ul li {
-  @apply py-2 px-4 hover:bg-[var(--main-bg-color)];
-}
-
-nav ul li a {
-  @apply text-[var(--text-color)] no-underline;
 }
 
 h1 {
@@ -165,7 +172,8 @@ a.regular:hover {
     @apply flex-col;
   }
 
-  nav {
+  .sidebar nav {
+    position: static;
     margin: 0 -3rem;
     padding: 0 3vw;
     background-color: #333;

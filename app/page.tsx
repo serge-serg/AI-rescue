@@ -17,13 +17,14 @@ export default function Home() {
         <p>
           <Image
             alt="Bostrom"
+            title='Nick Bøstrom, "Superintelligence: Paths, Dangers, Strategies"'
             src={imgBostrom}
             width="394"
             className="float-to-right"
           />
           ИИ, достигший такого уровня развития, называют Суперинтеллектом. Этот
           термин популяризировал шведский философ Н. Бостром в своей книге 2014
-          г. Superintelligence: Paths, Dangers, Strategies. Он и множество
+          г. <em><strong>Superintelligence: Paths, Dangers, Strategies</strong></em>. Он и множество
           других мыслителей считают, что Суперинтеллект будет способен к
           рекурсивному самоулучшению, и этот процесс будет невозможно
           контролировать извне.
@@ -60,6 +61,7 @@ export default function Home() {
         </p>
         <Image
           alt="Musk"
+          title='Elon Musk'
           src={imgMusk}
           width="394"
           className="float-to-left"
@@ -131,6 +133,7 @@ export default function Home() {
           Приближаясь к точке невозврата
           <Image
             alt="kurzweil"
+            title='Ray Kurzweil "The Singularity is Near"'
             src={imgKurzweil}
             width="500"
             className="float-to-right"
