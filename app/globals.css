@@ -42,7 +42,7 @@ main {
 }
 
 .sidebar {
-  @apply h-screen p-4 flex flex-col justify-between;
+  @apply h-screen px-12 flex flex-col justify-between;
   background-image: url('../assets/images/13th-floor.png');
   background-color: #333;
   background-size: 500px;
@@ -55,15 +55,19 @@ main {
 }
 
 .logo-text {
-  @apply text-4xl text-[var(--accent-color)] relative pr-4 text-right;
+  @apply text-[var(--accent-color)] relative pr-4 text-right;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 2.5rem;
+  margin-bottom: auto;
 }
 
 .logo-text::before {
-  content: "...";
+  content: "_";
   @apply block absolute right-0;
-  font-size: 1.75rem;
+  /* font-size: 1.75rem; */
   opacity: 0.75;
-  top: 0.25rem;
+  top: -0.09rem;
   width: 0.75rem;
 }
 
@@ -80,7 +84,12 @@ nav ul li a {
 }
 
 h1 {
-  @apply text-[1.667rem] mb-12 text-center;
+  @apply text-[1.667rem] mb-12;
+  margin-left: -2rem;
+}
+
+h1::before {
+  content: "__ ";
 }
 
 h2 {
@@ -96,11 +105,11 @@ p {
 }
 
 .float-to-right {
-  @apply float-right mb-8 lg+:-mr-16 mt-8 ml-8;
+  @apply float-right mb-8 lg+:-mr-16 ml-8;
 }
 
 .float-to-left {
-  @apply float-left mb-8 mr-8 mt-8 -ml-16;
+  @apply float-left mb-8 mr-8 -ml-16;
 }
 
 @media (max-width: 768px) {
@@ -108,7 +117,15 @@ p {
     @apply flex-col;
   }
 
+  nav {
+    margin: 0 -3rem;
+    padding: 0 3vw;
+    background-color: #333;
+  }
+
   .sidebar {
     @apply w-full;
+    background-size: auto;
+    background-position: right -294px;
   }
 }
