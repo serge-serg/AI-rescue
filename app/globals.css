@@ -4,18 +4,30 @@
 
 :root {
   --main-bg-color: #121212;
-  --accent-color: #D14050;
-  --gradient-start: #91609F;
+  --accent-color: #d14050;
+  --gradient-start: #91609f;
   --gradient-end: #121212;
-  --text-color: #FFFFFF;
+  --text-color: #ffffff;
 }
 
-body, html {
+body,
+html {
   height: 100%;
-  font-family: Arial, sans-serif; 
+  font-family: Arial, sans-serif;
   font-size: 16px;
   color: var(--text-color);
+  /* background-color: var(--main-bg-color); */
+}
+
+body::after {
+  content: " ";
   background-color: var(--main-bg-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
 }
 
 a {
@@ -34,6 +46,19 @@ main {
   @apply flex min-h-screen;
   max-width: none;
 }
+.container::after {
+  content: " ";
+  background-image: url(/_next/static/media/right-bg-translucent.61456e3b.jpg);
+  background-position: right;
+  width: 16vw;
+  /* opacity: 0.75; */
+  position: fixed;
+  top: -20vw;
+  z-index: -1;
+  bottom: -20vw;
+  right: 0;
+  box-shadow: inset 220px 0px 180px 40px rgba(18, 18, 18, 1);
+}
 
 .sidebar-container {
   @media screen and (min-width: 769px) {
@@ -43,15 +68,15 @@ main {
 
 .sidebar {
   @apply h-screen px-12 flex flex-col justify-between;
-  background-image: url('../assets/images/13th-floor.png');
+  background-image: url("../assets/images/13th-floor.png");
   background-color: #333;
   background-size: 500px;
-  background-position: right -94px;
+  background-position: right -80px;
   background-repeat: no-repeat;
 }
 
 .sidebar-header {
-  @apply  hidden md:flex items-end justify-center pt-16;
+  @apply hidden md:flex items-end justify-center pt-16;
 }
 
 .logo-text {
@@ -65,10 +90,19 @@ main {
 .logo-text::before {
   content: "_";
   @apply block absolute right-0;
-  /* font-size: 1.75rem; */
   opacity: 0.75;
   top: -0.09rem;
   width: 0.75rem;
+}
+
+main ul,
+main ol {
+  margin: initial;
+  padding: 0 3rem 1rem;
+}
+
+main ul {
+  list-style: square;
 }
 
 nav ul {
@@ -84,7 +118,7 @@ nav ul li a {
 }
 
 h1 {
-  @apply text-[1.667rem] mb-12;
+  @apply text-[1.667rem] mb-8;
   margin-left: -2rem;
 }
 
@@ -93,7 +127,7 @@ h1::before {
 }
 
 h2 {
-  @apply py-4;
+  @apply pt-4 pb-6 text-2xl;
 }
 
 h3 {
@@ -105,11 +139,25 @@ p {
 }
 
 .float-to-right {
-  @apply float-right mb-8 lg+:-mr-16 ml-8;
+  @apply float-right mb-8 lg+:-mr-16 ml-8 -mr-16;
 }
 
 .float-to-left {
   @apply float-left mb-8 mr-8 -ml-16;
+}
+
+a.regular,
+a.tell-me-more {
+  color: green;
+}
+
+a.tell-me-more {
+  margin-left: 1rem;
+}
+
+a.tell-me-more:hover,
+a.regular:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
@@ -123,9 +171,27 @@ p {
     background-color: #333;
   }
 
+  nav ul {
+    @apply mb-4;
+  }
+
+  .float-to-right,
+  .float-to-left {
+    @apply w-full mt-4 opacity-100;
+  }
+
+  .float-to-right {
+    @apply mr-0;
+  }
+
+  .float-to-left {
+    @apply ml-0;
+  }
+
   .sidebar {
     @apply w-full;
-    background-size: auto;
-    background-position: right -294px;
+    height: 63vw;
+    background-size: cover;
+    background-position: center -183px;
   }
 }

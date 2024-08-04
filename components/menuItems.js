@@ -13,9 +13,9 @@ export default [
     href: "/hal9000-vs-matrix",
     text: [
       <>
-        Why Hal-9000 Wanted to <span style={{ color: 'darkred', fontWeight: 700 }}>Kill All Humans</span>,
+        Why Hal-9000 Wanted to <span style={{ color: '#f00', opacity: 0.5, fontWeight: 700 }}>Kill All Humans</span>,
       </>,
-      <>but the Matrix <span style={{ color: '#2a9146', fontWeight: 700 }}>Did Not</span></>,
+      <>but the Matrix <span style={{ opacity: 0.4, fontWeight: 700 }}>Did Not</span></>,
     ],
   },
   { href: "/rescue-approaches", text: "Rescue approaches" },
