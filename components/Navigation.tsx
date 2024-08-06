@@ -6,14 +6,16 @@ import { useState, useEffect } from 'react'
 import menuItems from '@/components/menuItems'
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(window.innerWidth > 1200)
+  const ww = 1200
+  const windowIsWide = window.innerWidth > ww
+  const [isOpen, setIsOpen] = useState(windowIsWide)
 
   useEffect(() => {
     const savedIsOpen = localStorage.getItem('menuIsOpen')
-    setIsOpen(savedIsOpen === 'true' || window.innerWidth > 1200)
+    setIsOpen(savedIsOpen === 'true' || windowIsWide)
 
     const handleResize = () => {
-      const newIsOpen = window.innerWidth > 1200
+      const newIsOpen = window.innerWidth > ww
       setIsOpen(newIsOpen)
       localStorage.setItem('menuIsOpen', newIsOpen.toString())
     }
@@ -50,7 +52,13 @@ const Navigation = () => {
           onClick={() => setIsOpen(!isOpen)}
           className="text-white"
         >
-          {isOpen ? 'Close' : 'Menu'}
+          {/* {isOpen ? 'Close' : 'Menu'} */}
+          <div className="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </button>
       </div>
 

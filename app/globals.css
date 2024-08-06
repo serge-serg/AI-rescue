@@ -205,7 +205,7 @@ a.regular:hover {
   .sidebar nav {
     @apply h-full;
     background-color: #333;
-    padding: 0 3vw;
+    padding: 0 1rem;
   }
 
   .logo-text {
@@ -229,4 +229,24 @@ a.regular:hover {
     @apply w-full mt-4 mb-4 mr-auto ml-auto float-none;
     max-width: 400px;
   }
+}
+
+.hamburger-icon {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.hamburger-icon span {
+  background-color: #ddd;
+  border-bottom: solid 1px #ccc;
+  display: block;
+  width: 30px;
+  height: 2px;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+.hamburger-icon:hover span {
+  background-color: #fff;
 }
