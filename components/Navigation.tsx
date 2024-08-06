@@ -25,9 +25,7 @@ const Navigation = () => {
   }, [])
 
   useEffect(() => {
-    const shouldBeOpen = window.innerWidth > 1200
-    setIsOpen(shouldBeOpen)
-    localStorage.setItem('menuIsOpen', (shouldBeOpen).toString())
+    localStorage.setItem('menuIsOpen', (isOpen).toString())
   }, [isOpen])
 
   const LogoText = () => <Link href="/" className="logo-text">/ <span style={{ fontWeight: 600 }}>Super-AI Challenge</span> /</Link>;
@@ -46,7 +44,6 @@ const Navigation = () => {
 
   return (
     <div className="lg+:max-w-[500px] sidebar-container">
-      {/* Hamburger menu для мобильных устройств */}
       <div className="lg+:hidden p-4 flex justify-between items-center bg-[#333]">
         <LogoText />
         <button
