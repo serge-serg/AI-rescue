@@ -7,7 +7,7 @@
   --accent-color: #d14050;
   --gradient-start: #91609f;
   --gradient-end: #121212;
-  --text-color: #ffffff;
+  --text-color: #ddd;
   --sidebar-offset: 48px;
   --sidebar-width: 40vw;
   --sidebar-max-width: 500px; /* see md:max-w-[500px] in Navigation.tsx */
@@ -69,9 +69,9 @@ main {
 
 .sidebar-container {
   background-color: #333;
-  @media screen and (min-width: 769px) {
-    width: var(--sidebar-width);
-  }
+  width: var(--sidebar-width);
+  /* @media screen and (min-width: 769px) {
+  } */
 }
 
 .sidebar {
@@ -101,11 +101,11 @@ main {
 }
 
 .sidebar-header {
-  @apply hidden md:flex items-end justify-center pt-16;
+  @apply hidden lg+:flex items-end justify-center pt-16;
 }
 
 .logo-text {
-  @apply text-[var(--accent-color)] relative pr-4 text-right;
+  @apply text-[var(--accent-color)] relative pr-4;
   font-size: 1.8rem;
   font-weight: 300;
   line-height: 2.5rem;
@@ -131,13 +131,14 @@ main ul {
 }
 
 h1 {
-  @apply text-[1.667rem] mb-8;
-  margin-left: -2rem;
+  @apply text-[2.3rem] mb-8 -mt-2;
+  color: #888;
+  /* margin-left: -2rem; */
 }
 
-h1::before {
+/* h1::before {
   content: "__ ";
-}
+} */
 
 h2 {
   @apply pt-4 pb-6 text-2xl;
@@ -152,7 +153,7 @@ p {
 }
 
 .float-to-right {
-  @apply float-right mb-8 lg+:-mr-16 ml-8 -mr-16;
+  @apply float-right mb-8 lg++:-mr-16 ml-8 -mr-16;
 }
 
 .float-to-left {
@@ -173,7 +174,18 @@ a.regular:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 1303px) {
+  .float-to-right {
+    @apply mr-0;
+  }
+
+  .float-to-left {
+    @apply ml-0;
+  }  
+}
+
+@media screen and (max-width: 1200px) {
+
   .container {
     @apply flex-col;
   }
@@ -186,10 +198,18 @@ a.regular:hover {
     padding: 0;
   }
 
+  .sidebar-container {
+    @apply w-full;
+  }
+
   .sidebar nav {
     @apply h-full;
     background-color: #333;
     padding: 0 3vw;
+  }
+
+  .logo-text {
+    margin: auto;
   }
 
   nav ul {
@@ -198,16 +218,15 @@ a.regular:hover {
 
   .float-to-right,
   .float-to-left {
-    @apply w-full mt-4 opacity-100;
+    @apply opacity-100;
+    max-width: 400px;
   }
 }
 
-@media (max-width: 1303px) {
-  .float-to-right {
-    @apply mr-0;
-  }
-
+@media screen and (max-width: 768px) {
+  .float-to-right,
   .float-to-left {
-    @apply ml-0;
-  }  
+    @apply w-full mt-4 mb-4 mr-auto ml-auto float-none;
+    max-width: 400px;
+  }
 }

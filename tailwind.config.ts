@@ -11,7 +11,8 @@ const config: Config = {
       backgroundImage: {
       },
       screens: {
-        'lg+': '1303px',
+        'lg+': '1200px',
+        'lg++': '1303px',
       }
     },
     maxWidth: {

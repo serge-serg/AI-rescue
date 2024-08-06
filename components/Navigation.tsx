@@ -6,17 +6,29 @@ import { useState, useEffect } from 'react'
 import menuItems from '@/components/menuItems'
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(window.innerWidth > 768)
+  const [isOpen, setIsOpen] = useState(window.innerWidth > 1200)
 
   useEffect(() => {
+    const savedIsOpen = localStorage.getItem('menuIsOpen')
+    setIsOpen(savedIsOpen === 'true' || window.innerWidth > 1200)
+
     const handleResize = () => {
-      setIsOpen(window.innerWidth > 768)
+      const newIsOpen = window.innerWidth > 1200
+      setIsOpen(newIsOpen)
+      localStorage.setItem('menuIsOpen', newIsOpen.toString())
     }
+
     window.addEventListener('resize', handleResize)
     return () => {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
+
+  useEffect(() => {
+    const shouldBeOpen = window.innerWidth > 1200
+    setIsOpen(shouldBeOpen)
+    localStorage.setItem('menuIsOpen', (shouldBeOpen).toString())
+  }, [isOpen])
 
   const LogoText = () => <Link href="/" className="logo-text">/ <span style={{ fontWeight: 600 }}>Super-AI Challenge</span> /</Link>;
 
@@ -33,9 +45,9 @@ const Navigation = () => {
   };
 
   return (
-    <div className="md:max-w-[500px] sidebar-container">
+    <div className="lg+:max-w-[500px] sidebar-container">
       {/* Hamburger menu для мобильных устройств */}
-      <div className="md:hidden p-4 flex justify-between items-center bg-[#333]">
+      <div className="lg+:hidden p-4 flex justify-between items-center bg-[#333]">
         <LogoText />
         <button
           onClick={() => setIsOpen(!isOpen)}
