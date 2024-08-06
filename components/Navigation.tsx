@@ -6,11 +6,11 @@ import { useState, useEffect } from 'react'
 import menuItems from '@/components/menuItems'
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(window.innerWidth > 798)
+  const [isOpen, setIsOpen] = useState(window.innerWidth > 768)
 
   useEffect(() => {
     const handleResize = () => {
-      setIsOpen(window.innerWidth > 798)
+      setIsOpen(window.innerWidth > 768)
     }
     window.addEventListener('resize', handleResize)
     return () => {
