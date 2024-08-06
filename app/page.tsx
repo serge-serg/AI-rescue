@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import imgBostrom from '@/assets/images/bostrom.jpg'
-import imgMusk from '@/assets/images/musk.jpg'
+import imgMusk from '@/assets/images/musk-3.jpg'
 import imgKurzweil from '@/assets/images/kurzweil.jpg'
 
 export default function Home() {
   return (
     <>
-      <h1>Will Humanity Outlive Our *Final Invention*?</h1>
+      <h1>Will Humanity Outlive Our *Final&nbsp;Invention*?</h1>
       <h2>Почему всё так изменилось</h2>
         <p>
           После появления ChatGPT в конце 2022 г. ИИ перестал быть научной
@@ -59,14 +59,15 @@ export default function Home() {
           назвал «Нашим последним изобретением» в своей книге 2013 г. Our Final
           Invention: Artificial Intelligence and the End of the Human Era.
         </p>
-        <Image
+        
+        <h2><Image
           alt="Musk"
           title='Elon Musk'
           src={imgMusk}
-          width="394"
+          width="430"
           className="float-to-left"
         />
-        <h2>Почему мы не сможем предотвратить создание Суперинтеллекта</h2>
+        Почему мы не сможем предотвратить создание Суперинтеллекта</h2>
         <p>
           Фундаментальный аспект этой проблемы состоит в том, что мы не сможем
           отказаться от создания этой сущности. Замедлить этот процесс также
