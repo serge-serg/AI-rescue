@@ -8,6 +8,9 @@
   --gradient-start: #91609f;
   --gradient-end: #121212;
   --text-color: #ffffff;
+  --sidebar-offset: 48px;
+  --sidebar-width: 40vw;
+  --sidebar-max-width: 500px; /* see md:max-w-[500px] in Navigation.tsx */
 }
 
 body,
@@ -38,6 +41,10 @@ img {
   @apply border-none opacity-65 hover:opacity-100;
 }
 
+img.img-offset-top {
+  @apply mt-2;
+}
+
 main {
   padding: 4rem 5vw 2rem 6vw;
 }
@@ -48,7 +55,7 @@ main {
 }
 .container::after {
   content: " ";
-  background-image: url(/_next/static/media/right-bg-translucent.61456e3b.jpg);
+  background-image: url("../assets/images/right-bg-translucent.jpg");
   background-position: right;
   width: 16vw;
   /* opacity: 0.75; */
@@ -63,15 +70,14 @@ main {
 .sidebar-container {
   background-color: #333;
   @media screen and (min-width: 769px) {
-    width: 40%;
+    width: var(--sidebar-width);
   }
 }
 
 .sidebar {
   @apply h-screen px-12 flex flex-col justify-between;
   background-image: url("../assets/images/13th-floor.png");
-  /* background-color: #333; */
-  background-size: 500px;
+  background-size: var(--sidebar-max-width);
   background-position: right -80px;
   background-repeat: no-repeat;
   position: relative;
@@ -81,9 +87,9 @@ main {
   @apply list-none text-right mb-10;
 }
 
-.sidebar nav {
+.sidebar-nav.sticky {
   position: fixed;
-  bottom: 0;
+  top: 0;
 }
 
 .sidebar nav ul li {
@@ -172,11 +178,18 @@ a.regular:hover {
     @apply flex-col;
   }
 
+  .sidebar {
+    @apply w-full;
+    background-size: cover;
+    background-position: center -183px;
+    height: fit-content;
+    padding: 0;
+  }
+
   .sidebar nav {
-    position: static;
-    margin: 0 -3rem;
-    padding: 0 3vw;
+    @apply h-full;
     background-color: #333;
+    padding: 0 3vw;
   }
 
   nav ul {
@@ -187,19 +200,14 @@ a.regular:hover {
   .float-to-left {
     @apply w-full mt-4 opacity-100;
   }
+}
 
+@media (max-width: 1303px) {
   .float-to-right {
     @apply mr-0;
   }
 
   .float-to-left {
     @apply ml-0;
-  }
-
-  .sidebar {
-    @apply w-full;
-    height: 63vw;
-    background-size: cover;
-    background-position: center -183px;
-  }
+  }  
 }

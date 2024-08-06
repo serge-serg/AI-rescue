@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="container w-full">
           <Navigation />
-          <main className="flex-grow md:w-3/5 max-w-[1200px]">
+          <main className=" md:w-3/5 max-w-[1200px]">
             {children}
           </main>
         </div>
