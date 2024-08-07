@@ -15,7 +15,7 @@ const Navigation = () => {
     setIsOpen(savedIsOpen === 'true' || windowIsWide)
 
     const handleResize = () => {
-      const newIsOpen = window.innerWidth > ww
+      const newIsOpen = windowIsWide
       setIsOpen(newIsOpen)
       localStorage.setItem('menuIsOpen', newIsOpen.toString())
     }
@@ -27,7 +27,8 @@ const Navigation = () => {
   }, [])
 
   useEffect(() => {
-    localStorage.setItem('menuIsOpen', (isOpen).toString())
+    setIsOpen(windowIsWide)
+    localStorage.setItem('menuIsOpen', (windowIsWide).toString())
   }, [isOpen])
 
   const LogoText = () => <Link href="/" className="logo-text">/ <span style={{ fontWeight: 600 }}>Super-AI Challenge</span> /</Link>;

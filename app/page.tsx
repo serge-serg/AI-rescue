@@ -6,8 +6,8 @@ import imgKurzweil from '@/assets/images/kurzweil.jpg'
 export default function Home() {
   return (
     <>
-      <h1>Will Humanity Outlive Our *Final&nbsp;Invention*?</h1>
-      <h2>Почему всё так изменилось</h2>
+      <h1>Will Humanity Outlive Its *Final&nbsp;Invention*?</h1>
+      <h2>Почему всё так <span className='accent'>изменилось</span></h2>
         <p>
           После появления ChatGPT в конце 2022 г. ИИ перестал быть научной
           фантастикой. Практически никто из специалистов, работающих над
@@ -35,7 +35,7 @@ export default function Home() {
           которой развивается эта область НТП, предполагает, что для этого
           потребуются уже не десятилетия, но годы.
         </p>
-        <h2>В чём здесь проблема?</h2>
+        <h2>В чём здесь <span className='accent'>проблема?</span></h2>
         <p>
           Проблема здесь в том, что мы можем создать сущность, более
           могущественную чем мы сами и при этом обладающую целями, отличающимися
@@ -67,7 +67,7 @@ export default function Home() {
           width="430"
           className="float-to-left"
         />
-        Почему мы не сможем предотвратить создание Суперинтеллекта</h2>
+        Почему мы <span className='accent'>не сможем предотвратить</span> создание Суперинтеллекта</h2>
         <p>
           Фундаментальный аспект этой проблемы состоит в том, что мы не сможем
           отказаться от создания этой сущности. Замедлить этот процесс также
@@ -131,7 +131,7 @@ export default function Home() {
           <a href="#" className="tell-me-more">Подробнее…</a>
         </p>
         <h2>
-          Приближаясь к точке невозврата
+          Приближаясь к <span className='accent'>точке невозврата</span>
           <Image
             alt="kurzweil"
             title='Ray Kurzweil "The Singularity is Near"'

@@ -49,6 +49,10 @@ main {
   padding: 4rem 5vw 2rem 6vw;
 }
 
+.accent {
+  color: var(--accent-color);
+}
+
 .container {
   @apply flex min-h-screen;
   max-width: none;
@@ -132,7 +136,9 @@ main ul {
 
 h1 {
   @apply text-[2.3rem] mb-8 -mt-2;
-  color: #999;
+  color: #ddd;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
   transition: 0.3s;
   /* margin-left: -2rem; */
 }
@@ -167,11 +173,6 @@ p {
 
 .float-to-left {
   @apply float-left mb-8 mr-8 -ml-16;
-}
-
-a.regular,
-a.tell-me-more {
-  color: green;
 }
 
 a.tell-me-more {
