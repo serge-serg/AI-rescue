@@ -1,6 +1,6 @@
-'use client';
+'use client'
 
-import React from 'react';
+import React, { useRef } from 'react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import menuItems from '@/components/menuItems'
@@ -9,6 +9,8 @@ const Navigation = () => {
   const ww = 1200
   const windowIsWide = window.innerWidth > ww
   const [isOpen, setIsOpen] = useState(windowIsWide)
+  const navRef = useRef<HTMLElement>(null)
+  const asideRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const savedIsOpen = localStorage.getItem('menuIsOpen')
@@ -21,29 +23,44 @@ const Navigation = () => {
     }
 
     window.addEventListener('resize', handleResize)
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
+    return () => window.removeEventListener('resize', handleResize)
   }, [])
 
   useEffect(() => {
-    setIsOpen(windowIsWide)
-    localStorage.setItem('menuIsOpen', (windowIsWide).toString())
+    if (windowIsWide) setIsOpen(true)
+    localStorage.setItem('menuIsOpen', (true).toString())
   }, [isOpen])
 
-  const LogoText = () => <Link href="/" className="logo-text">/ <span style={{ fontWeight: 600 }}>Super-AI Challenge</span> /</Link>;
+  useEffect(() => {
+    const handleScroll = () => {
+      if (navRef.current !== null && asideRef.current !== null) {
+        const asideTop = asideRef.current.getBoundingClientRect().top
+        const navRect = navRef.current.getBoundingClientRect()
+        const topLimit = (window.innerHeight - navRect.height) / 2
+        if ((asideTop) * -1 > topLimit) { // after sticky
+          if (navRef.current.style.position === 'fixed') return
+          navRef.current.style.position = 'fixed'
+          navRef.current.style.top = `${topLimit}px`
+        } else { // before sticky
+          if (navRef.current.style.position !== 'fixed') return
+          navRef.current.style.position = 'static'
+        }
+      }
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const LogoText = () => <Link href="/" className="logo-text">/ <span style={{ fontWeight: 600 }}>Super-AI Challenge</span> /</Link>
 
   const renderMenuItem = (item: string | (string | JSX.Element)[]) => {
     if (Array.isArray(item)) {
       return item.map((textPart, index) => (
-        <React.Fragment key={index}>
-          {textPart}
-          {index < item.length - 1 && <br />}
-        </React.Fragment>
-      ));
+        <React.Fragment key={index}>{textPart}</React.Fragment>
+      ))
     }
-    return item;
-  };
+    return item
+  }
 
   return (
     <div className="lg+:max-w-[500px] sidebar-container">
@@ -53,7 +70,6 @@ const Navigation = () => {
           onClick={() => setIsOpen(!isOpen)}
           className="text-white"
         >
-          {/* {isOpen ? 'Close' : 'Menu'} */}
           <div className="hamburger-icon">
             <span></span>
             <span></span>
@@ -63,21 +79,24 @@ const Navigation = () => {
         </button>
       </div>
 
-      <aside className={`sidebar ${isOpen ? 'flex' : 'hidden'}`}>
+      <aside ref={asideRef} className={`sidebar ${isOpen ? 'flex' : 'hidden'}`}>
         <div className="sidebar-header">
           <LogoText />
         </div>
-        {isOpen && <nav>
-          <ul>
-            {menuItems.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} onClick={() => setIsOpen(false)}>
-                  {renderMenuItem(item.text)}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>}
+        {
+          isOpen &&
+          <nav ref={navRef} className="lg+:max-w-[500px]">
+            <ul>
+              {menuItems.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} onClick={() => setIsOpen(false)}>
+                    {renderMenuItem(item.text)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        }
       </aside>
     </div>
   )

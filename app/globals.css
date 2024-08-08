@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --main-bg-color: #121212;
-  --accent-color: #d14050;
-  --gradient-start: #91609f;
-  --gradient-end: #121212;
-  --text-color: #ddd;
+  --color-darkest: #121212;
+  --color-dark-rose: #d14050;
+  --color-violet: #91609f; /* not in use */
+  --color-grey-light: #ddd;
+  --color-green: #408040;
   --sidebar-offset: 48px;
   --sidebar-width: 40vw;
   --sidebar-max-width: 500px; /* see md:max-w-[500px] in Navigation.tsx */
@@ -18,13 +18,13 @@ html {
   height: 100%;
   font-family: Arial, sans-serif;
   font-size: 16px;
-  color: var(--text-color);
-  /* background-color: var(--main-bg-color); */
+  color: var(--color-grey-light);
+  /* background-color: var(--color-darkest); */
 }
 
 body::after {
   content: " ";
-  background-color: var(--main-bg-color);
+  background-color: var(--color-darkest);
   position: fixed;
   top: 0;
   left: 0;
@@ -37,8 +37,9 @@ a {
   @apply text-[#9999ff];
 }
 
-img {
+img.obscured {
   @apply border-none opacity-65 hover:opacity-100;
+  transition: 0.3s;
 }
 
 img.img-offset-top {
@@ -50,7 +51,7 @@ main {
 }
 
 .accent {
-  color: var(--accent-color);
+  color: var(--color-dark-rose);
 }
 
 .container {
@@ -71,15 +72,14 @@ main {
   box-shadow: inset 220px 0px 180px 40px rgba(18, 18, 18, 1);
 }
 
-.sidebar-container {
+.sidebar-container,
+.sidebar nav {
   background-color: #333;
   width: var(--sidebar-width);
-  /* @media screen and (min-width: 769px) {
-  } */
 }
 
 .sidebar {
-  @apply h-screen px-12 flex flex-col justify-between;
+  @apply h-screen flex flex-col justify-between;
   background-image: url("../assets/images/13th-floor.png");
   background-size: var(--sidebar-max-width);
   background-position: right -80px;
@@ -88,20 +88,16 @@ main {
 }
 
 .sidebar ul {
-  @apply list-none text-right mb-10;
+  @apply list-none text-right mb-8;
 }
 
-.sidebar-nav.sticky {
-  position: fixed;
-  top: 0;
-}
-
-.sidebar nav ul li {
-  @apply py-2 px-4 hover:bg-[var(--main-bg-color)];
+.sidebar nav ul li,
+.sidebar nav ul li.selected {
+  @apply py-2 pl-8 pr-12 hover:bg-[var(--color-darkest)];
 }
 
 .sidebar nav ul li a {
-  @apply text-[var(--text-color)] no-underline;
+  @apply text-[var(--color-grey-light)] no-underline;
 }
 
 .sidebar-header {
@@ -109,7 +105,7 @@ main {
 }
 
 .logo-text {
-  @apply text-[var(--accent-color)] relative pr-4;
+  @apply text-[var(--color-dark-rose)] relative pr-4;
   font-size: 1.8rem;
   font-weight: 300;
   line-height: 2.5rem;
@@ -124,6 +120,15 @@ main {
   width: 0.75rem;
 }
 
+.logo-text::after {
+  content: "inquiry about the near future";
+  display: block;
+  font-size: 1rem;
+  color: #bbb;
+  text-align: center;
+  line-height: 2;
+}
+
 main ul,
 main ol {
   margin: initial;
@@ -136,7 +141,7 @@ main ul {
 
 h1 {
   @apply text-[2.3rem] mb-8 -mt-2;
-  color: #ddd;
+  color: var(--color-grey-light);
   letter-spacing: 1px;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
   transition: 0.3s;
@@ -160,7 +165,7 @@ h3 {
 }
 
 p {
-  @apply text-[#ddd] mb-4 leading-relaxed;
+  @apply text-[var(--color-grey-light)] mb-4 leading-relaxed;
 }
 
 .float-to-left, .float-to-right {
@@ -208,7 +213,8 @@ a.regular:hover {
     padding: 0;
   }
 
-  .sidebar-container {
+  .sidebar-container,
+  .sidebar nav {
     @apply w-full;
   }
 
@@ -248,7 +254,7 @@ a.regular:hover {
 }
 
 .hamburger-icon span {
-  background-color: #ddd;
+  background-color: var(--color-grey-light);
   border-bottom: solid 1px #ccc;
   display: block;
   width: 30px;

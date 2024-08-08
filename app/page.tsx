@@ -20,7 +20,7 @@ export default function Home() {
             title='Nick Bøstrom, "Superintelligence: Paths, Dangers, Strategies"'
             src={imgBostrom}
             width="394"
-            className="float-to-right"
+            className="float-to-right obscured"
           />
           ИИ, достигший такого уровня развития, называют Суперинтеллектом. Этот
           термин популяризировал шведский философ Н. Бостром в своей книге 2014
@@ -65,7 +65,7 @@ export default function Home() {
           title='Elon Musk'
           src={imgMusk}
           width="430"
-          className="float-to-left"
+          className="float-to-left obscured"
         />
         Почему мы <span className='accent'>не сможем предотвратить</span> создание Суперинтеллекта</h2>
         <p>
@@ -137,7 +137,7 @@ export default function Home() {
             title='Ray Kurzweil "The Singularity is Near"'
             src={imgKurzweil}
             width="500"
-            className="float-to-right"
+            className="float-to-right obscured"
           />
         </h2>
 
