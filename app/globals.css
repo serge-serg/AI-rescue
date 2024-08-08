@@ -91,9 +91,11 @@ main {
   @apply list-none text-right mb-8;
 }
 
-.sidebar nav ul li,
-.sidebar nav ul li.selected {
+.sidebar nav ul li {
   @apply py-2 pl-8 pr-12 hover:bg-[var(--color-darkest)];
+}
+.sidebar nav ul li.selected {
+  @apply bg-[var(--color-darkest)];
 }
 
 .sidebar nav ul li a {

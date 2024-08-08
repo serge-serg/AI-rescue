@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import imgBostrom from '@/assets/images/bostrom.jpg'
 import imgMusk from '@/assets/images/musk-3.jpg'

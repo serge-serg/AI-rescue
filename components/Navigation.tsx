@@ -1,11 +1,14 @@
 'use client'
-
 import React, { useRef } from 'react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import menuItems from '@/components/menuItems'
 
 const Navigation = () => {
+
+  const currentPath = usePathname()
+
   const ww = 1200
   const windowIsWide = window.innerWidth > ww
   const [isOpen, setIsOpen] = useState(windowIsWide)
@@ -88,7 +91,7 @@ const Navigation = () => {
           <nav ref={navRef} className="lg+:max-w-[500px]">
             <ul>
               {menuItems.map((item) => (
-                <li key={item.href}>
+                <li key={item.href} className={currentPath === item.href ? 'selected' : ''}>
                   <Link href={item.href} onClick={() => setIsOpen(false)}>
                     {renderMenuItem(item.text)}
                   </Link>
