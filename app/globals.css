@@ -80,7 +80,7 @@ main {
 
 .sidebar {
   @apply h-screen flex flex-col justify-between;
-  background-image: url("../assets/images/13th-floor.png");
+  /* background-image: url("../assets/images/13th-floor.png"); */
   background-size: var(--sidebar-max-width);
   background-position: right -80px;
   background-repeat: no-repeat;
@@ -116,21 +116,22 @@ main {
   font-weight: 300;
   line-height: 2.5rem;
   margin-bottom: auto;
+  text-align: center;
 }
 
-.logo-text::before {
+/* .logo-text::before {
   content: "_";
   @apply block absolute right-0;
   opacity: 0.75;
   top: -0.09rem;
   width: 0.75rem;
-}
+} */
 
 .logo-text::after {
-  content: "inquiry about the near future";
+  content: "Inquiry About the Upcoming Game-Changing Future";
   display: block;
   font-size: 1rem;
-  color: #bbb;
+  color: #ccc;
   text-align: center;
   line-height: 2;
 }

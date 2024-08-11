@@ -4,10 +4,28 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import menuItems from '@/components/menuItems'
+import img13Floor from '@/assets/images/13th-floor.png'
+import imgRobotAndPeople from '@/assets/images/robot-ai-leadership-crowd.jpg'
 
 const Navigation = () => {
-
   const currentPath = usePathname()
+
+  let bgImg = img13Floor
+
+  switch (currentPath) {
+    case '/why-we-will-not-refuse':
+      bgImg = imgRobotAndPeople
+      break
+    default:
+      break
+  }
+
+  const style = {
+    bgImage: {
+      backgroundImage: `url(${bgImg.src})`
+    }
+  }
+
 
   const ww = 1200
   const windowIsWide = window.innerWidth > ww
@@ -82,7 +100,7 @@ const Navigation = () => {
         </button>
       </div>
 
-      <aside ref={asideRef} className={`sidebar ${isOpen ? 'flex' : 'hidden'}`}>
+      <aside ref={asideRef} style={style.bgImage} className={`sidebar ${isOpen ? 'flex' : 'hidden'}`}>
         <div className="sidebar-header">
           <LogoText />
         </div>

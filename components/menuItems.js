@@ -1,8 +1,9 @@
 const fontBold = { fontWeight: 700 };
 const textColorMain = { color: 'var(--color-dark-rose)' };
 const textColorMainBold = { ...textColorMain, ...fontBold };
+const textBoldOpacity = { opacity: 0.6, ...fontBold };
 export default [
-  { href: "/", text: "Home" },
+  { href: "/", text: ["Will Humanity Outlive Its ", <i style={textBoldOpacity}>Final Invention?</i>], },
   {
     href: "/why-we-will-not-refuse",
     text: ["Why We Won't Refuse ", <>Creating <span style={textColorMainBold}>Superintelligence</span></>],
@@ -23,7 +24,7 @@ export default [
         Why <span style={textColorMainBold}>Hal-9000</span> Wanted to <span style={{ color: '#f00', opacity: 0.5, ...fontBold }}>Kill All Humans</span>,
       </>,
       <wbr />,
-      <span style={{whiteSpace: 'nowrap'}}>&nbsp;but the <span style={textColorMainBold}>Matrix</span> <span style={{ opacity: 0.4, ...fontBold }}>Didn't</span></span>,
+      <span style={{whiteSpace: 'nowrap'}}>&nbsp;but the <span style={textColorMainBold}>Matrix</span> <span style={textBoldOpacity}>Didn't</span></span>,
     ],
   },
   /* { href: "/rescue-approaches", text: "Rescue approaches" }, */
