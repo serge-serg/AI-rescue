@@ -92,14 +92,18 @@ main {
 }
 
 .sidebar nav ul li {
-  @apply py-2 pl-8 pr-12 hover:bg-[var(--color-darkest)];
+  @apply py-2 hover:bg-[rgba(255,255,255,0.1)];
 }
 .sidebar nav ul li.selected {
   @apply bg-[var(--color-darkest)];
+  /* margin-top: 0.625rem;
+  margin-bottom: 0.625rem; */
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
 }
 
 .sidebar nav ul li a {
-  @apply text-[var(--color-grey-light)] no-underline;
+  @apply text-[var(--color-grey-light)] pl-8 pr-12  no-underline block w-full;
 }
 
 .sidebar-header {
@@ -170,7 +174,8 @@ p {
   @apply text-[var(--color-grey-light)] mb-4 leading-relaxed;
 }
 
-.float-to-left, .float-to-right {
+.float-to-left,
+.float-to-right {
   @apply mt-2 mb-4;
 }
 
@@ -198,11 +203,10 @@ a.regular:hover {
 
   .float-to-left {
     @apply ml-0;
-  }  
+  }
 }
 
 @media screen and (max-width: 1200px) {
-
   .container {
     @apply flex-col;
   }

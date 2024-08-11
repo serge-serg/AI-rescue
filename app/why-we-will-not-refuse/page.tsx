@@ -8,7 +8,7 @@ import imgFreedom from '@/assets/images/freedom.jpg'
 export default function WhyWeCantGiveUp() {
   return (
     <>
-      <h1>Why We Cant Give Up on Creating Superintelligence</h1>
+      <h1>Why We Won't Refuse Creating Superintelligence</h1>
       <em>
         <Image src={imgAIButterfly} width="450" className='float-to-right' alt="Why We Cant Give Up on Creating Superintelligence" />
         Наши технологии или наша природа?<br />Либо мы исчезнем, либо станем с ними единым целым
