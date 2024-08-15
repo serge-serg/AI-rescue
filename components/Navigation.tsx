@@ -100,7 +100,7 @@ const Navigation = () => {
         </button>
       </div>
 
-      <aside ref={asideRef} style={style.bgImage} className={`sidebar ${isOpen ? 'flex' : 'hidden'}`}>
+      <aside ref={asideRef} style={style.bgImage} className={`sidebar ${!isOpen && 'hidden'}`}>
         <div className="sidebar-header">
           <LogoText />
         </div>

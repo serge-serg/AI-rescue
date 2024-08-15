@@ -79,7 +79,7 @@ main {
 }
 
 .sidebar {
-  @apply h-screen flex flex-col justify-between;
+  @apply h-screen /*flex flex-col justify-between*/;
   /* background-image: url("../assets/images/13th-floor.png"); */
   background-size: var(--sidebar-max-width);
   background-position: right -80px;
@@ -108,6 +108,7 @@ main {
 
 .sidebar-header {
   @apply hidden lg+:flex items-end justify-center pt-16;
+  height: 590px;
 }
 
 .logo-text {

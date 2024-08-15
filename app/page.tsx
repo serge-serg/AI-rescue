@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <>
-      <h1>Will Humanity Outlive Its *Final&nbsp;Invention*?</h1>
+      <h1>Toward the Point of No Return</h1>
       <h2>Почему всё так <span className='accent'>изменилось</span></h2>
         <p>
           После появления ChatGPT в конце 2022 г. ИИ перестал быть научной

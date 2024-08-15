@@ -1,7 +1,7 @@
 export default function Scenarios() {
   return (
     <>
-      <h1>Scenarios</h1>
+      <h1>Is Superintelligence the Great Filter for Humanity?</h1>
       <h2>Description</h2>
     </>
   );
