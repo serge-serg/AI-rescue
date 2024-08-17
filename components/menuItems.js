@@ -5,11 +5,11 @@ const textBoldOpacity = { opacity: 0.6, ...fontBold };
 const textBoldDarkRed = { color: '#f00', opacity: 0.5, ...fontBold };
 export default [
   { href: "/", text: "Toward the Point of No Return",},
+  { href: "/great-filter", text: ["Is ",<span style={textColorMainBold}>Superintelligence </span>, "the Great Filter for Humanity?"] },
   {
     href: "/why-we-will-not-refuse",
     text: ["Why We Won't Refuse ", <>Creating <span style={textColorMainBold}>Superintelligence</span></>],
   },
-  { href: "/great-filter", text: ["Is ",<span style={textColorMainBold}>Superintelligence </span>, "the Great Filter for Humanity?"] },
   { href: "/deep-dive-into-ai-risks", 
     text: ["Deep Dive into ", <span style={textBoldDarkRed}>AI Risks</span>],
   },
