@@ -1,5 +1,5 @@
 'use client'
-import React, { ReactNode, useRef } from 'react'
+import React, { ReactNode, useCallback, useRef } from 'react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
@@ -33,19 +33,18 @@ const Navigation = () => {
   const navRef = useRef<HTMLElement>(null)
   const asideRef = useRef<HTMLElement>(null)
 
+  const handleResize = useCallback(() => {
+    const newIsOpen = window.innerWidth > ww
+    setIsOpen(newIsOpen)
+    localStorage.setItem('menuIsOpen', newIsOpen.toString())
+  }, [])
+
   useEffect(() => {
     const savedIsOpen = localStorage.getItem('menuIsOpen')
     setIsOpen(savedIsOpen === 'true' || windowIsWide)
-
-    const handleResize = () => {
-      const newIsOpen = windowIsWide
-      setIsOpen(newIsOpen)
-      localStorage.setItem('menuIsOpen', newIsOpen.toString())
-    }
-
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
-  }, [])
+  }, [handleResize])
 
   useEffect(() => {
     if (windowIsWide) setIsOpen(true)
