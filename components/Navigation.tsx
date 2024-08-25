@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef } from 'react'
+import React, { ReactNode, useRef } from 'react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
@@ -74,7 +74,7 @@ const Navigation = () => {
 
   const LogoText = () => <Link href="/" className="logo-text">/ <span style={{ fontWeight: 600 }}>Super-AI Challenge</span> /</Link>
 
-  const renderMenuItem = (item: string | (string | JSX.Element)[]) => {
+  const renderMenuItem = (item: string | ReactNode | (string | JSX.Element)[]) => {
     if (Array.isArray(item)) {
       return item.map((textPart, index) => (
         <React.Fragment key={index}>{textPart}</React.Fragment>

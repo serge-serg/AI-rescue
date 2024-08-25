@@ -1,38 +1,79 @@
-const fontBold = { fontWeight: 700 };
-const textColorMain = { color: 'var(--color-dark-rose)' };
-const textColorMainBold = { ...textColorMain, ...fontBold };
+const fontBold = { fontWeight: 700 }
+const textColorMain = { color: "var(--color-dark-rose)" }
+const textColorMainBold = { ...textColorMain, ...fontBold }
 //const textBoldOpacity = { opacity: 0.6, ...fontBold };
-const textBoldLightGreen = { color: 'lightgreen', ...fontBold };
-const textBoldDarkRed = { color: '#f00', opacity: 0.5, ...fontBold };
-export default [
-  { href: "/", text: "Toward the Point of No Return",},
-  { href: "/will-superintelligence-become-the-great-filter-for-humanity", text: ["Will Superintelligence Become ",<span style={textColorMainBold}>Superintelligence </span>, "the Great Filter for Humanity?"] },
+const textBoldLightGreen = { color: "lightgreen", ...fontBold }
+const textBoldDarkRed = { color: "#f00", opacity: 0.5, ...fontBold }
+const menuItems = [
+  { href: "/", 
+    text: "Toward the Point of No Return", 
+    key: "home" 
+  },
+  {
+    href: "/will-superintelligence-become-the-great-filter-for-humanity",
+    text: [
+      "Will Superintelligence Become ",
+      <span key="superAI" style={textColorMainBold}>Superintelligence</span>,
+      " the Great Filter for Humanity?",
+    ],
+    key: "great-filter",
+  },
   {
     href: "/why-we-will-not-refuse",
-    text: ["Why We Won't Refuse ", <>Creating <span style={textColorMainBold}>Superintelligence</span></>],
+    text: [
+      "Why We Won't Refuse ",
+      <>
+        Creating <span style={textColorMainBold}>Superintelligence</span>
+      </>,
+    ],
+    key: "wont-refuse",
   },
-  { href: "/deep-dive-into-fundamental-ai-risks", 
-    text: ["Deep Dive into Fundamental ", <span style={textBoldDarkRed}>AI Risks</span>],
+  {
+    href: "/deep-dive-into-fundamental-ai-risks",
+    text: [
+      "Deep Dive into Fundamental ",
+      <span key="ai-risks" style={textBoldDarkRed}>AI Risks</span>,
+    ],
+    key: "deep-dive",
   },
-  { // Bizarre Great Filter?
+  {
+    // Bizarre Great Filter?
     href: "/can-superintelligence-be-inherently-friendly",
     text: [
       "Can ",
-      <><span style={textColorMainBold}>Superintelligence</span> </>,
-      <>Be <span style={textBoldLightGreen}>Friendly</span>?</>, 
+      <>
+        <span style={textColorMainBold}>Superintelligence</span>{" "}
+      </>,
+      <>
+        Be <span style={textBoldLightGreen}>Friendly</span>?
+      </>,
     ],
+    key: "friendly",
   },
   {
     href: "/why-did-hal-decide-to-kill-all-the-discovery-astronauts",
     text: [
       <>
-        Why Did <span style={textColorMainBold}>Hal9000</span> Decide to <span style={textBoldDarkRed}>Kill </span>All the Discovery Astronauts?
+        Why Did <span style={textColorMainBold}>Hal9000</span> Decide to{" "}
+        <span style={textBoldDarkRed}>Kill </span>All the Discovery Astronauts?
       </>,
     ],
+    key: "hal-9000",
   },
   {
     href: "/why-the-matrix-never-intended-to-destroy-human-race",
-    text: <>Why <span style={textColorMainBold}>The Matrix</span> <span style={textBoldLightGreen}>Never</span> Intended To <span style={textBoldDarkRed}>Destroy</span> Human Race</>,
+    text: (
+      <>
+        Why <span style={textColorMainBold}>The Matrix</span>{" "}
+        <span style={textBoldLightGreen}>Never</span> Intended To{" "}
+        <span style={textBoldDarkRed}>Destroy</span> Human Race
+      </>
+    ),
+    key: "the-matrix",
   },
-  { href: "/we-need-your-opinion", text: "We need your opinion!" },
-];
+  { href: "/we-need-your-opinion", 
+    text: "We need your opinion!",
+    key: "opinion",
+  },
+]
+export default menuItems
