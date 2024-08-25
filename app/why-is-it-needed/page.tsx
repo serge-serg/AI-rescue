@@ -1,4 +1,4 @@
-export default function WhatIsSuperAI() {
+export default function WhyItIsNeeded() {
   return (
     <>
       <h1>Why is it needed?</h1>

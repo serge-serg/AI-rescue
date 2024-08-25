@@ -169,7 +169,7 @@ h2 {
 }
 
 h3 {
-  @apply py-4;
+  @apply py-4 font-bold text-xl;
 }
 
 p {

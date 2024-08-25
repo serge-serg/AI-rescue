@@ -1,4 +1,4 @@
-export default function WhatIsSuperAI() {
+export default function DeepDiveIntoFundamentalAIRisks() {
   return (
     <>
       <h1>Rescue approaches</h1>
