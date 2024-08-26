@@ -19,7 +19,7 @@ const menuItems = [
     key: "great-filter",
   },
   {
-    href: "/why-we-will-not-refuse",
+    href: "/why-we-will-not-refuse-creating-superintelligence",
     text: [
       "Why We Won't Refuse ",
       <>

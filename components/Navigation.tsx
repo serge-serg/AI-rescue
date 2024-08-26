@@ -14,7 +14,7 @@ const Navigation = () => {
   let bgImg = img13Floor
 
   switch (currentPath) {
-    case '/why-we-will-not-refuse':
+    case '/why-we-will-not-refuse-creating-superintelligence':
       bgImg = imgRobotAndPeople
       break
     default:
