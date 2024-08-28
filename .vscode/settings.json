@@ -1,5 +1,8 @@
 {
   "cSpell.words": [
+    "Animatrix",
     "человечеству"
-  ]
+  ],
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120
 }

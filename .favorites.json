@@ -22,5 +22,13 @@
         "workspaceRoot": "/Users/sergei.klevtsov/Documents/Projects/AI-rescue",
         "workspacePath": "tailwind.config.ts",
         "id": "5nm6L3Mcioh9TvZD"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sergei.klevtsov/Documents/Projects/Super-AI-Challenge/components/menuItems.js",
+        "parent_id": null,
+        "workspaceRoot": "/Users/sergei.klevtsov/Documents/Projects/Super-AI-Challenge",
+        "workspacePath": "components/menuItems.js",
+        "id": "2uEDBazLlZtMfsYi"
     }
 ]
