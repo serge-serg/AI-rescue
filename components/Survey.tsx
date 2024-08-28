@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 import 'survey-core/defaultV2.min.css';
@@ -17,49 +19,27 @@ const surveyJson = {
         "Very negative"
       ],
       isRequired: true
-    },
-    {
-      name: "SecondQuestion",
-      title: "Do you think AI will significantly impact your job in the next 5 years?",
-      type: "radiogroup",
-      choices: [
-        "Yes, positively",
-        "Yes, negatively",
-        "No significant impact",
-        "Unsure"
-      ],
-      isRequired: true
     }
   ]
 };
 
 const SurveyComponent: React.FC = () => {
-  const [survey, setSurvey] = useState<Model | null>(null);
   const [results, setResults] = useState<any>(null);
-
-  useEffect(() => {
-    const newSurvey = new Model(surveyJson);
-    newSurvey.onComplete.add((sender) => {
-      const results = JSON.stringify(sender.data);
-      localStorage.setItem('surveyResults', results);
-      setResults(sender.data);
-    });
-    setSurvey(newSurvey);
-
-    // Load existing results
-    const savedResults = localStorage.getItem('surveyResults');
-    if (savedResults) {
-      setResults(JSON.parse(savedResults));
-    }
-  }, []);
+  const survey = new Model(surveyJson);
+  
+  survey.onComplete.add((sender) => {
+    setResults(sender.data);
+  });
 
   return (
     <div>
-      {!results && survey && <Survey model={survey} />}
-      {results && (
+      {!results ? (
+        <Survey model={survey} />
+      ) : (
         <div>
-          <h2>Survey Results:</h2>
-          <pre>{JSON.stringify(results, null, 2)}</pre>
+          <h2>Your Survey Results:</h2>
+          <p><strong>Opinion on AI development:</strong> {results.FirstQuestion}</p>
+          <button onClick={() => setResults(null)}>Take Survey Again</button>
         </div>
       )}
     </div>
