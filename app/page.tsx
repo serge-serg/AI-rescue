@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <h1>Toward the Point of No Return</h1>
-      <h2>ПWhy Everything <span className='accent'>Has Changed</span> So Much</h2>
+      <h2>Why Everything <span className='accent'>Has Changed</span> So Much</h2>
       <p>
         With the emergence of ChatGPT at the close of 2022, AI transitioned from the realm of science fiction to a rapidly approaching reality. The consensus among AI specialists is now firm-the creation of machines capable of human-level thinking, and even surpassing it, is not a matter of if, but when.
       </p>
@@ -109,11 +109,11 @@ export default function Home() {
         <li>
           Understand the details of the <Link href="/deep-dive-into-fundamental-ai-risks">fundamental risks coming from AI</Link>;
         </li>
-        {/* <li>
+        {<li>
           Imagine Superintelligence not as a threat to our existence, but as <Link href="/can-superintelligence-be-inherently-friendly">our partner and friend</Link>;
-        </li> */}
+        </li>}
       </ul>
-      <p>In addition to this information, you will find sections devoted to the vision of the AI problem through the prism of contemporary art. Finally, we hope to learn your opinion on the most pressing issues related to this problem.</p>
+      <p>In addition to this information, you will find sections devoted to the vision of the AI problem through the prism of <Link href="/why-could-not-the-matrix-exist-without-humans">modern&nbsp;art</Link>. Finally, we hope to learn your opinion on the most pressing issues related to this problem.</p>
       <p>Good luck in exploring the challenge of Superintelligence!</p>
     </>
   )

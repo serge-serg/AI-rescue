@@ -101,9 +101,7 @@ const Navigation = () => {
       </div>
 
       <aside ref={asideRef} style={style.bgImage} className={`sidebar ${!isOpen && 'hidden'}`}>
-        <div className="sidebar-header">
-          <LogoText />
-        </div>
+        <div className="sidebar-header"><LogoText /></div>
         {
           isOpen &&
           <nav ref={navRef} className="lg+:max-w-[500px]">

@@ -36,38 +36,33 @@ const menuItems = [
     ],
     key: "deep-dive",
   },
-  {
-    // Bizarre Great Filter?
+  /* {
     href: "/can-superintelligence-be-inherently-friendly",
     text: [
       "Can ",
       <>
-        <span style={textColorMainBold}>Superintelligence</span>{" "}
+        <span style={textColorMainBold}>Superintelligence</span>
       </>,
       <>
         Be <span style={textBoldLightGreen}>Friendly</span>?
       </>,
     ],
     key: "friendly",
-  },
-  {
+  }, */
+  /* {
     href: "/why-did-hal-decide-to-kill-all-the-discovery-astronauts",
     text: [
       <>
-        Why Did <span style={textColorMainBold}>Hal9000</span> Decide to{" "}
+        Why Did <span style={textColorMainBold}>Hal9000</span> Decide to
         <span style={textBoldDarkRed}>Kill </span>All the Discovery Astronauts?
       </>,
     ],
     key: "hal-9000",
-  },
+  }, */
   {
-    href: "/why-the-matrix-never-intended-to-destroy-human-race",
+    href: "/why-could-not-the-matrix-exist-without-humans",
     text: (
-      <>
-        Why <span style={textColorMainBold}>The Matrix</span>{" "}
-        <span style={textBoldLightGreen}>Never</span> Intended To{" "}
-        <span style={textBoldDarkRed}>Destroy</span> Human Race
-      </>
+      <>Why Could Not <span style={textColorMainBold}>The Matrix</span> Exist Without Humans?</>
     ),
     key: "the-matrix",
   },

@@ -7,6 +7,7 @@
   --color-dark-rose: #d14050;
   --color-violet: #91609f; /* not in use */
   --color-grey-light: #ddd;
+  --color-grey: #999;
   --color-green: #408040;
   --sidebar-offset: 48px;
   --sidebar-width: 40vw;
@@ -31,6 +32,14 @@ body::after {
   right: 0;
   bottom: 0;
   z-index: -2;
+}
+
+
+blockquote {
+  font-style: italic;
+  margin: 1.3rem;
+  padding-left: 1.3rem;
+  border-left: solid 0.15vw var(--color-grey);
 }
 
 a {
