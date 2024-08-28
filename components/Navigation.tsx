@@ -7,15 +7,36 @@ import { usePathname } from 'next/navigation'
 import menuItems from '@/components/menuItems'
 import img13Floor from '@/assets/images/13th-floor.png'
 import imgRobotAndPeople from '@/assets/images/robot-ai-leadership-crowd.jpg'
+import imgAiRisks from '@/assets/images/ai-risks-dark.jpg'
+import imgGreatFilter from '@/assets/images/great-filter-monolith.jpg'
+import imgMatrixIncubator from '@/assets/images/matrix-incubator.jpg'
+import imgSurvey from '@/assets/images/survey.jpg'
 
 const Navigation = () => {
   const currentPath = usePathname()
+
+  /*
+    background-position: right -80px;
+    Rendered size: 691 x 857 px
+  */
 
   let bgImg = img13Floor
 
   switch (currentPath) {
     case '/why-we-will-not-refuse-creating-superintelligence':
       bgImg = imgRobotAndPeople
+      break
+    case '/deep-dive-into-fundamental-ai-risks':
+      bgImg = imgAiRisks
+      break
+    case '/will-superintelligence-become-the-great-filter-for-humanity':
+      bgImg = imgGreatFilter
+      break
+    case '/why-could-not-the-matrix-exist-without-humans':
+      bgImg = imgMatrixIncubator
+      break
+    case '/we-need-your-opinion':
+      bgImg = imgSurvey
       break
     default:
       break

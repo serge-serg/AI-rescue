@@ -12,9 +12,11 @@ const menuItems = [
   {
     href: "/will-superintelligence-become-the-great-filter-for-humanity",
     text: [
-      "Will Superintelligence Become ",
+      "Will ",
       <span key="superAI" style={textColorMainBold}>Superintelligence</span>,
-      " the Great Filter for Humanity?",
+      " Become the ",
+      <span style={textBoldDarkRed}>Great Filter</span>, 
+      " for Humanity?",
     ],
     key: "great-filter",
   },
