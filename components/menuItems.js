@@ -13,9 +13,7 @@ const menuItems = [
       <span key="superAI" style={textColorMainBold}>
         Superintelligence
       </span>,
-      " Become the ",
-      <span style={textBoldDarkRed}>Great Filter</span>,
-      " for Humanity?",
+      <>Become the <span style={textBoldDarkRed}>Great Filter</span> for Humanity?</>,
     ],
     key: "great-filter",
   },
