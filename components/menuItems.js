@@ -72,10 +72,9 @@ const menuItems = [
     ),
     key: "the-matrix",
   },
-  /* 
   { href: "/we-need-your-opinion", 
     text: "We need your opinion!",
     key: "opinion",
-  }, */
+  },
 ];
 export default menuItems;
