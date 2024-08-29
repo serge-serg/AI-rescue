@@ -6,15 +6,15 @@ const nextConfig = {
   images: {
     domains: ['localhost'],
   },
-  rewrites: async () => {
+  /* rewrites: async () => {
     return [
       {
         source: '/api/:path*',
-        destination: '/server/api/:path*',
+        destination: '/api/:path*',
       },
     ]
-  },
+  }, */
 }
 
-//module.exports = withImages(nextConfig)
 module.exports = nextConfig
+//module.exports = withImages(nextConfig)
