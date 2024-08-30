@@ -49,14 +49,14 @@ const Navigation = () => {
   }
 
 
-  const ww = 1200
-  const windowIsWide = window.innerWidth > ww
+  const wideWindowValue = 1200
+  const windowIsWide = window.innerWidth > wideWindowValue
   const [isOpen, setIsOpen] = useState(windowIsWide)
   const navRef = useRef<HTMLElement>(null)
   const asideRef = useRef<HTMLElement>(null)
 
   const handleResize = useCallback(() => {
-    const newIsOpen = window.innerWidth > ww
+    const newIsOpen = window.innerWidth > wideWindowValue
     setIsOpen(newIsOpen)
     localStorage.setItem('menuIsOpen', newIsOpen.toString())
   }, [])
@@ -74,6 +74,7 @@ const Navigation = () => {
   }, [isOpen])
 
   useEffect(() => {
+    if (window.innerWidth <= wideWindowValue) return
     const handleScroll = () => {
       if (navRef.current !== null && asideRef.current !== null) {
         const asideTop = asideRef.current.getBoundingClientRect().top
