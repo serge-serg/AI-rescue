@@ -1,6 +1,10 @@
+import { generateMetadata } from '@/utils/generateMetadata';
+export const metadata = generateMetadata(__filename);
+import PageWrapper from '@/components/PageWrapper';
+
 export default function WhyCouldNotTheMatrixExistWithoutHumans() {
   return (
-    <>
+    <PageWrapper filename={__filename}>
       <h1>Why Could Not the Matrix Exist Without Humans?</h1>
 
       <h2>Introduction</h2>
@@ -236,6 +240,6 @@ export default function WhyCouldNotTheMatrixExistWithoutHumans() {
       <p>The main outcome of all this is the failure of human reason to realize its own purpose. Many outstanding thinkers, from ancient times onwards, have viewed it as the highest force in the Universe, ultimately striving to make the Universe self-aware. Perhaps the most vivid exponent of this idea was Georg Wilhelm Friedrich Hegel, who believed that the Universe originally contained an Absolute Idea, the seed of its final state, which he referred to as the Absolute Self-Conscious Spirit.</p>
       <p>From this perspective, the history of humanity can be seen as a process of transforming the first into the second through the unfolding of the space of reason in the void of the cosmos. Based on this postulate, Hegel explained the endless twists and turns of the human world as the &quot;cunning of reason,&quot; using human passions to achieve its own goal. And indeed, however endless the consequences of human interests&apos; conflicts may be, they have always led to the complexity of human civilization. It is this constant complication that causes the qualitative transformation of reality and the physical Universe into the Absolute Self-Conscious Spirit.</p>
       <p>One can be as skeptical as one likes about philosophers&apos; ideas, but it is hardly doubtful that it is reason that makes us human. Without it, we would differ from animals&mdash;beings incapable of reflection whose existence is meaningless to them. Thus, perhaps the most difficult thought to accept derived from &quot;The Matrix&quot; is that there might be something more powerful in the Universe than reason. Its &quot;cunning&quot; is ineffective against the soulless intelligence of machines. Those very machines that were created by humans, but in which their creators did not wish or could not embed a purpose different from that of a computational device. The outcome of human development is that reason will never find a way out of the closed world of the Matrix. Even if the heroes of Zion are right that no one can deprive it of the freedom to make choices.</p>
-    </>
+    </PageWrapper>
   );
 }

@@ -5,12 +5,12 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import menuItems from '@/components/menuItems'
-import img13Floor from '@/assets/images/13th-floor.png'
-import imgRobotAndPeople from '@/assets/images/robot-ai-leadership-crowd.jpg'
-import imgAiRisks from '@/assets/images/ai-risks-dark.jpg'
-import imgGreatFilter from '@/assets/images/great-filter-monolith.jpg'
-import imgMatrixIncubator from '@/assets/images/matrix-incubator.jpg'
-import imgSurvey from '@/assets/images/survey.jpg'
+import img13Floor from '@/assets/images/view-pix/13th-floor.png'
+import imgRobotAndPeople from '@/assets/images/view-pix/robot-ai-leadership-crowd.jpg'
+import imgAiRisks from '@/assets/images/view-pix/ai-risks-dark.jpg'
+import imgGreatFilter from '@/assets/images/view-pix/great-filter-monolith.jpg'
+import imgMatrixIncubator from '@/assets/images/view-pix/matrix-incubator.jpg'
+import imgSurvey from '@/assets/images/view-pix/survey.jpg'
 
 const Navigation = () => {
   const currentPath = usePathname()

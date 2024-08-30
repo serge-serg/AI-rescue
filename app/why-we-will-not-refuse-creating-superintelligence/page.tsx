@@ -1,15 +1,13 @@
-import Link from "next/link";
 // import Image from 'next/image'
-// import imgAIButterfly from '@/assets/images/ai-butterflies.jpeg'
-// import imgAITime from '@/assets/images/ai-time.jpg'
-// import imgAIProducts from '@/assets/images/ai-products.jpg'
-// import imgAIRace from '@/assets/images/ai-engingeering.jpg'
-// import imgFreedom from '@/assets/images/freedom.jpg'
+import Link from "next/link";
+import { generateMetadata } from '@/utils/generateMetadata';
+export const metadata = generateMetadata(__filename);
+import PageWrapper from '@/components/PageWrapper';
 import { Asterisks } from "@/components/Separators";
 
 export default function WhyWeWillNotRefuseCreatingSuperintelligence() {
   return (
-    <>
+    <PageWrapper filename={__filename}>
       <h1>Why We Won&apos;t Refuse Creating Superintelligence</h1>
       <p>There are many compelling reasons not to create Superintelligence. Common sense suggests that if there is a non-zero probability that it could lead to the end of humanity, we should abandon this endeavor.</p>
       <p>Most experts in the AI field consider these concerns justified. Although their assessments of the degree of danger may vary, it is very difficult to find those who believe AI is a safe technology. Of course, any advanced technology is dangerous, but Superintelligence stands apart.</p>
@@ -116,6 +114,6 @@ export default function WhyWeWillNotRefuseCreatingSuperintelligence() {
       <p>After that, the gates to a fundamentally new era in our history will be opened. Every member of the human race will face the question of their future path: whether to pursue the expansion of human intellect into the outer universe or to move into the digital Metaverse, indulging in hyper-real pleasures. Our final invention will be that ultimate solution, which will pose this question to each of us and give us the opportunity to choose.</p>
       <Asterisks />
       <p>Thus, if the creation of Superintelligence is possible, it is unlikely that humanity will refuse it. This means that the question of the dangers associated with its arrival becomes of paramount importance, as agreed upon by the vast majority of experts in this field. The inability to control our final invention may result in it becoming, as we mentioned in the previous section, an insurmountable <Link href="/will-superintelligence-become-the-great-filter-for-humanity">Great Filter</Link> for us. This means that before we take the final step on the path leading us to the point of no return, we must thoroughly study and understand the risks that Artificial Intelligence poses to us. We addressed this issue in the following section and <Link href="/deep-dive-into-fundamental-ai-risks">invite you to review our findings</Link>.</p>
-    </>
+    </PageWrapper>
   );
 }

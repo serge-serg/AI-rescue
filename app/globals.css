@@ -96,7 +96,6 @@ main {
 
 .sidebar {
   @apply h-screen /*flex flex-col justify-between*/;
-  /* background-image: url("../assets/images/13th-floor.png"); */
   background-size: var(--sidebar-max-width);
   background-position: right -80px;
   background-repeat: no-repeat;

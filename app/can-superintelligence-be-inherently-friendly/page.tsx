@@ -1,6 +1,9 @@
+import { generateMetadata } from '@/utils/generateMetadata';
+export const metadata = generateMetadata(__filename);
+import PageWrapper from '@/components/PageWrapper';
 export default function CanSuperintelligenceBeInherentlyFriendly() {
   return (
-    <>
+    <PageWrapper filename={__filename}>
       <h1>Can Superintelligence Be Friendly?</h1>
       <h2>Противоречие между Design Stance и Intentional Stance в отношении AGI</h2>
       <ol>
@@ -17,6 +20,6 @@ export default function CanSuperintelligenceBeInherentlyFriendly() {
       </ul>
       <h2>Заключение</h2>
       <p>Таким образом, Design Stance и Intentional Stance дополняют друг друга. Design Stance задает начальные условия и ограничения, но по мере усложнения системы Intentional Stance становится необходимым для понимания и предсказания её поведения. Ключевой вопрос заключается в том, как эффективно ограничить свободу действий AGI через дизайн, чтобы минимизировать риски, но при этом учитывать, что истинное поведение AGI будет зависеть от его обучаемости и адаптивности, что потребует применения Intentional Stance для его понимания.</p>
-    </>
+    </PageWrapper>
   );
 }

@@ -1,9 +1,12 @@
-import { Asterisks } from "@/components/Separators";
 import Link from "next/link";
+import { generateMetadata } from '@/utils/generateMetadata';
+export const metadata = generateMetadata(__filename);
+import PageWrapper from '@/components/PageWrapper';
+import { Asterisks } from "@/components/Separators";
 
 export default function DeepDiveIntoFundamentalAIRisks(){
   return (
-    <>
+    <PageWrapper filename={__filename}>
       <h1>Deep Dive into Fundamental AI Risks</h1>
       
       <p>There are many fears surrounding the problem of unfriendly Superintelligence. Some of them are irrational, while others are justified, but both should be taken into account. Irrational fears express the opinion of a part of the public, which politicians are forced to listen to and respond to. All this affects the position of public and state institutions regarding the most important problem in human history.</p>
@@ -132,6 +135,6 @@ export default function DeepDiveIntoFundamentalAIRisks(){
       <p>One of the scenarios for this future was portrayed extraordinarily convincingly in the brilliant trilogy <em>The Matrix</em>. Like any work of art of this caliber, it is multilayered. You can watch it repeatedly and discover something new each time. Perhaps those who created this film did not intend to embed in it what others later uncovered. But that is not surprising. The mystery of art is unfathomable. We humans possess a remarkable mind. As we mentioned earlier, the ability to have insights allows it to find unexpected creative solutions to problems, the logic of which becomes clear only in hindsight and after a long time. Therefore, the interpretation of <em>The Matrix</em>&apos;s plot may not end anytime soon. And now, with the advent of AI looming on the horizon, we have every reason to revisit this story. Some interpreters have given it a grim ending, while others have seen it as positive. But whatever the outcome, every insightful researcher understands that, firstly, this film is a warning to all of us. And secondly, that no particular outcome is predestined. If we can imagine the future not only as brilliant but also as bleak, then we can anticipate the mistakes we might but must not make on this path full of hopes and dangers.</p>
       <p>So, while humanity&apos;s fate in <em>The Matrix</em> may seem bleak, one question gives us reason to believe that it is humans, not Machines, who determine the order of things that will prevail in the future we are rapidly approaching.</p>
       <p>We invite you to discover the answer to the most important question that has not yet received the attention it deserves: <Link href="/why-could-not-the-matrix-exist-without-humans">Why Could Not the Matrix Exist Without Humans?</Link></p>
-    </>
+    </PageWrapper>
   );
 }
