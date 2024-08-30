@@ -97,7 +97,7 @@ export default function WhyWeWillNotRefuseCreatingSuperintelligence() {
       <p>Its arrival is expected. Not only in terms of its impact on society&apos;s life but also in terms of reformatting the essence of human existence and, probably, rethinking our purpose.</p>
 
       <h3>Metaphysics of Existence</h3>
-      <p>More and more people are asking a question that until recently seemed meaningless: should &quote;I&quote; really disappear someday? Or do I have, or will I have in the foreseeable future, a choice?</p>
+      <p>More and more people are asking a question that until recently seemed meaningless: should &quot;I&quot; really disappear someday? Or do I have, or will I have in the foreseeable future, a choice?</p>
       <p>Of course, not everyone considers this prospect for themselves. But this does not mean that it is impossible. It doesn&apos;t even mean that it&apos;s impossible within the lifetime of one generation.</p>
       <p>Those whose gaze is turned to the future and who have the ability to shape it take the probability of changing this age-old order of things seriously.</p>
       <p>This bold vision was initiated by American physicist and writer, one of the founders of the cryonics movement, Robert C. W. Ettinger. In his book <em>The Prospect of Immortality</em> (1964), he proposed the radical idea that human death is not inevitable and can be overcome through science. He believed that bodies could be frozen immediately after biological death and stored indefinitely until technologies are created to restore and improve their vital functions. Thus, people could attain physical immortality.</p>
