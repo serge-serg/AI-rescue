@@ -1,5 +1,4 @@
 'use client';
-//import SurveyComponent from "@/components/Survey";
 
 const SurveyPage: React.FC = () => {
   return (
