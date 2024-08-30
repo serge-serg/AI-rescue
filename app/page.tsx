@@ -1,4 +1,7 @@
-'use client'
+//'use client'
+import { generateMetadata } from '@/utils/generateMetadata';
+export const metadata = generateMetadata(__filename);
+import PageWrapper from '@/components/PageWrapper';
 import Image from 'next/image'
 import imgBostrom from '@/assets/images/bostrom.jpg'
 import imgMusk from '@/assets/images/musk-3.jpg'
@@ -6,9 +9,8 @@ import imgKurzweil from '@/assets/images/kurzweil.jpg'
 import Link from 'next/link'
 
 export default function Home() {
-
   return (
-    <>
+    <PageWrapper filename={__filename}>
       <h1>Toward the Point of No Return</h1>
       <h2>Why Everything <span className='accent'>Has Changed</span> So Much</h2>
       <p>
@@ -115,6 +117,6 @@ export default function Home() {
       </ul>
       <p>In addition to this information, you will find sections devoted to the vision of the AI problem through the prism of <Link href="/why-could-not-the-matrix-exist-without-humans">modern&nbsp;art</Link>. Finally, we hope to learn your opinion on the most pressing issues related to this problem.</p>
       <p>Good luck in exploring the challenge of Superintelligence!</p>
-    </>
+    </PageWrapper>
   )
 }

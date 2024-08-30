@@ -1,8 +1,11 @@
 import Link from "next/link"
+import { generateMetadata } from '@/utils/generateMetadata';
+export const metadata = generateMetadata(__filename);
+import PageWrapper from '@/components/PageWrapper';
 
 export default function Scenarios() {
   return (
-    <>
+    <PageWrapper filename={__filename}>
       <h1>Will Superintelligence Become the Great Filter for Humanity?</h1>
       <h2>A Barren Universe</h2>
       <p>In 1950, during a lunch conversation with colleagues at the Los Alamos National Laboratory, the eminent physicist Enrico Fermi posed what seemed like a simple question: &quot;Where is everybody?&quot;</p>
@@ -91,6 +94,6 @@ export default function Scenarios() {
         <li>Delve into an <Link href="/deep-dive-into-fundamental-ai-risks">in-depth investigation of these dangers</Link>.</li>
       </ul>
       <p>Reliable answers to the questions posed in these sections will allow us to judge how great our chances are of overcoming the hypothetical <Link href="/will-superintelligence-become-the-great-filter-for-humanity">Great Filter</Link> as we approach the creation of Superintelligence, which is becoming an increasingly tangible problem.</p>
-    </>
+    </PageWrapper>
   );
 }
