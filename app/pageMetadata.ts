@@ -31,8 +31,8 @@ const pageMetadata: Record<string, PageMetadata> = {
     description: 'Analyzing the motivations and implications of HAL 9000&apos;s actions in 2001: A Space Odyssey',
   },
   '/why-could-not-the-matrix-exist-without-humans': {
-    title: 'Why Couldn&apos;t The Matrix Exist Without Humans?',
-    heading: 'Why Couldn&apos;t The Matrix Exist Without Humans?',
+    title: 'Why Couldn\'t The Matrix Exist Without Humans?',
+    heading: 'Why Couldn\'t The Matrix Exist Without Humans?',
     description: 'Exploring the philosophical and technological reasons behind the human-machine symbiosis in The Matrix',
   },
   '/can-superintelligence-be-inherently-friendly': {

@@ -6,7 +6,6 @@ import PageWrapper from '@/components/PageWrapper';
 export default function Scenarios() {
   return (
     <PageWrapper filename={__filename}>
-      <h1>Will Superintelligence Become the Great Filter for Humanity?</h1>
       <h2>A Barren Universe</h2>
       <p>In 1950, during a lunch conversation with colleagues at the Los Alamos National Laboratory, the eminent physicist Enrico Fermi posed what seemed like a simple question: &quot;Where is everybody?&quot;</p>
       <p>This question referred to the lack of observed traces of extraterrestrial civilizations despite the vast number of stars and potentially habitable planets in the universe. Such civilizations, being much older than ours and far more advanced, should have already colonized a significant portion of the galaxy or left noticeable traces of their existence. Yet, we observe neither. This contradiction became known as the <em>Fermi Paradox</em>.</p>

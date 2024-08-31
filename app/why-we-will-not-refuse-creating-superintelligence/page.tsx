@@ -8,7 +8,6 @@ import { Asterisks } from "@/components/Separators";
 export default function WhyWeWillNotRefuseCreatingSuperintelligence() {
   return (
     <PageWrapper filename={__filename}>
-      <h1>Why We Won&apos;t Refuse Creating Superintelligence</h1>
       <p>There are many compelling reasons not to create Superintelligence. Common sense suggests that if there is a non-zero probability that it could lead to the end of humanity, we should abandon this endeavor.</p>
       <p>Most experts in the AI field consider these concerns justified. Although their assessments of the degree of danger may vary, it is very difficult to find those who believe AI is a safe technology. Of course, any advanced technology is dangerous, but Superintelligence stands apart.</p>
       <h2>Who Rules This Planet</h2>

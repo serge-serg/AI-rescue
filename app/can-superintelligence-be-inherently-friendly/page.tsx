@@ -4,7 +4,6 @@ import PageWrapper from '@/components/PageWrapper';
 export default function CanSuperintelligenceBeInherentlyFriendly() {
   return (
     <PageWrapper filename={__filename}>
-      <h1>Can Superintelligence Be Friendly?</h1>
       <h2>Противоречие между Design Stance и Intentional Stance в отношении AGI</h2>
       <ol>
         <li><strong>Design Stance</strong> предполагает, что мы можем предсказать поведение системы на основе её конструкции и цели, заложенной её создателями. Для AGI это означает, что, создавая систему, мы стремимся заложить в неё определённые алгоритмы и архитектуру, чтобы её поведение было предсказуемо и контролируемо. Мы бы проектировали AGI так, чтобы исключить вредоносные действия или искажения целей.</li>

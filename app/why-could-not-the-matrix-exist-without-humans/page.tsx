@@ -5,7 +5,6 @@ import PageWrapper from '@/components/PageWrapper';
 export default function WhyCouldNotTheMatrixExistWithoutHumans() {
   return (
     <PageWrapper filename={__filename}>
-      <h1>Why Could Not the Matrix Exist Without Humans?</h1>
 
       <h2>Introduction</h2>
 
