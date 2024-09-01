@@ -168,6 +168,11 @@ a.regular:hover {
   box-shadow: inset 220px 0px 180px 40px rgba(18, 18, 18, 1);
 }
 
+.offset-mobile {
+  left: 4px;
+  width: calc(100% - 4px);
+}
+
 .sidebar-container,
 .sidebar nav {
   background-color: #333;

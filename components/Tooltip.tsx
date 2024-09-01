@@ -23,7 +23,7 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
       const spaceLeft = iconRect.left + iconRect.width / 2
       const verticalPosition: VerticalPosition = spaceTop < window.innerHeight / 2 ? 'bottom' : 'top'
       const horizontalPosition: HorizontalPosition = spaceLeft > window.innerWidth / 2 ? 'left' : 'right'
-      
+
       setPosition([verticalPosition, horizontalPosition])
       setTimeout(() => setIsAnimating(true), 50)
     } else {
@@ -38,16 +38,19 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
   };
 
   const getPositionStyles = () => {
+
+    if (window.innerWidth < 1200) return 'offset-mobile'
+    
     const [vertical, horizontal] = position;
-    
+
     let classes = '';
-    
+
     if (vertical === 'top') {
       classes += 'bottom-full mb-2 ';
     } else {
       classes += 'top-full mt-2 ';
     }
-    
+
     if (horizontal === 'left') {
       classes += 'right-0 ';
     } else {
@@ -57,7 +60,7 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
   };
 
   return (
-    <span className="relative inline-block" style={{ margin: 'auto 4px' }} ref={containerRef}>
+    <span className="xl:relative inline-block" style={{ margin: 'auto 4px' }} ref={containerRef}>
       <span
         ref={closeIconRef}
         className="bg-gray-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm cursor-pointer transition-transform duration-200 hover:scale-110 hover:bg-gray-400"
@@ -75,9 +78,15 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
             opacity: isAnimating ? 1 : 0.5,
             transform: `scale(${isAnimating ? 1 : 0.85})`,
             transformOrigin: getTransformOrigin(),
+            width: 'max-content !',
+            left: '0px !important',
+            right: '0px !important',
           }}
         >
-          <span className="relative pr-6 block" style={{ maxHeight: '50vh', transform: 'translateY(-3px)'}}>
+          <span className="relative pr-6 block" style={{
+            maxHeight: '50vh',
+            transform: 'translateY(-3px)',
+          }}>
             {content}
             <span
               className="absolute text-black text-sm cursor-pointer"
