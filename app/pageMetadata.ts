@@ -25,9 +25,9 @@ const pageMetadata: Record<string, PageMetadata> = {
     heading: 'Deep Dive into Fundamental AI Risks',
     description: 'An in-depth analysis of the core risks associated with advanced artificial intelligence',
   },
-  '/why-did-hal-decide-to-kill-all-the-discovery-astronauts': {
-    title: 'Why Did HAL Decide to Kill All the Discovery Astronauts?',
-    heading: 'Why Did HAL Decide to Kill All the Discovery Astronauts?',
+  '/why-hal-9000-intended-to-kill-all-astronauts-aboard-discovery': {
+    title: 'Why HAL-9000 Intended to Kill All Astronauts Aboard Discovery',
+    heading: 'Why HAL-9000 Intended to Kill All Astronauts Aboard Discovery',
     description: 'Analyzing the motivations and implications of HAL 9000&apos;s actions in 2001: A Space Odyssey',
   },
   '/why-could-not-the-matrix-exist-without-humans': {

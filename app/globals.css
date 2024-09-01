@@ -66,6 +66,61 @@ main {
   width: 100%;
 }
 
+main ul,
+main ol {
+  margin: initial;
+  padding: 0 3rem 1rem;
+}
+
+main ul {
+  list-style: square;
+}
+
+h1 {
+  @apply text-[2.3rem] mb-8 -mt-2;
+  color: var(--color-grey-light);
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+  transition: 0.3s;
+  /* margin-left: -2rem; */
+}
+
+h1:hover {
+  color: #fff;
+}
+
+h2 {
+  @apply pt-4 pb-6 text-2xl;
+}
+
+h3 {
+  @apply py-4 font-bold text-xl;
+}
+
+h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 100;
+  font-size: 1.15rem;
+  color: #fff;
+}
+
+nav ul {
+  @apply mb-4;
+}
+
+p {
+  @apply mb-4 leading-relaxed;
+}
+
+a.tell-me-more {
+  margin-left: 1rem;
+}
+
+a.tell-me-more:hover,
+a.regular:hover {
+  text-decoration: underline;
+}
+
 .accent {
   color: var(--color-dark-rose);
 }
@@ -135,14 +190,6 @@ main {
   text-align: center;
 }
 
-/* .logo-text::before {
-  content: "_";
-  @apply block absolute right-0;
-  opacity: 0.75;
-  top: -0.09rem;
-  width: 0.75rem;
-} */
-
 .logo-text::after {
   content: "Inquiry About the Upcoming Game-Changing Future";
   display: block;
@@ -150,52 +197,6 @@ main {
   color: #ccc;
   text-align: center;
   line-height: 2;
-}
-
-main ul,
-main ol {
-  margin: initial;
-  padding: 0 3rem 1rem;
-}
-
-main ul {
-  list-style: square;
-}
-
-h1 {
-  @apply text-[2.3rem] mb-8 -mt-2;
-  color: var(--color-grey-light);
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
-  transition: 0.3s;
-  /* margin-left: -2rem; */
-}
-
-h1:hover {
-  color: #fff;
-}
-
-/* h1::before {
-  content: "__ ";
-} */
-
-h2 {
-  @apply pt-4 pb-6 text-2xl;
-}
-
-h3 {
-  @apply py-4 font-bold text-xl;
-}
-
-h4 {
-  margin-bottom: 0.5rem;
-  font-weight: 100;
-  font-size: 1.15rem;
-  color: #fff;
-}
-
-p {
-  @apply text-[var(--color-grey-light)] mb-4 leading-relaxed;
 }
 
 .float-to-left,
@@ -209,15 +210,6 @@ p {
 
 .float-to-left {
   @apply float-left mb-8 mr-8 -ml-16;
-}
-
-a.tell-me-more {
-  margin-left: 1rem;
-}
-
-a.tell-me-more:hover,
-a.regular:hover {
-  text-decoration: underline;
 }
 
 @media screen and (max-width: 1303px) {
@@ -256,10 +248,6 @@ a.regular:hover {
 
   .logo-text {
     margin: auto;
-  }
-
-  nav ul {
-    @apply mb-4;
   }
 
   .float-to-right,

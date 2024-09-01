@@ -50,8 +50,8 @@ const menuItems = [
     ],
     key: "friendly",
   }, */
-  /* {
-    href: "/why-did-hal-decide-to-kill-all-the-discovery-astronauts",
+  {
+    href: "/why-hal-9000-intended-to-kill-all-astronauts-aboard-discovery",
     text: [
       <>
         Why Did <span style={textColorMainBold}>Hal9000</span> Decide to
@@ -59,7 +59,7 @@ const menuItems = [
       </>,
     ],
     key: "hal-9000",
-  }, */
+  },
   {
     href: "/why-could-not-the-matrix-exist-without-humans",
     text: (

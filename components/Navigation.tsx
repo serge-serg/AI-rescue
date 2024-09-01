@@ -9,6 +9,7 @@ import img13Floor from '@/assets/images/view-pix/13th-floor.png'
 import imgRobotAndPeople from '@/assets/images/view-pix/robot-ai-leadership-crowd.jpg'
 import imgAiRisks from '@/assets/images/view-pix/ai-risks-dark.jpg'
 import imgGreatFilter from '@/assets/images/view-pix/great-filter-monolith.jpg'
+import imgHalVsHuman from '@/assets/images/view-pix/HALvsHuman.jpg'
 import imgMatrixIncubator from '@/assets/images/view-pix/matrix-incubator.jpg'
 import imgSurvey from '@/assets/images/view-pix/survey.jpg'
 
@@ -31,6 +32,9 @@ const Navigation = () => {
       break
     case '/will-superintelligence-become-the-great-filter-for-humanity':
       bgImg = imgGreatFilter
+      break
+    case '/why-hal-9000-intended-to-kill-all-astronauts-aboard-discovery':
+      bgImg = imgHalVsHuman
       break
     case '/why-could-not-the-matrix-exist-without-humans':
       bgImg = imgMatrixIncubator

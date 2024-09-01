@@ -1,5 +1,4 @@
 'use client';
-
 import React from 'react';
 import pageMetadata from '@/app/pageMetadata';
 import { getPagePath } from '@/utils/getPagePath';
@@ -14,7 +13,7 @@ const PageWrapper = ({ children, filename }: PageWrapperProps) => {
   const { heading } = pageMetadata[path];
 
   return (
-    <div>
+    <div style={{ paddingBottom: '3rem' }}>
       <h1>{heading}</h1>
       {children}
     </div>

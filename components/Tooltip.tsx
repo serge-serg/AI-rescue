@@ -1,3 +1,4 @@
+'use client'
 import { useState, useEffect, useRef } from 'react';
 
 interface TooltipProps {
@@ -56,7 +57,7 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
   };
 
   return (
-    <span className="relative inline-block" ref={containerRef}>
+    <span className="relative inline-block" style={{ margin: 'auto 4px' }} ref={containerRef}>
       <span
         ref={closeIconRef}
         className="bg-gray-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm cursor-pointer transition-transform duration-200 hover:scale-110 hover:bg-gray-400"
@@ -76,7 +77,7 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
             transformOrigin: getTransformOrigin(),
           }}
         >
-          <span className="relative" style={{ maxHeight: '50vh', transform: 'translateY(-3px)', display: 'block' }}>
+          <span className="relative pr-6 block" style={{ maxHeight: '50vh', transform: 'translateY(-3px)'}}>
             {content}
             <span
               className="absolute text-black text-sm cursor-pointer"
