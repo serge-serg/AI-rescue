@@ -54,8 +54,8 @@ const menuItems = [
     href: "/why-hal-9000-intended-to-kill-all-astronauts-aboard-discovery",
     text: [
       <>
-        Why Did <span style={textColorMainBold}>Hal9000</span> Decide to
-        <span style={textBoldDarkRed}>Kill </span>All the Discovery Astronauts?
+        Why <span style={textColorMainBold}>Hal&nbsp;9000</span> Intended to 
+        <span style={textBoldDarkRed}>Kill </span>All Astronauts Aboard Discovery
       </>,
     ],
     key: "hal-9000",
