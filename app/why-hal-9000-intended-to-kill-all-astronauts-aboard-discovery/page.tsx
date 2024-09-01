@@ -92,7 +92,7 @@ export default function WhyDidHalDecideToKillAllTheDiscoveryAstronauts() {
       <h2>The Missing Directive</h2>
       <p>The <em>Space Odyssey</em> never mentions what would seem to be the most important directive that <em>should</em> have been embedded in HAL&apos;s consciousness, namely&mdash;to rule out hostile actions toward humans. At first glance, this can be explained by the reluctance of the creators of the film and novel to complicate the logic of the plot development. After all, if such a directive existed, it would be necessary to explain somehow how HAL managed to ignore it. However, not an artistic but logical explanation may be different, revealing the full depth of this problem.</p>
       <p>In science fiction, it was probably first considered in Isaac Asimov&apos;s story &quot;Runaround&quot; (first published as a separate work in 1942), which is part of the collection <em>I, Robot</em> (1950). This story introduces the famous Three Laws of Robotics:</p>
-      <ol>
+      <ol className="decimal">
         <li>A robot may not injure a human being or, through inaction, allow a human being to come to harm.</li>
         <li>A robot must obey the orders given to it by human beings except where such orders would conflict with the First Law.</li>
         <li>A robot must protect its own existence as long as such protection does not conflict with the First or Second Law.</li>
