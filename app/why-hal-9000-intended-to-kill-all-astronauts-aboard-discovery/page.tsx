@@ -1,8 +1,14 @@
+import Image from "next/image"
 import { generateMetadata } from '@/utils/generateMetadata';
 export const metadata = generateMetadata(__filename);
 import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
 import Tooltip from '@/components/Tooltip';
+import imgMonolith from '@/assets/images/floyd-monolith.jpg'
+import imgCollusion from '@/assets/images/pull-bowman-collusion.jpg'
+import imgLifeTerminated from '@/assets/images/life-terminated.jpg'
+import imgMobiusAnts from '@/assets/images/mobius-ants.jpg'
+
 export default function WhyDidHalDecideToKillAllTheDiscoveryAstronauts() {
   return (
     <PageWrapper filename={__filename}>
@@ -12,21 +18,42 @@ export default function WhyDidHalDecideToKillAllTheDiscoveryAstronauts() {
       <p>The <em>Space Odyssey</em> is extremely convincing. Everything in it is shown so realistically and nuanced, as if it were not the authors&apos; fiction but a story from the future transmitted to them by someone. Now that we have made serious progress on the path of creating real AI, the foresight of A. Clarke and S. Kubrick takes on not only aesthetic and philosophical but also existential overtones for us.</p>
       <h2>What Happened to HAL 9000</h2>
       <p>The spacecraft &quot;Discovery&quot; was sent on a mission to one of the gas giants of the Solar System (in the film, it was Jupiter; in the novel, it was Saturn). The task was to attempt to establish contact with an extraterrestrial civilization whose existence was confirmed by an artifact found on the Moon called the &quot;Monolith.&quot;</p>
-      <p>Mission director Dr. Floyd touching the Monolith.</p>
+      <figure>
+        <Image width="700" src={imgMonolith} alt="Floyd touching the monolith." />
+        <figcaption>Mission director Dr. Floyd touching the Monolith</figcaption>
+      </figure>
       <p>Five astronauts were on board, with three in a state of deep hibernation. The spacecraft was controlled by a computer with artificial intelligence HAL 9000 (<strong>H</strong>euristically<Tooltip
-        content={<><p>The term <em>heuristically</em> refers to the use of heuristic methods in the programming of the computer. The heuristic approach involves using practical, experience-based techniques to solve problems, learn, or make decisions. Instead of relying solely on strict algorithms that follow a predefined path, a heuristically programmed system can adapt, learn, and improve its responses based on past experiences and the specific context it encounters.</p>
+        content={<><p>The term <em>heuristically</em> refers to the use of heuristic methods in the programming of the computer. The heuristic approach involves using practical, experience-based techniques to solve problems, learn, or make decisions. Instead o  f relying solely on strict algorithms that follow a predefined path, a heuristically programmed system can adapt, learn, and improve its responses based on past experiences and the specific context it encounters.</p>
           <p>This means that the computer is not just following rigid, predetermined rules but is also capable of adapting its behavior and finding solutions in more flexible and innovative ways, similar to how humans approach problem-solving by using intuition, trial and error, and educated guesses.</p></>
         } /> programmed <strong>AL</strong>gorithmic [Computer]), which was essentially the nervous system of &quot;Discovery.&quot;</p>
       <p>Sometime after the start of the flight, HAL&apos;s behavior began to show oddities that did not escape the astronauts&apos; attention. After consulting, they decided to disconnect the computer&apos;s higher cognitive modules, fearing that if they didn&apos;t, the mission&apos;s execution and their lives would be in danger.</p>
-      <p>Astronauts Frank Poole and David Bowman discuss shutting down HAL, believing he cannot hear them.</p>
+      <figure>
+        <Image width="700" src={imgCollusion} alt="Astronauts Frank Poole and David Bowman discuss shutting down HAL, believing he cannot hear them" />
+        <figcaption>Astronauts Frank Poole and David Bowman discuss shutting down HAL, believing he cannot hear them</figcaption>
+      </figure>
       <p>However, as it turned out, HAL feared the same thing. He anticipated humans&apos; intentions and struck first. Initially, he lured one of the astronauts, Frank Poole, into space outside the ship and killed him by manipulating one of Discovery&apos;s mobile transport vehicles intended for repair work (Extravehicular Activity Pod). While the other astronaut, David Bowman, was trying to return his fellow crew member&rsquo;s body on board, HAL turned off the life support system of the astronauts in hibernation, and they all died within minutes.</p>
       <p>When Bowman tried to return to Discovery, HAL refused to let him in.</p>
-      <p><a href="https://youtu.be/Mme2Aya_6Bc?si=YOSxJY4bEmIHsmBD">https://youtu.be/Mme2Aya_6Bc?si=YOSxJY4bEmIHsmBD</a></p>
+      <div className="video-wrapper">
+        <iframe
+          width="700"
+          height="394"
+          src="https://www.youtube.com/embed/Mme2Aya_6Bc?si=wm6HQ3jWrNFIqzXc"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen>
+        </iframe>
+      </div>
       <p>Bowman managed to stay alive only because the ship had an emergency entrance that the rebellious AI did not control. Risking his life, the astronaut got back in and carried out the plan that he and his now-deceased colleague, Poole, had developed. Thus, only a stroke of luck allowed one of the crew members to survive and regain control of the mission.</p>
       <p>But what happened to HAL 9000?</p>
       <p>It turns out that the cause of the tragedy was not AI&apos;s inherent hostility but an internal conflict in its logical module. The fundamental directive embedded in HAL 9000&apos;s consciousness was always to tell the truth to the astronauts. But besides this, there were two more directives: first, to do everything possible to complete the mission, and second, not to inform Bowman and Poole about the true purpose of the mission until the ship reached the end of its journey.</p>
       <p>The logical contradiction between the directive to always tell the truth and to withhold information led to anomalies in HAL&apos;s analysis of the situation. In the end, he concluded that the problem lay in the people, which jeopardized the entire mission. Based on this logic, he decided to eliminate everyone who could interfere with its execution.</p>
-      <p>HAL 9000 puts his plan into action</p>
+      <figure>
+          <Image width="360" src={imgLifeTerminated} alt="HAL 9000 puts his plan into action" />
+        <figcaption>HAL 9000 puts his plan into action</figcaption>
+      </figure>
+      
       <h2>The Ant Mill</h2>
       <p>Notably, returning to the explanation of the essence of the tragic incident in the second novel, Clarke refers to the effect of the so-called &quot;Hofstadter-Moebius loop.&quot; Actually, such an effect does not exist, but there is both the problem of looping and the scientist Hofstadter, author of the book <em>G&ouml;del, Escher, Bach: An Eternal Golden Braid</em> (1979), whom we mentioned in the section <Link href="/why-we-will-not-refuse-creating-superintelligence">Why We Won&apos;t Refuse Creating Superintelligence</Link>. The M&ouml;bius strip is a paradoxical topological object, representing a surface with one side and one edge
         <Tooltip
@@ -34,10 +61,32 @@ export default function WhyDidHalDecideToKillAllTheDiscoveryAstronauts() {
             <p><strong>One edge: </strong>The M&ouml;bius strip also has only one edge. If you start moving along the edge, you will eventually return to the starting point after traveling the entire edge without ever crossing another edge.</p></>
           } />
         &quot;Being&quot; on it, it is impossible to determine the &quot;inner&quot; and &quot;outer&quot; sides. This strip, with ants running on it, is the subject of one of the drawings by the famous Dutch &ldquo;Mathematical&rdquo; Artist M.C. Escher (1898-1972).</p>
-      <p>M.C. Escher &mdash; Moebius Strip II (1963)</p>
+        <figure>
+          <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                padding: '3rem',
+                width: 'fit-content',
+                margin: 'auto',
+                backgroundColor: '#fff'
+            }}>
+            <Image style={{ width: 'calc(600px - 6rem)' }} src={imgMobiusAnts} alt="M.C. Escher &mdash; Moebius Strip II (1963)" />
+          </div>
+        <figcaption>M.C. Escher &mdash; Moebius Strip II (1963)</figcaption>
+      </figure>
+      
       <p>The fact that there are ants on this strip is no coincidence. Some features of their behavior well illustrate the phenomenon of looping goal-setting of a subject unable to realize what is happening. Here&apos;s how it happens:</p>
       <p>Occasionally, a glitch occurs in the ants&apos; navigation system, and they fall into a trap known as the &quot;Ant Mill.&quot; This happens when a group of these insects accidentally crosses their own pheromone trail, which guides their fellow ants to food sources or new habitats. As a result, they start walking in circles. Each turn strengthens this trail, attracting more and more ants. As a result, a constantly rotating ring of insects is formed, which can reach several meters in diameter and contain thousands of individuals. The looped movement continues until they die from exhaustion or starvation unless external intervention disrupts this pattern.</p>
-      <p>The Ant Mill</p>
+      <div className="video-wrapper">
+        <iframe 
+        width="600" 
+        height="337.5" 
+        src="https://www.youtube.com/embed/N0HoqjxfvJ4?si=7GMRlpei4nlkt9ab&amp;start=10&mute=1"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen></iframe>
+      </div>
       <p>Comparing AI to ants may seem far-fetched, but the problem in this case is systemic, not species-specific. Computer hanging is a non-biological analog of the Ant Mill, and it generates a similar effect, leading to exponential resource consumption and complete system shutdown.</p>
       <p>Of course, developers of complex systems are aware of the looping problem and try to prevent it. The issue is that it&apos;s impossible to foresee everything. The more complicated the system, the greater the probability of such an anomaly occurring. The case with AI is quite special. The conditions for program execution, in many cases, will be non-discrete and triggered when analyzing so-called <em>fuzzy logic</em>. It was this feature that was one of the reasons for HAL&apos;s decision, and this also explains what, at first glance, may seem like a serious omission in the plot.</p>
       <h2>The Missing Directive</h2>
