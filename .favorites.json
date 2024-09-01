@@ -38,5 +38,13 @@
         "workspaceRoot": "/Users/sergei.klevtsov/Documents/Projects/Super-AI-Challenge",
         "workspacePath": "app/pageMetadata.ts",
         "id": "IVCmkA41DhFpaGUJ"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sergei.klevtsov/Documents/Projects/Super-AI-Challenge/components/Navigation.tsx",
+        "parent_id": null,
+        "workspaceRoot": "/Users/sergei.klevtsov/Documents/Projects/Super-AI-Challenge",
+        "workspacePath": "components/Navigation.tsx",
+        "id": "IAtNXvu91OijzqUd"
     }
 ]

@@ -12,6 +12,7 @@ import imgGreatFilter from '@/assets/images/view-pix/great-filter-monolith.jpg'
 import imgHalVsHuman from '@/assets/images/view-pix/HALvsHuman.jpg'
 import imgMatrixIncubator from '@/assets/images/view-pix/matrix-incubator.jpg'
 import imgSurvey from '@/assets/images/view-pix/survey.jpg'
+import imgCreators from '@/assets/images/view-pix/floyd-monolith-2.jpg'
 
 const Navigation = () => {
   const currentPath = usePathname()
@@ -41,6 +42,9 @@ const Navigation = () => {
       break
     case '/we-need-your-opinion':
       bgImg = imgSurvey
+      break
+    case '/lets-connect':
+      bgImg = imgCreators
       break
     default:
       break

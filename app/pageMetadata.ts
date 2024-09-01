@@ -49,7 +49,12 @@ const pageMetadata: Record<string, PageMetadata> = {
     title: 'We Need Your Opinion on AI',
     heading: 'Share Your Thoughts on AI',
     description: 'Participate in our ongoing research and share your views on the future of AI',
-  }, 
+  },
+  '/lets-connect': {
+    title: "Let's Connect!",
+    heading: 'Let\'s Connect!',
+    description: 'Get in touch with us if you have any questions or comments',
+  } 
 };
 
 export default pageMetadata;

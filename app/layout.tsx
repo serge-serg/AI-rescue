@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/Navigation';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="container w-full">
+          <Link className="hidden xl:block absolute" href="/lets-connect" style={{ top: '1rem', right: '5vw', fontWeight: 600 }}>
+            Let&apos;s Connect
+          </Link>
           <Navigation />
           <main className="max-w-[1200px]">
             {children}
