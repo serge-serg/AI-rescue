@@ -46,9 +46,10 @@ a {
 }
 
 cite {
+  display: block;
   font-weight: 100;
   color: #fff;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem;
 }
 
 div.video-wrapper {
