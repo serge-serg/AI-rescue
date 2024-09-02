@@ -16,8 +16,8 @@ export default function LetsConnect() {
     <PageWrapper filename={__filename}>
       <p>This site has been created by:</p>
       <ul style={{ padding: 0, marginBottom: '2rem' }}>
-        <LiSection name={<a href="https://www.linkedin.com/in/sergey-cleftsow/">Sergei Kevtsov</a>} duties='Ideation, research, writing, web development, developing and pitching video concepts, scriptwriting, and storyboarding.' />
-        <LiSection name={<a href="https://www.linkedin.com/in/daniil-klevtsov-633a1a235/">Daniil Kevtsov</a>} duties='Filming and directing video shoots, ensuring the technical quality of the final product, managing production timelines, incorporating feedback and making revisions, publishing, and promoting videos across various platforms.' />
+        <LiSection name={<a href="https://www.linkedin.com/in/sergey-cleftsow/">Sergei Klevtsov</a>} duties='Ideation, research, writing, web development, developing and pitching video concepts, scriptwriting, and storyboarding.' />
+        <LiSection name={<a href="https://www.linkedin.com/in/daniil-klevtsov-633a1a235/">Daniil Klevtsov</a>} duties='Filming and directing video shoots, ensuring the technical quality of the final product, managing production timelines, incorporating feedback and making revisions, publishing, and promoting videos across various platforms.' />
       </ul>
       <Image style={{ width: '500px', minWidth: '400px' }} alt="Pluto and Rabbit" title='Pluto and Rabbit' src={imgCreators} />
     </PageWrapper>
