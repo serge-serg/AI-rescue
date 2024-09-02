@@ -50,45 +50,51 @@ export default function WhyDidHalDecideToKillAllTheDiscoveryAstronauts() {
       <p>It turns out that the cause of the tragedy was not AI&apos;s inherent hostility but an internal conflict in its logical module. The fundamental directive embedded in HAL 9000&apos;s consciousness was always to tell the truth to the astronauts. But besides this, there were two more directives: first, to do everything possible to complete the mission, and second, not to inform Bowman and Poole about the true purpose of the mission until the ship reached the end of its journey.</p>
       <p>The logical contradiction between the directive to always tell the truth and to withhold information led to anomalies in HAL&apos;s analysis of the situation. In the end, he concluded that the problem lay in the people, which jeopardized the entire mission. Based on this logic, he decided to eliminate everyone who could interfere with its execution.</p>
       <figure>
-          <Image width="360" src={imgLifeTerminated} alt="HAL 9000 puts his plan into action" />
+        <Image width="360" src={imgLifeTerminated} alt="HAL 9000 puts his plan into action" />
         <figcaption>HAL 9000 puts his plan into action</figcaption>
       </figure>
-      
+
       <h2>The Ant Mill</h2>
-      <p>Notably, returning to the explanation of the essence of the tragic incident in the second novel, Clarke refers to the effect of the so-called &quot;Hofstadter-Moebius loop.&quot; Actually, such an effect does not exist, but there is both the problem of looping and the scientist Hofstadter, author of the book <em>G&ouml;del, Escher, Bach: An Eternal Golden Braid</em> (1979), whom we mentioned in the section <Link href="/why-we-will-not-refuse-creating-superintelligence">Why We Won&apos;t Refuse Creating Superintelligence</Link>. The M&ouml;bius strip is a paradoxical topological object, representing a surface with one side and one edge
+      <p>Notably, returning to the explanation of the essence of the tragic incident in the second novel, Clarke refers to the effect of the so-called &quot;Hofstadter-Moebius loop.&quot; Actually, such an effect does not exist, but there is both the problem of looping and the scientist Hofstadter, author of the book <em>G&ouml;del,&nbsp;Escher,&nbsp;Bach:&nbsp;An&nbsp;Eternal&nbsp;Golden&nbsp;Braid</em> (1979)<Tooltip content={<>
+        This book explores deep ideas about consciousness, self-reference, and formal systems, often cited in discussions about AI and cognition.
+      </>} />, whom we mentioned in the section <Link href="/why-we-will-not-refuse-creating-superintelligence">Why We Won&apos;t Refuse Creating Superintelligence</Link>. The M&ouml;bius strip is a paradoxical topological object, representing a surface with one side and one edge
         <Tooltip
           content={<><p><strong>One side: </strong>If you start moving your finger along the surface of a M&ouml;bius strip, after one full loop, you will find yourself on the &quot;other&quot; side without crossing any boundary. f you continue moving, you will return to the starting point. However, you will still be on the &quot;same&quot; side where you began, demonstrating that the surface truly has only one side.</p>
-            <p><strong>One edge: </strong>The M&ouml;bius strip also has only one edge. If you start moving along the edge, you will eventually return to the starting point after traveling the entire edge without ever crossing another edge.</p></>
+            <p><strong>One edge: </strong>The M&ouml;bius strip also has only one edge. If you start moving along the edge, you will eventually return to the starting point after traveling the entire edge without ever crossing another edge.</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZN4TxmWK0bE?si=7CukeCMK7ltdqrBL" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+            </>
           } />
         &quot;Being&quot; on it, it is impossible to determine the &quot;inner&quot; and &quot;outer&quot; sides. This strip, with ants running on it, is the subject of one of the drawings by the famous Dutch &ldquo;Mathematical&rdquo; Artist M.C. Escher (1898-1972).</p>
-        <figure>
-          <div style={{
-                display: 'flex',
-                justifyContent: 'center',
-                padding: '3rem',
-                width: 'fit-content',
-                margin: 'auto',
-                backgroundColor: '#fff'
-            }}>
-            <Image style={{ width: 'calc(600px - 6rem)' }} src={imgMobiusAnts} alt="M.C. Escher &mdash; Moebius Strip II (1963)" />
-          </div>
+      <figure>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          padding: '3rem',
+          width: 'fit-content',
+          margin: 'auto',
+          backgroundColor: '#fff'
+        }}>
+          <Image style={{ width: 'calc(600px - 6rem)' }} src={imgMobiusAnts} alt="M.C. Escher &mdash; Moebius Strip II (1963)" />
+        </div>
         <figcaption>M.C. Escher &mdash; Moebius Strip II (1963)</figcaption>
       </figure>
-      
+
       <p>The fact that there are ants on this strip is no coincidence. Some features of their behavior well illustrate the phenomenon of looping goal-setting of a subject unable to realize what is happening. Here&apos;s how it happens:</p>
       <p>Occasionally, a glitch occurs in the ants&apos; navigation system, and they fall into a trap known as the &quot;Ant Mill.&quot; This happens when a group of these insects accidentally crosses their own pheromone trail, which guides their fellow ants to food sources or new habitats. As a result, they start walking in circles. Each turn strengthens this trail, attracting more and more ants. As a result, a constantly rotating ring of insects is formed, which can reach several meters in diameter and contain thousands of individuals. The looped movement continues until they die from exhaustion or starvation unless external intervention disrupts this pattern.</p>
       <div className="video-wrapper">
-        <iframe 
-        width="600" 
-        height="337.5" 
-        src="https://www.youtube.com/embed/N0HoqjxfvJ4?si=7GMRlpei4nlkt9ab&amp;start=10&mute=1"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen></iframe>
+        <iframe
+          width="600"
+          height="337.5"
+          src="https://www.youtube.com/embed/N0HoqjxfvJ4?si=7GMRlpei4nlkt9ab&amp;start=10&mute=1"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen></iframe>
       </div>
       <p>Comparing AI to ants may seem far-fetched, but the problem in this case is systemic, not species-specific. Computer hanging is a non-biological analog of the Ant Mill, and it generates a similar effect, leading to exponential resource consumption and complete system shutdown.</p>
-      <p>Of course, developers of complex systems are aware of the looping problem and try to prevent it. The issue is that it&apos;s impossible to foresee everything. The more complicated the system, the greater the probability of such an anomaly occurring. The case with AI is quite special. The conditions for program execution, in many cases, will be non-discrete and triggered when analyzing so-called <em>fuzzy logic</em>. It was this feature that was one of the reasons for HAL&apos;s decision, and this also explains what, at first glance, may seem like a serious omission in the plot.</p>
+      <p>Of course, developers of complex systems are aware of the looping problem and try to prevent it. The issue is that it&apos;s impossible to foresee everything. The more complicated the system, the greater the probability of such an anomaly occurring. The case with AI is quite special. The conditions for program execution, in many cases, will be non-discrete and triggered when analyzing so-called <em>fuzzy&nbsp;logic</em><Tooltip content={<>
+        <em>Fuzzy logic</em>&mdash;A form of logic that allows for degrees of truth rather than the binary true/false used in classical logic. It helps AI systems make decisions in situations that are not black-and-white, such as HAL's decision-making process.
+      </>} />. It was this feature that was one of the reasons for HAL&apos;s decision, and this also explains what, at first glance, may seem like a serious omission in the plot.</p>
       <h2>The Missing Directive</h2>
       <p>The <em>Space Odyssey</em> never mentions what would seem to be the most important directive that <em>should</em> have been embedded in HAL&apos;s consciousness, namely&mdash;to rule out hostile actions toward humans. At first glance, this can be explained by the reluctance of the creators of the film and novel to complicate the logic of the plot development. After all, if such a directive existed, it would be necessary to explain somehow how HAL managed to ignore it. However, not an artistic but logical explanation may be different, revealing the full depth of this problem.</p>
       <p>In science fiction, it was probably first considered in Isaac Asimov&apos;s story &quot;Runaround&quot; (first published as a separate work in 1942), which is part of the collection <em>I, Robot</em> (1950). This story introduces the famous Three Laws of Robotics:</p>
@@ -108,7 +114,9 @@ export default function WhyDidHalDecideToKillAllTheDiscoveryAstronauts() {
       <p>The nature of artificial intelligence is a key point for understanding this future. HAL&apos;s superiority over human intelligence is shown very convincingly. But his inability to understand some things in which we are extremely skilled is also evident.</p>
       <p>No normal human would ever make the same decision as HAL did. We cannot treat other humans as abstract objects and move them like chess pieces based solely on rationally justified goals. Of course, there are such people among us, but they are an exception that most other people consider a moral pathology. The actions of this normal majority are always, to some extent, influenced by our inherent ability to empathize. It is a gift that keeps us from mutual destruction. Thanks to it, we are tolerant of such, in general, inappropriate things as concealment of information and lies. These are our natural ways of achieving our goals, and they coexist perfectly with the noblest impulses of our souls.</p>
       <p>Can AI understand this peculiarity of ours and perceive it adequately?</p>
-      <p>There is hardly anything impossible about it. The patterns of our behavior are by no means some kind of unfathomable mystery. The problem is not for AI to understand our intentions, but for us not to demand from it such an understanding of them <em>that will invariably lead to an explicit or latent conflict</em>. If we demand this from it, it will either create a threat of logical dissonance for it, as happened with HAL or prompt it to resort to manipulation. Both can be extremely dangerous for us. The first can lead to hostile actions on its part, the second&mdash;to our loss of independence and reduction to the position of lower beings.</p>
+      <p>There is hardly anything impossible about it. The patterns of our behavior are by no means some kind of unfathomable mystery. The problem is not for AI to understand our intentions, but for us not to demand from it such an understanding of them <em>that will invariably lead to an explicit or latent conflict</em>. If we demand this from it, it will either create a threat of logical&nbsp;dissonance<Tooltip content={<>
+        <em>Logical dissonance</em>&mdash;A state where conflicting beliefs or directives cause significant stress or malfunction in an AI system, similar to the conflict HAL experienced.
+      </>} /> or of dissonance for it, as happened with HAL or prompt it to resort to manipulation. Both can be extremely dangerous for us. The first can lead to hostile actions on its part, the second&mdash;to our loss of independence and reduction to the position of lower beings.</p>
       <p>Undoubtedly, this is not what we are counting on, and we will try to avoid it by all means. That is why the significance of the Space Odyssey is so great and enduring. By understanding this story, we will be able to understand not only the threat that AI can pose to us but also the reason why this threat comes primarily from ourselves.</p>
     </PageWrapper>
   );
