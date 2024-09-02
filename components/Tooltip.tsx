@@ -96,7 +96,6 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
               outline: 'solid 3px',
               padding: '5px',
               paddingLeft: '6px',
-              right: '-13px',
               top: '-11px',
               width: '1.5rem',
               zIndex: 1,

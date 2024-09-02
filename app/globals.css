@@ -142,7 +142,6 @@ h4 {
   font-size: 1rem;
 }
 
-
 nav ul {
   @apply mb-4;
 }
@@ -184,6 +183,10 @@ a.regular:hover {
   bottom: -20vw;
   right: 0;
   box-shadow: inset 220px 0px 180px 40px rgba(18, 18, 18, 1);
+}
+
+.cursor-pointer {
+  right: -13px;
 }
 
 .offset-mobile {
@@ -273,6 +276,10 @@ a.regular:hover {
 @media screen and (max-width: 1200px) {
   .container {
     @apply flex-col;
+  }
+
+  .cursor-pointer {
+    right: 6px;
   }
 
   .sidebar {
