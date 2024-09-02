@@ -40,7 +40,7 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
   const getPositionStyles = () => {
 
     if (window.innerWidth < 1200) return 'offset-mobile'
-    
+
     const [vertical, horizontal] = position;
 
     let classes = '';
@@ -60,7 +60,7 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
   };
 
   return (
-    <span className="xl:relative inline-block" style={{ margin: 'auto 4px' }} ref={containerRef}>
+    <span className="component-tooltip xl:relative inline-block" style={{ margin: 'auto 4px' }} ref={containerRef}>
       <span
         ref={closeIconRef}
         className="bg-gray-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm cursor-pointer transition-transform duration-200 hover:scale-110 hover:bg-gray-400"
@@ -70,7 +70,7 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
       </span>
       {isVisible && (
         <span
-          className={`absolute z-10 p-5 bg-gray-100 text-black text-sm shadow-lg transition-all duration-300 ease-out ${getPositionStyles()}`}
+          className={`absolute z-10 p-5 pr-0 bg-gray-100 text-black text-sm shadow-lg transition-all duration-300 ease-out ${getPositionStyles()}`}
           style={{
             display: 'block',
             minWidth: '200px',
@@ -83,32 +83,34 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
             right: '0px !important',
           }}
         >
+          <span
+            className="absolute text-black text-sm cursor-pointer"
+            style={{
+              backgroundColor: 'var(--color-dark-rose)',
+              borderRadius: '50%',
+              color: '#eee',
+              fontSize: '1.2rem',
+              fontWeight: 200,
+              height: '1.5rem',
+              lineHeight: '12px',
+              outline: 'solid 3px',
+              padding: '5px',
+              paddingLeft: '6px',
+              right: '-13px',
+              top: '-11px',
+              width: '1.5rem',
+              zIndex: 1,
+            }}
+            onClick={() => setVisible(false)}
+          >
+            &times;
+          </span>
           <span className="relative pr-6 block" style={{
             maxHeight: '50vh',
             transform: 'translateY(-3px)',
+            overflow: 'hidden auto',
           }}>
             {content}
-            <span
-              className="absolute text-black text-sm cursor-pointer"
-              style={{
-                lineHeight: '12px',
-                right: '-8px',
-                top: '-6px',
-                padding: '5px',
-                paddingLeft: '6px',
-                backgroundColor: '#999',
-                borderRadius: '50%',
-                color: '#eee',
-                fontWeight: 200,
-                fontSize: '1.2rem',
-                width: '1.5rem',
-                height: '1.5rem',
-                display: 'block',
-              }}
-              onClick={() => setVisible(false)}
-            >
-              &times;
-            </span>
           </span>
         </span>
       )}

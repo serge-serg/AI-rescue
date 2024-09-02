@@ -7,6 +7,7 @@ import imgBostrom from '@/assets/images/bostrom.jpg'
 import imgMusk from '@/assets/images/musk-3.jpg'
 import imgKurzweil from '@/assets/images/kurzweil.jpg'
 import Link from 'next/link'
+import Tooltip from '@/components/Tooltip';
 
 export default function Home() {
   return (
@@ -82,7 +83,23 @@ export default function Home() {
         />
       </h2>
       <p>
-        So, we have reason to believe that we are approaching an event that will be a point of no return in human history. The creation of Superintelligence will cause what British mathematician I.J.&nbsp;Good defined as an &quot;intelligence explosion&quot; back in the mid-1960s. This term refers to a hypothetical scenario in which an AI, once it reaches a certain level of intelligence, can rapidly improve its intelligence, leading to an exponential increase in its cognitive abilities.
+        So, we have reason to believe that we are approaching an event that will be a point of no return in human history. The creation of Superintelligence will cause what British mathematician I.J.&nbsp;Good
+        <Tooltip content={
+          <>
+            <p>Irving John Good (1916-2009), a British mathematician, statistician, and cryptographer, played a significant role in the development of ideas related to artificial intelligence (AI). His contributions to this field are impressive, especially considering his pioneering work in the mid-20th century.</p>
+            <h4>Key Aspects of His Contribution:</h4>
+            <ol>
+              <li><strong>Codebreaking Work During World War II</strong>: Good worked at the famous Bletchley Park in the United Kingdom, where he was involved in cryptography and helped break the ciphers used by Nazi Germany, including the Enigma code. His work made a significant contribution to the success of the Allies in the war.</li>
+              <li><strong>Pioneering Work in Bayesian Statistics</strong>: Good made a significant contribution to the development of Bayesian statistics, which later became the basis for many modern methods of machine learning and AI. His work in this area continues to influence the current development of algorithms and statistical models used in AI.</li>
+              <li><strong>The Concept of the "Intelligence Explosion"</strong>: Good was the first to propose the idea that once a sufficiently powerful AI is created, it could continue to create increasingly powerful versions of itself, leading to a rapid increase in intelligence and technological capabilities. This idea has had a significant impact on subsequent theoretical and practical research in AI.</li>
+            </ol>
+            <p>Good's work has inspired many followers and researchers, such as Ray Kurzweil and Nick Bostrom, who have continued to develop his ideas on singularity and the potential threats associated with the development of superintelligence. His ideas remain relevant today, shaping discussions about the future of AI and its impact on humanity.</p>
+          </>
+        }
+        />
+        defined as an &quot;intelligence explosion&quot;
+        <Tooltip content={<>In his article <a target='_blank' href='https://ouci.dntb.gov.ua/en/works/4aXrrna7/'><em>Speculations Concerning the First Ultraintelligent Machine</em></a>, he described the hypothesis that the creation of an 'ultra-intelligent machine' could initiate explosive growth in intelligence, surpassing human capabilities and leading to rapid and uncontrolled technological development.</>} />
+        back in the mid-1960s. This term refers to a hypothetical scenario in which an AI, once it reaches a certain level of intelligence, can rapidly improve its intelligence, leading to an exponential increase in its cognitive abilities.
       </p>
       <p>
         At that time, it looked like an indefinitely distant or completely unrealistic prospect. But now it&apos;s not so. The famous inventor, futurist writer, Principal Researcher, and AI Visionary at Google, R.&nbsp;Kurzweil, in his book <em>The&nbsp;Singularity&nbsp;Is&nbsp;Near&nbsp;</em>(2005), predicted the creation of Superintelligence around 2045, and his forecast is now far from the most radical. If this indeed happens, then for the first time in Earth&apos;s history, there will be more than one intelligent species on it, and one of them will be far smarter than the other.
@@ -90,6 +107,7 @@ export default function Home() {
       <p>
         The unpleasant assumption from this is that we have no guarantee of survival. Our planning horizon regarding Superintelligence is objectively limited. In the equation of reality with its presence, there are many more unknown variables than those we can operate with. So far, we don&apos;t have reliable approaches to predict its intentions and protect ourselves from those that may pose a threat to us. Thus, we must realize that if we fail to develop such approaches, everything could go according to the worst-case scenario for us.
       </p>
+      <h2>How We Should Respond to the Challenge of Superintelligence?</h2>
       <p>
         The good news is that humanity has many brilliant minds ready to work on this issue, vast knowledge, and experience in successfully solving incredibly complex problems. Of course, the problem of Superintelligence is extraordinary in all senses, but this doesn&apos;t mean it&apos;s unsolvable in principle. Besides, our mind has a saving feature of maximum mobilization of its resources in situations of existential challenge.
       </p>
