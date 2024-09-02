@@ -1,5 +1,7 @@
-import Link from "next/link";
-import Image, { StaticImageData } from "next/image";
+import Link from "next/link"
+import Image, { StaticImageData } from "next/image"
+import imgVernonMountcastle from '@/assets/images/Vernon-Mountcastle2.jpg'
+import imgJeffHawkins from '@/assets/images/Jeff-Hawkins.jpg'
 import { generateMetadata } from '@/utils/generateMetadata';
 export const metadata = generateMetadata(__filename);
 import PageWrapper from '@/components/PageWrapper';
@@ -152,7 +154,20 @@ export default function DeepDiveIntoFundamentalAIRisks() {
         <em>Controlled evolution</em>&mdash;A method of AI development where the system is allowed to evolve or improve, but within carefully controlled parameters to prevent unintended consequences.
       </>} />, AI&nbsp;seed<Tooltip content={<>
         <em>AI seed</em>&mdash;The initial version of an AI system that has the potential to evolve or improve itself, potentially leading to the creation of a more advanced AI, such as Superintelligence.
-      </>} />, etc. However, for all these developments, there is no subject of application, i.e., AI itself. Moreover, there is still no practically proven effective approach to its creation (although there is already a <a href="https://www.numenta.com/blog/2019/01/16/the-thousand-brains-theory-of-intelligence/">theory of intelligence</a>). Although this situation can be called natural for the field of high technology, in the case of AI, it presents several extremely serious challenges to the developer community. Much more than career, market, and even national prospects will depend on the ability to respond to it. The stake is truly the fate of humanity.</p>
+      </>} />, etc. However, for all these developments, there is no subject of application, i.e., AI itself. Moreover, there is still no practically proven effective approach to its creation (although there is already a <a href="https://www.numenta.com/blog/2019/01/16/the-thousand-brains-theory-of-intelligence/">theory of intelligence</a><Tooltip content={<>
+        <em>The&nbsp;Thousand&nbsp;Brains&nbsp;Theory of Intelligence</em>&mdash;A theory proposed by Jeff Hawkins and his team at <a href="https://www.numenta.com/">Numenta</a>, which suggests that intelligence arises from the combined efforts of many cortical columns in the brain, each independently modeling complete objects or concepts. This theory posits that these columns work together, communicating with each other to create a unified understanding of the world. It was inspired by the work of <strong>Vernon Benjamin Mountcastle</strong> (1918-2015) who is widely regarded as the father of modern neuroscience. His research laid the foundation for understanding the functional organization of the neocortex.
+        <p>This connection to Mountcastle's work is crucial as it links the theory to established neuroscientific principles, providing a biological basis for creating AI systems that might more closely mimic human intelligence.</p>
+        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+          <figure>
+            <Image height="230" src={imgVernonMountcastle} alt="Vernon Mountcastle" />
+            <figcaption>Vernon Mountcastle</figcaption>
+          </figure>
+          <figure>
+            <Image height="230" src={imgJeffHawkins} alt="Jeff Hawkins" />
+            <figcaption>Jeff Hawkins</figcaption>
+          </figure>
+        </div>
+      </>} />). Although this situation can be called natural for the field of high technology, in the case of AI, it presents several extremely serious challenges to the developer community. Much more than career, market, and even national prospects will depend on the ability to respond to it. The stake is truly the fate of humanity.</p>
       <p>One of the narrowest places is the control of AI formation. How can this process be tracked and tested? What precautions can be considered reliable, and how can they remain so throughout?</p>
       <p>And where should this process stop? Probably, the best strategy would be to allow AI to develop to the human level. Although, in this case, it will likely make decisions much faster than humans, we can hope that they will at least be understandable to us.</p>
       <p>This is only a small part of the list of problems that AI experts at all levels will have to comprehend and solve. The prospects for these solutions depend on many factors, including the coordination and integration of various approaches to fulfill the task of creating safe AI and coordinating the involved technical specialists with the scientific community, regulators, and policymakers.</p>
