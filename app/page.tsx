@@ -85,7 +85,7 @@ export default function Home() {
         So, we have reason to believe that we are approaching an event that will be a point of no return in human history. The creation of Superintelligence will cause what British mathematician I.J.&nbsp;Good
         <Tooltip content={
           <>
-            <p>Irving John Good (1916-2009), a British mathematician, statistician, and cryptographer, played a significant role in the development of ideas related to artificial intelligence (AI). His contributions to this field are impressive, especially considering his pioneering work in the mid-20th century.</p>
+            <p><strong>Irving John Good</strong> (1916-2009), a British mathematician, statistician, and cryptographer, played a significant role in the development of ideas related to artificial intelligence (AI). His contributions to this field are impressive, especially considering his pioneering work in the mid-20th century.</p>
             <h4>Key Aspects of His Contribution:</h4>
             <ol>
               <li><strong>Codebreaking Work During World War II</strong>: Good worked at the famous Bletchley Park in the United Kingdom, where he was involved in cryptography and helped break the ciphers used by Nazi Germany, including the Enigma code. His work made a significant contribution to the success of the Allies in the war.</li>
