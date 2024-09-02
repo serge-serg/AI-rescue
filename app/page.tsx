@@ -1,12 +1,13 @@
+import Link from 'next/link'
+import Image from 'next/image'
 import { generateMetadata } from '@/utils/generateMetadata';
 export const metadata = generateMetadata(__filename);
 import PageWrapper from '@/components/PageWrapper';
-import Image from 'next/image'
+import Tooltip from '@/components/Tooltip';
 import imgBostrom from '@/assets/images/bostrom.jpg'
 import imgMusk from '@/assets/images/musk-3.jpg'
 import imgKurzweil from '@/assets/images/kurzweil.jpg'
-import Link from 'next/link'
-import Tooltip from '@/components/Tooltip';
+import imgGood from '@/assets/images/IJ-Good.png'
 
 export default function Home() {
   return (
@@ -37,7 +38,7 @@ export default function Home() {
         The problem here is that we may create an entity more powerful than ourselves and with goals different from ours. This means that the existence of humanity may depend on its intentions. If these intentions are friendly, Superintelligence could become our partner. This would allow us to solve the fundamental problems that humanity has been grappling with for millennia. Perhaps the very form of our existence will change, turning into a symbiosis of human and artificial minds. That will open up prospects for us to understand the universe at a level of comprehension that we cannot even imagine right now. Although it&apos;s impossible to predict what this future will be like, our main hope here is that it will be the subject of our desire and choice.
       </p>
       <p>
-        In the worst-case scenario, we will disappear from the historical scene as a species. We may become unnecessary to this super-powerful entity. It may happen that we, in accordance with Elon Musk&apos;s concern, will simply end up as a &quot;biological bootloader for Superintelligence.&quot; Thus, the latter may turn out to be what journalist and writer J. Barrat called &quot;Our Final Invention&quot; in his 2013 book (of the same name)&mdash;an invention that was created in a <em>bad</em> sense.
+        In the worst-case scenario, we will disappear from the historical scene as a species. We may become unnecessary to this super-powerful entity. It may happen that we, in accordance with Elon Musk&apos;s concern, will simply end up as a &quot;biological bootloader for Superintelligence.&quot; Thus, the latter may turn out to be what journalist and writer J.&nbsp;Barrat called &quot;Our Final Invention&quot; in his 2013 book (of the same name)&mdash;an invention that was created in a <em>bad</em> sense.
       </p>
       <h2><Image
         alt="Musk"
@@ -85,7 +86,12 @@ export default function Home() {
         So, we have reason to believe that we are approaching an event that will be a point of no return in human history. The creation of Superintelligence will cause what British mathematician I.J.&nbsp;Good
         <Tooltip content={
           <>
-            <p><strong>Irving John Good</strong> (1916-2009), a British mathematician, statistician, and cryptographer, played a significant role in the development of ideas related to artificial intelligence (AI). His contributions to this field are impressive, especially considering his pioneering work in the mid-20th century.</p>
+            <p><strong>Irving John Good</strong>&nbsp;(1916-2009), a British mathematician, statistician, and cryptographer, played a significant role in the development of ideas related to artificial intelligence (AI). His contributions to this field are impressive, especially considering his pioneering work in the mid-20th century.</p>
+            <figure>
+              <Image width="300" src={imgGood} alt="Irving John Good" height="300" />
+              <figcaption>Irving John Good</figcaption>
+            </figure>
+
             <h4>Key Aspects of His Contribution:</h4>
             <ol>
               <li><strong>Codebreaking Work During World War II</strong>: Good worked at the famous Bletchley Park in the United Kingdom, where he was involved in cryptography and helped break the ciphers used by Nazi Germany, including the Enigma code. His work made a significant contribution to the success of the Allies in the war.</li>
