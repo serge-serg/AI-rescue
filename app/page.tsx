@@ -1,4 +1,3 @@
-//'use client'
 import { generateMetadata } from '@/utils/generateMetadata';
 export const metadata = generateMetadata(__filename);
 import PageWrapper from '@/components/PageWrapper';
@@ -91,14 +90,14 @@ export default function Home() {
             <ol>
               <li><strong>Codebreaking Work During World War II</strong>: Good worked at the famous Bletchley Park in the United Kingdom, where he was involved in cryptography and helped break the ciphers used by Nazi Germany, including the Enigma code. His work made a significant contribution to the success of the Allies in the war.</li>
               <li><strong>Pioneering Work in Bayesian Statistics</strong>: Good made a significant contribution to the development of Bayesian statistics, which later became the basis for many modern methods of machine learning and AI. His work in this area continues to influence the current development of algorithms and statistical models used in AI.</li>
-              <li><strong>The Concept of the "Intelligence Explosion"</strong>: Good was the first to propose the idea that once a sufficiently powerful AI is created, it could continue to create increasingly powerful versions of itself, leading to a rapid increase in intelligence and technological capabilities. This idea has had a significant impact on subsequent theoretical and practical research in AI.</li>
+              <li><strong>The Concept of the &quot;Intelligence Explosion&quot;</strong>: Good was the first to propose the idea that once a sufficiently powerful AI is created, it could continue to create increasingly powerful versions of itself, leading to a rapid increase in intelligence and technological capabilities. This idea has had a significant impact on subsequent theoretical and practical research in AI.</li>
             </ol>
-            <p>Good's work has inspired many followers and researchers, such as Ray Kurzweil and Nick Bostrom, who have continued to develop his ideas on singularity and the potential threats associated with the development of superintelligence. His ideas remain relevant today, shaping discussions about the future of AI and its impact on humanity.</p>
+            <p>Good&apos;s work has inspired many followers and researchers, such as Ray Kurzweil and Nick Bostrom, who have continued to develop his ideas on singularity and the potential threats associated with the development of superintelligence. His ideas remain relevant today, shaping discussions about the future of AI and its impact on humanity.</p>
           </>
         }
         />
         defined as an &quot;intelligence explosion&quot;
-        <Tooltip content={<>In his article <a target='_blank' href='https://ouci.dntb.gov.ua/en/works/4aXrrna7/'><em>Speculations Concerning the First Ultraintelligent Machine</em></a>, he described the hypothesis that the creation of an 'ultra-intelligent machine' could initiate explosive growth in intelligence, surpassing human capabilities and leading to rapid and uncontrolled technological development.</>} />
+        <Tooltip content={<>In his article <a target='_blank' href='https://ouci.dntb.gov.ua/en/works/4aXrrna7/'><em>Speculations Concerning the First Ultraintelligent Machine</em></a>, he described the hypothesis that the creation of an &apos;ultra-intelligent machine&apos; could initiate explosive growth in intelligence, surpassing human capabilities and leading to rapid and uncontrolled technological development.</>} />
         back in the mid-1960s. This term refers to a hypothetical scenario in which an AI, once it reaches a certain level of intelligence, can rapidly improve its intelligence, leading to an exponential increase in its cognitive abilities.
       </p>
       <p>
