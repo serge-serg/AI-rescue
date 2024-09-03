@@ -58,7 +58,7 @@ export default function LetsConnect() {
       <section>
         <br />
         <p><strong>Sergei</strong> is a final-year student in the Master&apos;s program in Public Policy at EHU. After graduation, he plans to pursue a PhD in Philosophy. Currently, he works as a Senior Analyst, Research Fellow, and IT Expert at Accenture Baltics. He lives in Latvia.</p>
-        <p>He regularly participates in international scientific conferences in humanities and interdisciplinary fields such as philosophy, political science, sociology, social theory, public administration, and sustainable development.</p>
+        <p>He regularly participates in international scientific conferences in philosophy, political science, sociology, social theory, public administration, sustainable development, and interdisciplinary fields.</p>
         <p>Additionally, he writes for the Medium platform. You can <a href='https://medium.com/@sergeykleftzov'>follow him</a> and <a href='https://sergeykleftzov.medium.com/subscribe'>subscribe</a> to his newsletter to receive his original articles. These articles provide a comprehensive analysis of the problems facing modern and future societies, covering topics from psychology and religion to art and technology.</p>
         <p>His primary passion is philosophy, particularly in metaphysics, philosophy of mind, philosophy of AI, and political philosophy. He is also deeply engaged in studying current social issues in the context of the rapid technological advancements impacting our world.</p>
         <br />
