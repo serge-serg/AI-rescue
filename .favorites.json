@@ -9,14 +9,6 @@
     },
     {
         "type": "File",
-        "name": "/Users/sergei.klevtsov/Documents/Projects/AI-rescue/app/globals.css",
-        "parent_id": "SQXhpBGTzxmcNYZj",
-        "workspaceRoot": "/Users/sergei.klevtsov/Documents/Projects/AI-rescue",
-        "workspacePath": "app/globals.css",
-        "id": "48JDrSAYZK1cNV39"
-    },
-    {
-        "type": "File",
         "name": "/Users/sergei.klevtsov/Documents/Projects/AI-rescue/tailwind.config.ts",
         "parent_id": "SQXhpBGTzxmcNYZj",
         "workspaceRoot": "/Users/sergei.klevtsov/Documents/Projects/AI-rescue",
@@ -46,5 +38,13 @@
         "workspaceRoot": "/Users/sergei.klevtsov/Documents/Projects/Super-AI-Challenge",
         "workspacePath": "components/Navigation.tsx",
         "id": "IAtNXvu91OijzqUd"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sergei.klevtsov/Documents/Projects/Super-AI-Challenge/app/globals.css",
+        "parent_id": "SQXhpBGTzxmcNYZj",
+        "workspaceRoot": "/Users/sergei.klevtsov/Documents/Projects/Super-AI-Challenge",
+        "workspacePath": "app/globals.css",
+        "id": "GfjCwbvN1QApVUqr"
     }
 ]

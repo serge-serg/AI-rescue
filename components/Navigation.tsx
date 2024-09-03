@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import menuItems from '@/components/menuItems'
+import menuItems, { MenuItems } from '@/components/menuItems'
 import img13Floor from '@/assets/images/view-pix/13th-floor.png'
 import imgRobotAndPeople from '@/assets/images/view-pix/robot-ai-leadership-crowd.jpg'
 import imgAiRisks from '@/assets/images/view-pix/ai-risks-dark.jpg'
@@ -113,6 +113,33 @@ const Navigation = () => {
     return item
   }
 
+  const renderLiItem = (item: MenuItems) => (
+    <Link href={item.href} onClick={() => setIsOpen(false)}>
+      {renderMenuItem(item.text)}
+    </Link>
+  )
+
+  const renderLiBlock = (item: MenuItems) => (
+    <li key={item.href} className={currentPath === item.href ? 'selected' : ''}>
+      {renderLiItem(item)}
+    </li>
+  )
+
+  const renderMenu = () => {
+    const menu = menuItems.map((item) => renderLiBlock(item))
+    if (!windowIsWide) {
+      menu.push(renderLiBlock(
+        {
+          href: '/lets-connect',
+          text: 'Lets Connect',
+          key: 'lets-connect'
+        })
+      )
+      return menu
+    }
+    return menu
+  }
+
   return (
     <div className="lg+:max-w-[500px] sidebar-container">
       <div className="lg+:hidden p-4 flex justify-between items-center bg-[#333]">
@@ -135,15 +162,7 @@ const Navigation = () => {
         {
           isOpen &&
           <nav ref={navRef} className="lg+:max-w-[500px]">
-            <ul>
-              {menuItems.map((item) => (
-                <li key={item.href} className={currentPath === item.href ? 'selected' : ''}>
-                  <Link href={item.href} onClick={() => setIsOpen(false)}>
-                    {renderMenuItem(item.text)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <ul>{renderMenu()}</ul>
           </nav>
         }
       </aside>

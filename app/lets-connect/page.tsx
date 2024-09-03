@@ -33,7 +33,7 @@ export default function LetsConnect() {
   return (
     <PageWrapper filename={__filename}>
       <p>This site has been created by:</p>
-      <section className='flex'>
+      <section className='xl:flex'>
         <ul style={{
           padding: 0,
           marginBottom: '2rem',
@@ -49,11 +49,7 @@ export default function LetsConnect() {
             telegramLink='https://t.me/Dadine3k'
           />
         </ul>
-        <Image style={{
-          height: 'auto',
-          objectFit: 'cover',
-          width: '42%',
-        }} alt="Pluto and Rabbit" title='Pluto and Rabbit' src={imgCreators} />
+        <Image className='width42' alt="Pluto and Rabbit" title='Pluto and Rabbit' src={imgCreators} />
       </section>
       <section>
         <br />

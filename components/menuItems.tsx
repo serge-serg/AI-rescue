@@ -1,10 +1,17 @@
+import { ReactNode } from "react";
+
 const fontBold = { fontWeight: 700 };
 const textColorMain = { color: "var(--color-dark-rose)" };
 const textColorMainBold = { ...textColorMain, ...fontBold };
 //const textBoldOpacity = { opacity: 0.6, ...fontBold };
 const textBoldLightGreen = { color: "lightgreen", ...fontBold };
 const textBoldDarkRed = { color: "#f00", opacity: 0.5, ...fontBold };
-const menuItems = [
+interface MenuItems {
+  href: string
+  text: string | ReactNode[] | ReactNode;
+  key: string
+}
+const menuItems: MenuItems[] = [
   { href: "/", text: "Toward the Point of No Return", key: "home" },
   {
     href: "/will-superintelligence-become-the-great-filter-for-humanity",
@@ -76,3 +83,4 @@ const menuItems = [
   },
 ];
 export default menuItems;
+export type { MenuItems };
