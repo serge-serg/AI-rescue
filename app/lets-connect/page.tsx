@@ -62,7 +62,8 @@ export default function LetsConnect() {
         <p>Additionally, he writes for the Medium platform. You can <a href='https://medium.com/@sergeykleftzov'>follow him</a> and <a href='https://sergeykleftzov.medium.com/subscribe'>subscribe</a> to his newsletter to receive his original articles. These articles provide a comprehensive analysis of the problems facing modern and future societies, covering topics from psychology and religion to art and technology.</p>
         <p>His primary passion is philosophy, particularly in metaphysics, philosophy of mind, philosophy of AI, and political philosophy. He is also deeply engaged in studying current social issues in the context of the rapid technological advancements impacting our world.</p>
         <br />
-        <p><b>Daniil</b> is a professional photographer, video producer, and <a href='https://srgg6701.github.io/Music-Is-My-Life/' target='_blank'>musician</a> living in Germany.</p>
+        <p><b>Daniil</b> is a professional photographer, video producer, and musician, and <a href='https://srgg6701.github.io/Music-Is-My-Life/' target='_blank'><strong><em>music is his life</em></strong></a>.
+        He has been living in Germany.</p>
       </section>
       <section>
         <h3>Our Mission</h3>
