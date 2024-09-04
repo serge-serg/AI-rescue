@@ -85,7 +85,7 @@ img.img-offset-top {
 main {
   padding: 4rem 5vw 2rem 6vw;
   height: 100vh;
-  width: 100%;
+  width: 60vw;
 }
 
 main ul,
@@ -280,6 +280,9 @@ a.regular:hover {
 }
 
 @media screen and (max-width: 1200px) {
+  main {
+    width: 100%;
+  }
   .container {
     @apply flex-col;
   }

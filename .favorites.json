@@ -46,5 +46,23 @@
         "workspaceRoot": "/Users/sergei.klevtsov/Documents/Projects/Super-AI-Challenge",
         "workspacePath": "app/globals.css",
         "id": "GfjCwbvN1QApVUqr"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sergei.klevtsov/Documents/Projects/Super-AI-Challenge/app/layout.tsx",
+        "parent_id": null,
+        "workspaceRoot": "/Users/sergei.klevtsov/Documents/Projects/Super-AI-Challenge",
+        "workspacePath": "app/layout.tsx",
+        "id": "CNwqiV6b0sGmhA7k",
+        "label": "[Layout]"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sergei.klevtsov/Documents/Projects/Super-AI-Challenge/app/page.tsx",
+        "parent_id": null,
+        "workspaceRoot": "/Users/sergei.klevtsov/Documents/Projects/Super-AI-Challenge",
+        "workspacePath": "app/page.tsx",
+        "id": "j8Cm3lR0V19eqTaQ",
+        "label": "[Homepage]"
     }
 ]
