@@ -28,7 +28,9 @@ const Temp: React.FC = () => {
       <h1>Text to read</h1>
       <div id="text-container">
         <h1>Why Could Not the Matrix Exist Without Humans?</h1>
-
+        <video width="640" height="360" controls>
+          <source src="https://drive.google.com/uc?export=download&id=19c8CfbESchycxO2s_bE0n-mhzB-iriyJ" type="video/mp4" />
+        </video>
         <h2>Introduction <Tooltip content="This text is not so huge, but it is really important. Do you want to read it?" /></h2>
 
         <p><em>The Matrix</em> is a true masterpiece of contemporary art, one of those films whose relevance doesn&apos;t diminish over time but <Tooltip content="This text is not so huge, but it is really important. Do you want to read what si 'rather'?" /> rather increases. The world depicted in it becomes harder to perceive as mere fantasy. With each passing year, it&apos;s more difficult to shake the feeling that the same trends that led to the creation of the world presented in the famous trilogy are also behind the events unfolding in real life. Undoubtedly, the mission of art is precisely to make visible to us what, hidden beneath the routine of everyday life, subtly shapes the future. This mission is more important than it might seem at first glance: the future can take many different forms, and it is by no means guaranteed to be the one we consider acceptable and desirable. This means we need a chance to vividly imagine the scenarios we would prefer to avoid&mdash;before they become our reality. This is one of the central ideas that unfolds in the narrative&apos;s beginning.</p>
@@ -42,7 +44,7 @@ const Temp: React.FC = () => {
         <p>
           Fortunately, <em>The Matrix</em> provides all of this, allowing us to see another idea behind the symbiosis of machines and humans&mdash;one that is crucial for understanding not only the dystopian future world depicted in the trilogy but also its roots in our past and present.
           <Tooltip content={`The version presented by Morpheus is that the Matrix uses human bodies as a source of energy. However, this explanation is hardly convincing: according to Morpheus himself, the Machines have mastered thermonuclear fusion, which should be sufficient to meet their energy needs without resorting to exotic and inherently less efficient methods to ${<Link href={'/what-is-super-ai'}>achieve the same goal</Link>}. Nevertheless, the Machines not only maintain the physiological functioning of billions of human bodies but also provide their consciousnesses with a space in a virtual world, subjectively indistinguishable from the real one.`} />
-          </p>
+        </p>
       </div>
     </>
   )
