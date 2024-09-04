@@ -142,6 +142,11 @@ h4 {
   font-size: 1rem;
 }
 
+aside nav {
+  max-height: calc(100vh - 10px); /* check the value 10px at Navigation.tsx */
+  overflow: auto;
+}
+
 nav ul {
   @apply mb-4;
 }
@@ -280,6 +285,10 @@ a.regular:hover {
 }
 
 @media screen and (max-width: 1200px) {
+  aside nav {
+    max-height: none;
+    overflow: initial;
+  }
   main {
     width: 100%;
   }

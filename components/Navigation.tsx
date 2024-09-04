@@ -81,25 +81,49 @@ const Navigation = () => {
     localStorage.setItem('menuIsOpen', (true).toString())
   }, [isOpen])
 
-  useEffect(() => {
-    if (window.innerWidth <= wideWindowValue) return
-    const handleScroll = () => {
-      if (navRef.current !== null && asideRef.current !== null) {
-        const asideTop = asideRef.current.getBoundingClientRect().top
-        const navRect = navRef.current.getBoundingClientRect()
-        const topLimit = (window.innerHeight - navRect.height) / 2
-        if ((asideTop) * -1 > topLimit) { // after sticky
-          if (navRef.current.style.position === 'fixed') return
-          navRef.current.style.position = 'fixed'
-          navRef.current.style.top = `${topLimit}px`
-        } else { // before sticky
-          if (navRef.current.style.position !== 'fixed') return
-          navRef.current.style.position = 'static'
-        }
+  const handleMenuPosition = () => {
+    if (navRef.current !== null && asideRef.current !== null) {
+      const asideTop = asideRef.current.getBoundingClientRect().top;
+      const navRect = navRef.current.getBoundingClientRect();
+      let topLimit = (window.innerHeight - navRect.height) / 2;
+      
+      if ((asideTop) * -1 > topLimit) { // after sticky
+        if (navRef.current.style.position !== 'fixed') navRef.current.style.position = 'fixed';
+        if (topLimit < 10) topLimit = 10
+        navRef.current.style.top = `${topLimit}px`
+      } else { // before sticky
+        if (navRef.current.style.position !== 'fixed') return;
+        navRef.current.style.position = 'static';
       }
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+  };
+
+  useEffect(() => {
+    if (window.innerWidth <= wideWindowValue) return;
+    
+    handleMenuPosition();
+    
+    const addMultipleListeners = (
+      element: Window | HTMLElement,
+      events: (keyof DocumentEventMap)[],
+      handler: EventListener
+    ) => {
+      events.forEach(event => element.addEventListener(event, handler));
+    };
+
+    const removeMultipleListeners = (
+      element: Window | HTMLElement,
+      events: (keyof DocumentEventMap)[],
+      handler: EventListener
+    ) => {
+      events.forEach(event => element.removeEventListener(event, handler));
+    };
+
+    addMultipleListeners(window, ['scroll', 'resize'], handleMenuPosition);
+
+    return () => {
+      removeMultipleListeners(window, ['scroll', 'resize'], handleMenuPosition);
+    };
   }, [])
 
   const LogoText = () => <Link href="/" className="logo-text">/ <span style={{ fontWeight: 600 }}>Super-AI Challenge</span> /</Link>
