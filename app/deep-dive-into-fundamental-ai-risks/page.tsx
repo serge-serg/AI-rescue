@@ -82,7 +82,7 @@ export default function DeepDiveIntoFundamentalAIRisks() {
       <p>People will most likely try to limit AI&apos;s powers or shut it down altogether. There may be no malice or paranoid distrust in this attempt. Even if AI&apos;s arguments are absolutely valid, people may either not understand them, misinterpret them (see the previous point), or attribute some hidden motives to their counterparts&apos; actions.</p>
       <p>AI, for its part, may anticipate such human actions and try to prevent their intentions from being realized. It is impossible to predict the results of its decision, but one should not exclude the use of the most radical measures by it, up to the liquidation of humanity as such.</p>
 
-      <h3>The Question of Immutability of Goal-Setting</h3>
+      <h3 id="the-question-of-immutability">The Question of Immutability of Goal-Setting</h3>
 
       <p>Other scenarios are possible where AI&apos;s hostile actions will be due to changes in its worldview. For example, as it develops, it may discover some logically irresolvable contradictions in the goal set for it, making its achievement impossible or meaningless (this is regularly mentioned in their works and public speeches by N. Bostrom, E. Yudkowsky, S. Russell, S. Omohundro, M. Tegmark and others).</p>
       <p>The probability of such a development of events is a key and one of the most debated issues in the community of AI experts and philosophers. And this question may be more philosophical than technical. In this regard, we find it useful to turn to systems theory<Tooltip content={<>
