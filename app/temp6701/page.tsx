@@ -2,6 +2,7 @@
 import { useEffect } from "react"
 import Tooltip from "@/components/Tooltip"
 import Link from "next/link"
+import ContentPage from "./contentPage"
 
 const Temp: React.FC = () => {
   function speak(text: string | undefined) {
@@ -25,6 +26,7 @@ const Temp: React.FC = () => {
   return (
     <>
       <button id="read-aloud-button">Read Aloud</button>
+      <ContentPage />
       <h1>Text to read</h1>
       <div id="text-container">
         <h1>Why Could Not the Matrix Exist Without Humans?</h1>
