@@ -7,7 +7,7 @@ import { Asterisks } from '@/components/Separators';
 import imgMatrixOrigin from '@/assets/images/matrix-origin.png'
 import imgBlondeInRed from '@/assets/images/blonde-in-red.png'
 import imgPeople from '@/assets/images/ordinary-people.png'
-import imgNeoMeetsTheArchitect from '@/assets/images/neo-meets-the-architect.jpg'
+import imgNeoMeetsTheArchitect from '@/assets/images/neo-meets-the-Architect.jpg'
 import imgMachineAmbassadorInUn from '@/assets/images/machine-ambassador-at-un.png'
 import imgMerovingian from '@/assets/images/Merovingian.png'
 import imgNeoAndRobot from '@/assets/images/neo-and-robot.png'
