@@ -29,7 +29,7 @@ const Temp: React.FC = () => {
       <div id="text-container">
         <h1>Why Could Not the Matrix Exist Without Humans?</h1>
         <video width="640" height="360" controls>
-          <source src="https://drive.google.com/uc?export=download&id=19c8CfbESchycxO2s_bE0n-mhzB-iriyJ" type="video/mp4" />
+          <source src="https://storage.googleapis.com/our_video_storage/Matrix%20The%20Promodial%20Cause%20Low%20Quality.mp4" type="video/mp4" />
         </video>
         <h2>Introduction <Tooltip content="This text is not so huge, but it is really important. Do you want to read it?" /></h2>
 
