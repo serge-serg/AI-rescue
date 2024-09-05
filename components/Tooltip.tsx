@@ -108,6 +108,9 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
             maxHeight: '50vh',
             transform: 'translateY(-3px)',
             overflow: 'hidden auto',
+            fontStyle: 'normal',
+            fontWeight: 400,
+            color: '#000',
           }}>
             {content}
           </span>
