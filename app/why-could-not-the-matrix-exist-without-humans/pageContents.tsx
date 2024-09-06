@@ -205,7 +205,7 @@ const PageContents: React.FC = () => {
               controls
               poster={imgVideoPoster.src}
             >
-              <source src="https://storage.googleapis.com/our_video_storage/Matrix%20The%20Promodial%20Cause%20Low%20Quality.mp4" type="video/mp4" />
+              <source src="https://storage.googleapis.com/our_video_storage/Matrix.LQ.mp4" type="video/mp4" />
             </video>
           </section>)}
       </fieldset>
