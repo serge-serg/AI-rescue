@@ -165,13 +165,13 @@ export default function DeepDiveIntoFundamentalAIRisks() {
       <h2>Technical Problem</h2>
 
       <p>There are quite a few approaches to controlling the state of AI, such as Boxing<Tooltip content={<>
-        (<em>AI Boxing</em>)&mdash;A safety measure involving confining AI to a limited environment to prevent it from causing harm.
+        <em>(AI) Boxing</em>&mdash;A safety measure involving confining AI to a limited environment to prevent it from causing harm.
       </>} /> (and its variation&mdash;running AI in a virtual machine), formal&nbsp;verification<Tooltip content={<>
         <em>Formal verification</em>&mdash;A mathematical approach used to prove or disprove the correctness of algorithms underlying a system with respect to a certain formal specification or property.
       </>} />, inverse&nbsp;reinforcement&nbsp;learning,<Tooltip content={<>
         <em>Inverse reinforcement learning</em>&mdash;A machine learning technique where AI learns by observing and imitating behavior, rather than being directly programmed with specific instructions.
       </>} /> multi&#8209;level&nbsp;architecture<Tooltip content={<>
-        <em>Multi-level architecture</em>&mdash;A design structure where an AI system is organized into multiple layers or levels, each responsible fordifferent functions or levels of abstraction, potentially allowing better control and oversight of the system.
+        <em>Multi-level architecture</em>&mdash;A design structure where an AI system is organized into multiple layers or levels, each responsible for different functions or levels of abstraction, potentially allowing better control and oversight of the system.
       </>} />, controlled&nbsp;evolution<Tooltip content={<>
         <em>Controlled evolution</em>&mdash;A method of AI development where the system is allowed to evolve or improve, but within carefully controlled parameters to prevent unintended consequences.
       </>} />, AI&nbsp;seed<Tooltip content={<>
