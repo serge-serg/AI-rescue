@@ -17,6 +17,8 @@
   --sidebar-max-width: 500px; /* see md:max-w-[500px] in Navigation.tsx */
 }
 
+/* main tags */
+
 body,
 html {
   height: 100%;
@@ -37,87 +39,10 @@ body::after {
   z-index: -2;
 }
 
-blockquote {
-  font-style: italic;
-  margin: 1.3rem;
-  padding-left: 1.3rem;
-  border-left: solid 0.15vw var(--color-grey);
-}
-
-a {
-  @apply text-[#9999ff];
-}
-
-cite {
-  display: block;
-  font-weight: 100;
-  color: #fff;
-  padding: 0 1rem 1rem;
-}
-
-div.video-wrapper {
-  display: flex; 
-  justify-content: center;
-  padding: 1rem 0 1.5rem;
-}
-
-figure {
-  padding: 1rem 0;
-}
-
-figure img {
-  margin: auto;
-}
-
-figcaption {
-  font-size: 15px;
-  font-weight: 100;
-  text-align: center;
-  padding: 0.75rem 0 0;
-}
-
-img.obscured {
-  @apply border-none opacity-65 hover:opacity-100;
-  transition: 0.3s;
-}
-
-img.img-offset-top {
-  @apply mt-2;
-}
-
-.label {
-  cursor: pointer;
-  display: inline-block;
-  padding: 0.75rem 6.5rem;
-}
-
-.label.active {
-  background-color: var(--color-grey-blue);
-}
-
-.label img {
-  display: inline-block;
-  margin-right: 0.5rem;
-}
-
 main {
   padding: 4rem 5vw 2rem 6vw;
   height: 100vh;
   width: 60vw;
-}
-
-main ul,
-main ol {
-  margin: initial;
-  padding: 0 3rem 1rem;
-}
-
-main ul {
-  list-style: square;
-}
-
-ol.decimal {
-  list-style: decimal;
 }
 
 h1 {
@@ -148,11 +73,72 @@ h4 {
   color: #fff;
 }
 
+/* regular tags */
+
+a {
+  @apply text-[#9999ff];
+}
+
+blockquote {
+  font-style: italic;
+  margin: 1.3rem;
+  padding-left: 1.3rem;
+  border-left: solid 0.15vw var(--color-grey);
+}
+
+cite {
+  display: block;
+  font-weight: 100;
+  color: #fff;
+  padding: 0 1rem 1rem;
+}
+
+figure {
+  padding: 1rem 0;
+}
+
+figcaption {
+  font-size: 15px;
+  font-weight: 100;
+  text-align: center;
+  padding: 0.75rem 0 0;
+}
+
+p {
+  @apply mb-4 leading-relaxed;
+}
+
+/* folded tags */
+
+aside nav {
+  max-height: calc(100vh - 10px); /* check the value 10px at Navigation.tsx */
+  overflow: auto;
+}
+
+figure img {
+  margin: auto;
+}
+
+main ul {
+  list-style: square;
+}
+
+main ul,
+main ol {
+  margin: initial;
+  padding: 0 3rem 1rem;
+}
+
+nav ul {
+  @apply mb-4;
+}
+
+/* folded tags inside classes */
+
 .component-tooltip h2,
 .component-tooltip h3,
 .component-tooltip h4,
-.component-tooltip h5
-{
+.component-tooltip h5 {
   color: initial;
   font-weight: 600;
 }
@@ -160,18 +146,39 @@ h4 {
   font-size: 1rem;
 }
 
-aside nav {
-  max-height: calc(100vh - 10px); /* check the value 10px at Navigation.tsx */
-  overflow: auto;
+.sidebar-container,
+.sidebar nav {
+  background-color: var(--color-grey-dark);
+  width: var(--sidebar-width);
 }
 
-nav ul {
-  @apply mb-4;
+.sidebar ul {
+  @apply list-none text-right mb-8;
 }
 
-p {
-  @apply mb-4 leading-relaxed;
+.sidebar nav ul li {
+  @apply py-2 hover:bg-[rgba(255,255,255,0.1)];
 }
+
+.sidebar nav ul li.selected {
+  @apply bg-[var(--color-darkest)];
+  /* margin-top: 0.625rem;
+  margin-bottom: 0.625rem; */
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+.sidebar nav ul li a {
+  @apply text-[var(--color-grey-light)] pl-8 pr-12  no-underline block w-full;
+}
+
+.tab img {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+
+/* classified tags */
 
 a:hover {
   text-decoration: underline;
@@ -185,6 +192,27 @@ a.tell-me-more:hover,
 a.regular:hover {
   text-decoration: underline;
 }
+
+div.video-wrapper {
+  display: flex; 
+  justify-content: center;
+  padding: 1rem 0 1.5rem;
+}
+
+img.obscured {
+  @apply border-none opacity-65 hover:opacity-100;
+  transition: 0.3s;
+}
+
+img.img-offset-top {
+  @apply mt-2;
+}
+
+ol.decimal {
+  list-style: decimal;
+}
+
+/* classes */
 
 .accent {
   color: var(--color-dark-rose);
@@ -212,47 +240,17 @@ a.regular:hover {
   right: -13px;
 }
 
-.offset-mobile {
-  left: 4px;
-  width: calc(100% - 4px);
+.float-to-left,
+.float-to-right {
+  @apply mt-2 mb-4;
 }
 
-.sidebar-container,
-.sidebar nav {
-  background-color: var(--color-grey-dark);
-  width: var(--sidebar-width);
+.float-to-right {
+  @apply float-right mb-8 lg++:-mr-16 ml-8 -mr-16;
 }
 
-.sidebar {
-  @apply h-screen /*flex flex-col justify-between*/;
-  background-size: var(--sidebar-max-width);
-  background-position: right -80px;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
-.sidebar ul {
-  @apply list-none text-right mb-8;
-}
-
-.sidebar nav ul li {
-  @apply py-2 hover:bg-[rgba(255,255,255,0.1)];
-}
-.sidebar nav ul li.selected {
-  @apply bg-[var(--color-darkest)];
-  /* margin-top: 0.625rem;
-  margin-bottom: 0.625rem; */
-  padding-top: 1.2rem;
-  padding-bottom: 1.2rem;
-}
-
-.sidebar nav ul li a {
-  @apply text-[var(--color-grey-light)] pl-8 pr-12  no-underline block w-full;
-}
-
-.sidebar-header {
-  @apply hidden lg+:flex items-end justify-center pt-16;
-  height: 590px;
+.float-to-left {
+  @apply float-left mb-8 mr-8 -ml-16;
 }
 
 .logo-text {
@@ -273,17 +271,34 @@ a.regular:hover {
   line-height: 2;
 }
 
-.float-to-left,
-.float-to-right {
-  @apply mt-2 mb-4;
+.offset-mobile {
+  left: 4px;
+  width: calc(100% - 4px);
 }
 
-.float-to-right {
-  @apply float-right mb-8 lg++:-mr-16 ml-8 -mr-16;
+.sidebar {
+  @apply h-screen /*flex flex-col justify-between*/;
+  background-size: var(--sidebar-max-width);
+  background-position: right -80px;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
-.float-to-left {
-  @apply float-left mb-8 mr-8 -ml-16;
+.sidebar-header {
+  @apply hidden lg+:flex items-end justify-center pt-16;
+  height: 590px;
+}
+
+.tab {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.75rem 5vw;
+}
+
+/* combined classes */
+
+.tab.active {
+  background-color: var(--color-grey-blue);
 }
 
 @media screen and (max-width: 1303px) {
@@ -347,10 +362,21 @@ a.regular:hover {
     max-width: 400px;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .tab {
+    width: 33%;
+  }
+}
+
 /* Surface Pro 7 */
 @media screen and (max-width: 912px) {
   section .width42 {
     width: 100% !important;
+  }
+  .tab {
+    text-align: center;
+    width: 50%;
   }
 }
 

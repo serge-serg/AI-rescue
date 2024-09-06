@@ -29,14 +29,14 @@ const PageContents: React.FC = () => {
   return (
     <>
       <section style={{ display: 'flex', marginBottom: '2rem', borderBottom: 'solid' }}>
-        <span className={partToShow === 'video' ? 'active label' : 'label'} onClick={() => setPartToShow('video')}>
+        <label className={partToShow === 'video' ? 'active tab' : 'tab'} onClick={() => setPartToShow('video')}>
           <Image src={imgIconVideoPlayer} alt="Video" width={25} height={25} />
           Video
-        </span>
-        <span className={partToShow === 'text' ? 'active label' : 'label'} onClick={() => setPartToShow('text')}>
+        </label>
+        <label className={partToShow === 'text' ? 'active tab' : 'tab'} onClick={() => setPartToShow('text')}>
           <Image src={imgIconStory} alt="Video" width={22} height={22} />
           Story
-        </span>
+        </label>
       </section>
       <fieldset>
         <p><strong><em>The Matrix</em></strong> raises a crucial question about the future of our relationship with Superintelligence. Perhaps our greatest concern is the possibility of arbitrary changes to its goals set during its design (we covered this question in detail in the section <a href="/deep-dive-into-fundamental-ai-risks/#the-question-of-immutability">Deep Dive Into Fundamental AI Risks -&gt; <em>The Question of Immutability of Goal-Setting</em></a>). This issue isn&apos;t explicitly addressed in the movie, which urges us to pay special attention to it.</p>
