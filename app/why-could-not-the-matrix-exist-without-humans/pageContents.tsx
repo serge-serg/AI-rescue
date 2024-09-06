@@ -1,9 +1,10 @@
 'use client'
 import { useState } from "react"
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Tooltip from '@/components/Tooltip';
 import { Asterisks } from '@/components/Separators';
 import imgIconVideoPlayer from '@/assets/images/icons/video-player.svg'
+import imgIconBook from '@/assets/images/icons/book.svg'
 import imgVideoPoster from '@/assets/images/video-poster.jpg'
 import imgMatrixOrigin from '@/assets/images/matrix-origin.png'
 import imgBlondeInRed from '@/assets/images/blonde-in-red.png'
@@ -24,8 +25,8 @@ const PageContents: React.FC = () => {
     width: '800px',
   }
 
-  const Label = ({ tabType, title, width, height }: { tabType: string, title: string, width: number, height: number }) => (<label className={`tab ${partToShow === tabType ? 'active' : ''}`} onClick={() => setPartToShow(tabType)}>
-    <Image src={imgIconVideoPlayer} alt="Video" width={width} height={height} />
+  const Label = ({ tabType, title, width, height, icon }: { tabType: string, title: string, width: number, height: number, icon: StaticImageData }) => (<label className={`tab ${partToShow === tabType ? 'active' : ''}`} onClick={() => setPartToShow(tabType)}>
+    <Image src={icon} alt="Video" width={width} height={height} />
     {title}
   </label>);
 
@@ -33,8 +34,8 @@ const PageContents: React.FC = () => {
   return (
     <>
       <section style={{ display: 'flex', marginBottom: '2rem', borderBottom: 'solid' }}>
-        <Label tabType="video" title="Video" width={25} height={25} />
-        <Label tabType="text" title="Story" width={22} height={22} />
+        <Label tabType="video" icon={imgIconVideoPlayer} title="Video" width={25} height={25} />
+        <Label tabType="text" icon={imgIconBook} title="Story" width={22} height={22} />
       </section>
       <fieldset>
         <p><strong><em>The Matrix</em></strong> raises a crucial question about the future of our relationship with Superintelligence. Perhaps our greatest concern is the possibility of arbitrary changes to its goals set during its design (we covered this question in detail in the section <a href="/deep-dive-into-fundamental-ai-risks/#the-question-of-immutability">Deep Dive Into Fundamental AI Risks -&gt; <em>The Question of Immutability of Goal-Setting</em></a>). This issue isn&apos;t explicitly addressed in the movie, which urges us to pay special attention to it.</p>
