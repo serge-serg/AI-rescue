@@ -22,10 +22,10 @@ import picAiEthics from './illustrations/ai-ethics.jpg'
 import Tooltip from "@/components/Tooltip";
 
 const ImageColumn = (
-  { columnWidth = "50%", imgSrc, link, header, title, alt, width = "12vw" }:
-    { columnWidth?: string, imgSrc: StaticImageData, link: string, header: string, title?: string, alt?: string, width?: string }) => (
+  { columnWidth = "50%", imgSrc, link, header, title, alt, headerWidth, width = "12vw" }:
+    { columnWidth?: string, imgSrc: StaticImageData, link: string, headerWidth?: string, header: string, title?: string, alt?: string, width?: string }) => (
   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: columnWidth }}>
-    <h5 style={{ width: width, textAlign: 'center', paddingBottom: '1rem' }}><Link href={link}>{header}</Link></h5>
+    <h5 style={{ width: headerWidth || width, textAlign: 'center', paddingBottom: '1rem' }}><Link href={link}>{header}</Link></h5>
     <Image
       alt={alt || header}
       title={title || alt || header}
@@ -106,7 +106,7 @@ export default function DeepDiveIntoFundamentalAIRisks() {
       <p>The probability of such a development of events is a key and one of the most debated issues in the community of AI experts and philosophers. And this question may be more philosophical than technical. In this regard, we find it useful to turn to systems theory<Tooltip content={<>
         <em>Systems theory</em>&mdash;A framework for analyzing and designing complex systems, including AI, by understanding their components, relationships, and overall behavior.
       </>} />. Its approaches and developments are widely used not only in theory as such but also in practical human activities in creating complex systems. AI is one such system, and the provisions of this theory are fully applicable to it, although they will have their own peculiarities.</p>
-        <Image src={picReflection} className="img-wide" style={{ width: '400px' }} alt="The Question of Immutability of Goal-Setting" title="The Question of Immutability of Goal-Setting" />
+      <Image src={picReflection} className="img-wide" style={{ width: '400px' }} alt="The Question of Immutability of Goal-Setting" title="The Question of Immutability of Goal-Setting" />
 
       <h4>System and System Goal</h4>
 
@@ -212,7 +212,7 @@ export default function DeepDiveIntoFundamentalAIRisks() {
       <p>Some of us may find them too grim. But let us not forget that one of the purposes of art is to serve as a warning against making fatal mistakes. After all, we believe that no outcome is predestined. If we have the courage to admit that the future may not be what we would like it to be, then we must do everything possible to prevent undesirable developments.</p>
       <div style={{ display: 'flex', justifyContent: 'space-between', margin: '2rem auto', maxWidth: '700px' }}>
         <ImageColumn imgSrc={imgHalVsHuman} link="/why-hal-9000-intended-to-kill-all-astronauts-aboard-discovery" header="Why HAL-9000 Intended to Kill All Astronauts Aboard Discovery" />
-        <ImageColumn imgSrc={imgMatrixIncubator} link="/why-could-not-the-matrix-exist-without-humans" header="Why Couldn't The Matrix Exist Without Humans?" />
+        <ImageColumn imgSrc={imgMatrixIncubator} headerWidth="10vw" link="/why-could-not-the-matrix-exist-without-humans" header="Why Couldn't The Matrix Exist Without Humans?" />
       </div>
     </PageWrapper>
   );
