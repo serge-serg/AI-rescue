@@ -25,18 +25,17 @@ const PageContents: React.FC = () => {
     width: '800px',
   }
 
+  const Label = ({ tabType, title, width, height }: { tabType: string, title: string, width: number, height: number }) => (<label className={`tab ${partToShow === tabType ? 'active' : ''}`} onClick={() => setPartToShow(tabType)}>
+    <Image src={imgIconVideoPlayer} alt="Video" width={width} height={height} />
+    {title}
+  </label>);
+
   const [partToShow, setPartToShow] = useState('video');
   return (
     <>
       <section style={{ display: 'flex', marginBottom: '2rem', borderBottom: 'solid' }}>
-        <label className={partToShow === 'video' ? 'active tab' : 'tab'} onClick={() => setPartToShow('video')}>
-          <Image src={imgIconVideoPlayer} alt="Video" width={25} height={25} />
-          Video
-        </label>
-        <label className={partToShow === 'text' ? 'active tab' : 'tab'} onClick={() => setPartToShow('text')}>
-          <Image src={imgIconStory} alt="Video" width={22} height={22} />
-          Story
-        </label>
+        <Label tabType="video" title="Video" width={25} height={25} />
+        <Label tabType="text" title="Story" width={22} height={22} />
       </section>
       <fieldset>
         <p><strong><em>The Matrix</em></strong> raises a crucial question about the future of our relationship with Superintelligence. Perhaps our greatest concern is the possibility of arbitrary changes to its goals set during its design (we covered this question in detail in the section <a href="/deep-dive-into-fundamental-ai-risks/#the-question-of-immutability">Deep Dive Into Fundamental AI Risks -&gt; <em>The Question of Immutability of Goal-Setting</em></a>). This issue isn&apos;t explicitly addressed in the movie, which urges us to pay special attention to it.</p>
@@ -161,7 +160,10 @@ const PageContents: React.FC = () => {
             <p>But how did it become possible to change what, in accordance with the intentions of the creators of AI, should not change?</p>
             <h3>The Ultimate Goal and Imperative</h3>
             <p>We can assume that the structure of artificial intelligence was guided not by directive but by heuristic logic, similar to that which guided the mind of HAL 9000 (we examined this case in detail in the section <a href="why-hal-9000-intended-to-kill-all-astronauts-aboard-discovery">Why HAL-9000 Intended to Kill All Astronauts Aboard Discovery</a>). The reason for that lies in the impossibility of defining discrete goals in relation to phenomena of the human world that do not lend themselves to objective definitions (such as &quot;happiness,&rdquo; &quot;justice,&rdquo; &ldquo;prosperity,&rdquo; etc.). Consequently, the change in the Machines&apos; attitude toward humans was the result of the objective necessity to resolve the contradiction between the imperative of self-preservation and the fundamental goal of caring for their creators. The threat to the existence of a self-aware subject prompts it to actions to bring the world to a state where such a threat is absent. For the Machines, however, <em>this world had no content without humans</em>. Thus, the logical solution for them was not the destruction of the human race but gaining complete control over it.</p>
-            <p>This goal of theirs remained the same but underwent structural changes (here, we can recall Bostrom&apos;s postulate about the <em>convergence of instrumental goals</em> of a rational agent, according to which the latter strives to fulfill goals that contribute to its survival and functioning, regardless of its initial mission). The focus of the Machines&apos; care shifted from the individual to the species as a whole (as we noted above, the Matrix itself performs the role of evolution, neglecting the individual for the sake of the survival of the entire species).</p>
+            <p>This goal of theirs remained the same but underwent structural changes (here, we can recall Bostrom&apos;s postulate about the <em>convergence of instrumental goals</em> <Tooltip content={<>
+              Bostrom&apos;s assertion about the convergence of instrumental goals refers to the idea that any sufficiently intelligent agent, whether human or machine, will naturally pursue certain instrumental goals (such as self-preservation, resource acquisition, and the avoidance of threats) regardless of its ultimate objective. In the case of the Machines, this means that their fundamental goal (controlling humanity) remained the same, but the structure of this goal evolved as they sought to ensure their survival by eliminating existential threats.
+            </>}
+            />of a rational agent, according to which the latter strives to fulfill goals that contribute to its survival and functioning, regardless of its initial mission). The focus of the Machines&apos; care shifted from the individual to the species as a whole (as we noted above, the Matrix itself performs the role of evolution, neglecting the individual for the sake of the survival of the entire species).</p>
             <p>Thus, humans are not the only prisoners of Machines; Machines are also actual hostages of the world of the humans who created them. If this world disappears, the process of solving the equation will be interrupted, which, for artificial intelligence, is equivalent to falling into a coma.</p>
             <h3>Another End of History</h3>
             <p>But this will not happen. The world of Machines will not disappear due to a loss of purpose because evolution has managed to fool everyone here&mdash;both humanity and the Machines. And it is evolution itself that is the ultimate beneficiary of the &quot;revolution&quot; that has taken place in The Matrix. The task of preserving the Homo Sapiens species has the greatest chances of success now that it is ensured by an entity technically more powerful than this species was at the peak of its development.</p>
