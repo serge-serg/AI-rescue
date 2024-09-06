@@ -185,7 +185,7 @@ export default function DeepDiveIntoFundamentalAIRisks() {
       <p>However, this future is not entirely hidden from us. As is often the case, those who can see the farthest are outstanding artists. Two brilliant works of modern art&mdash;<em>The Space Odyssey</em> and <em>The Matrix</em>&mdash;have extremely convincingly depicted some scenarios of this future.</p>
       <p>As is fitting for works of such caliber, they are multilayered and invite thoughtful interpretations. And although these works remain fictional, it would be too reckless not to consider the plausibility of their plots. Now, as the advent of AI looms on the horizon, we have every reason to revisit these stories.</p>
       <p>Some of us may find them too grim. But let us not forget that one of the purposes of art is to serve as a warning against making fatal mistakes. After all, we believe that no outcome is predestined. If we have the courage to admit that the future may not be what we would like it to be, then we must do everything possible to prevent undesirable developments.</p>
-      <div style={{ display: 'flex', justifyContent: 'space-between', margin: '2rem auto' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', margin: '2rem auto', maxWidth: '700px' }}>
         <ImageColumn imgSrc={imgHalVsHuman} link="/why-hal-9000-intended-to-kill-all-astronauts-aboard-discovery" header="Why HAL-9000 Intended to Kill All Astronauts Aboard Discovery" />
         <ImageColumn imgSrc={imgMatrixIncubator} link="/why-could-not-the-matrix-exist-without-humans" header="Why Couldn't The Matrix Exist Without Humans?" />
       </div>

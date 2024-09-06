@@ -253,6 +253,14 @@ ol.decimal {
   @apply float-left mb-8 mr-8 -ml-16;
 }
 
+.img-wide, .img-wider {
+  margin: 1rem auto;
+}
+
+.img-wide {
+  width: 800px;
+}
+
 .logo-text {
   @apply text-[var(--color-dark-rose)] relative pr-4;
   font-size: 1.8rem;
