@@ -6,7 +6,7 @@ import pageMetadata from '@/app/pageMetadata';
 import { getPagePath } from '@/utils/getPagePath';
 import iconPdf from '@/assets/images/icons/pdf-24.png'
 import iconConnect from '@/assets/images/icons/connect.svg'
-import AudioPlayer from "@/components/audioplayer"
+//import AudioPlayer from "@/components/audioplayer"
 
 const UnderHeaderBlock = ({ pageIndex, filenamePDF }: { pageIndex: number, filenamePDF: string }) => (
   <section style={{
@@ -22,9 +22,9 @@ const UnderHeaderBlock = ({ pageIndex, filenamePDF }: { pageIndex: number, filen
       <a href={`https://serge-serg.github.io/superintelligence-challenge/${pageIndex}. ${filenamePDF}/${filenamePDF}.pdf`} target="_blank">
       <Image src={iconPdf} alt="Download PDF" style={{ display: 'inline-block', marginBottom: '4px', marginRight: '4px' }} />Download PDF</a>
     </div>
-    <div>
+    {/* <div>
       <AudioPlayer />
-    </div>
+    </div> */}
     <div>
       <Link href="/lets-connect">
       <Image width={24} height={24} src={iconConnect} alt="Let's connect" style={{ display: 'inline-block', marginBottom: '4px', marginRight: '4px', }} />Let&apos;s Connect!</Link>
