@@ -12,7 +12,7 @@ import picUnsafeContent from "./illustrations/unsafe-content-detected.jpg"
 import picAiFrankenstein from "./illustrations/ai-frankenstein.jpg"
 import picCenturyHumiliation from "./illustrations/the-national-humiliation-narrative-dealing-with-the-present-by-fixating-on-the-past1-555x800.jpg"
 
-export default function Scenarios() {
+export default function WillSuperintelligenceBecomeTheGreatFilterForHumanity() {
   return (
     <PageWrapper filename={__filename}>
       <h2>A Barren Universe</h2>
