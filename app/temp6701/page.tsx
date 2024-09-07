@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import Tooltip from "@/components/Tooltip"
 import Link from "next/link"
 import ContentPage from "./contentPage"
+import AudioPlayer from "@/components/audioplayer"
 
 const Temp: React.FC = () => {
   function speak(text: string | undefined) {
@@ -30,6 +31,7 @@ const Temp: React.FC = () => {
       <h1>Text to read</h1>
       <div id="text-container">
         <h1>Why Could Not the Matrix Exist Without Humans?</h1>
+        <AudioPlayer />
         <video width="640" height="360" controls>
           <source src="https://storage.googleapis.com/our_video_storage/Matrix%20The%20Promodial%20Cause%20Low%20Quality.mp4" type="video/mp4" />
         </video>
