@@ -31,7 +31,7 @@ export default function LetsConnect() {
     </>
   )}
   return (
-    <PageWrapper filename={__filename}>
+    <PageWrapper filename={__filename} underHeaderBlock={false}>
       <p>This site has been created by:</p>
       <section className='xl:flex'>
         <ul style={{

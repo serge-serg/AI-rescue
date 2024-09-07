@@ -1,6 +1,7 @@
 'use client'
 import { useState } from "react"
 import Image, { StaticImageData } from "next/image";
+import { setUnderHeaderBlock } from '@/components/PageWrapper';
 import Tooltip from '@/components/Tooltip';
 import { Asterisks } from '@/components/Separators';
 import imgIconVideoPlayer from '@/assets/images/icons/video-player.svg'
@@ -16,7 +17,12 @@ import imgNeoAndRobot from '@/assets/images/neo-and-robot.png'
 import imgHegelCunningOfReason from '@/assets/images/hegel-cunning-of-reason.jpg'
 import imgMatrixSunset from '@/assets/images/matrix-sunset.jpg'
 
-const PageContents: React.FC = () => {
+interface PageContentsProps {
+  filename: string;
+}
+
+function PageContents({ filename }: PageContentsProps) {
+
   const liStyle = {
     lineHeight: '1.65rem',
   }
@@ -33,21 +39,21 @@ const PageContents: React.FC = () => {
   const [partToShow, setPartToShow] = useState('video');
   return (
     <>
-      <section style={{ display: 'flex', marginBottom: '2rem', borderBottom: 'solid' }}>
+      <section style={{ display: 'flex', borderBottom: 'solid 2px rgba(255,255,255,0.55)' }}>
         <Label tabType="video" icon={imgIconVideoPlayer} title="Video" width={25} height={25} />
         <Label tabType="text" icon={imgIconBook} title="Story" width={22} height={22} />
       </section>
       <fieldset>
-        <p><strong><em>The Matrix</em></strong> raises a crucial question about the future of our relationship with Superintelligence. Perhaps our greatest concern is the possibility of arbitrary changes to its goals set during its design (we covered this question in detail in the section <a href="/deep-dive-into-fundamental-ai-risks/#the-question-of-immutability">Deep Dive Into Fundamental AI Risks -&gt; <em>The Question of Immutability of Goal-Setting</em></a>). This issue isn&apos;t explicitly addressed in the movie, which urges us to pay special attention to it.</p>
-        <p>We recommend watching this video, as it explores the complexity of the relationship between humans and machines, starting from before the emergence of the Matrix. The text, in turn, highlights the same issue with a slightly different focus, although it does not contradict the content of the video.</p>
-        <p>We hope that both the text and the video will allow you to see the story presented in this outstanding sci-fi film from a deeper perspective and bring you genuine enjoyment!</p>
         {(
           partToShow === 'text' &&
           <section>
-            <Asterisks margin='1rem auto' />
-            <div style={{ margin: '0 auto', width: '440px', maxWidth: '90%' }}>
+            {
+              setUnderHeaderBlock({ filename })
+            }
+            <div style={{ margin: '2rem auto', width: '440px', maxWidth: '90%' }}>
               <div>
-                <h3 style={{ textAlign: 'center' }}>Etymology of the meaning &quot;Matrix&quot;</h3></div>
+                <h3 style={{ textAlign: 'center' }}>Etymology of the meaning &quot;Matrix&quot;</h3>
+              </div>
               <Image src={imgMatrixOrigin} style={{ width: '100%', maxWidth: 'initial' }} alt="Etymology of the meaning &quot;Matrix&quot;" />
               <ol className='decimal' style={{ margin: '0.75rem 0', padding: '0 0 0 2.65rem' }}>
                 <li style={liStyle}>(<em>now </em><a href="https://en.wiktionary.org/wiki/Appendix:Glossary#rare" target='_blank'><em>rare</em></a>) The <a href="https://en.wiktionary.org/wiki/womb" target='_blank'>womb</a>.</li>
@@ -196,8 +202,12 @@ const PageContents: React.FC = () => {
             <p>If this happens in the future, it means that we have not been able to learn the lessons of great thinkers and brilliant artists who acutely felt both the greatness and the fragility of reason. We have not been able to set priorities correctly and have paid attention to what was not the most important.</p>
             <p>But we still have time and strength. The future is not predetermined, and it still depends on us. This means it depends on you, too. Be the one who will help to comprehend this simple but critically important thought to as many intelligent beings living on this, for now&mdash;our&mdash;planet.</p>
             <Image className="img-wide" src={imgMatrixSunset} alt="Matrix: Happy End" />
-          </section>) ||
-          (<section style={{ marginTop: '1.5rem' }}>
+          </section>
+        ) ||
+          (<section style={{ marginTop: '2.25rem' }}>
+            <p><strong><em>The Matrix</em></strong> raises a crucial question about the future of our relationship with Superintelligence. Perhaps our greatest concern is the possibility of arbitrary changes to its goals set during its design (we covered this question in detail in the section <a href="/deep-dive-into-fundamental-ai-risks/#the-question-of-immutability">Deep Dive Into Fundamental AI Risks -&gt; <em>The Question of Immutability of Goal-Setting</em></a>). This issue isn&apos;t explicitly addressed in the movie, which urges us to pay special attention to it.</p>
+            <p>We recommend watching this video, as it explores the complexity of the relationship between humans and machines, starting from before the emergence of the Matrix. The text, in turn, highlights the same issue with a slightly different focus, although it does not contradict the content of the video.</p>
+            <p>We hope that both the text and the video will allow you to see the story presented in this outstanding sci-fi film from a deeper perspective and bring you genuine enjoyment!</p>
             <video
               width="100%"
               height="auto"

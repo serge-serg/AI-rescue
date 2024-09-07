@@ -20,9 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="container w-full">
-          <Link className="hidden xl:block absolute" href="/lets-connect" style={{ top: '1rem', right: '5vw', fontWeight: 600 }}>
+          {/* <Link className="hidden xl:block absolute" href="/lets-connect" style={{ top: '1rem', right: '5vw', fontWeight: 600 }}>
             Let&apos;s Connect
-          </Link>
+          </Link> */}
           <Navigation />
           <main className="max-w-[1200px]">
             {children}
