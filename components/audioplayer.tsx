@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
 const AudioPlayer = () => {
-  const [currentNarrator, setCurrentNarrator] = useState('Winston');
+  const [currentNarrator, setCurrentNarrator] = useState<string>(() => {
+    // Получаем чтеца из localStorage при загрузке страницы
+    return localStorage.getItem('selectedNarrator') || 'Winston';
+  });
   const [currentTime, setCurrentTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -19,6 +22,7 @@ const AudioPlayer = () => {
     if (audioRef.current) {
       setCurrentTime(audioRef.current.currentTime);  // Сохраняем текущее время
       setCurrentNarrator(newNarrator);              // Устанавливаем нового чтеца
+      localStorage.setItem('selectedNarrator', newNarrator);  // Запоминаем выбор чтеца
     }
   };
 
