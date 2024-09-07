@@ -14,7 +14,7 @@ const AudioPlayer = () => {
     { name: 'Jessica', file: '/audio/toward-the-point-of-no-return/jessica.mp3' },
   ];
 
-  // Смена чтеца без остановки воспроизведения
+  // Смена чтеца без сброса времени воспроизведения
   const switchNarrator = (newNarrator: string) => {
     if (audioRef.current) {
       setCurrentTime(audioRef.current.currentTime);  // Сохраняем текущее время
@@ -34,7 +34,7 @@ const AudioPlayer = () => {
       }
       audioElement.preload = 'metadata'; // Предзагрузка метаданных
     }
-  }, [currentNarrator, currentTime, isPlaying]);
+  }, [currentNarrator, isPlaying]);
 
   // Этот useEffect останавливает звук, если компонент размонтируется
   useEffect(() => {
@@ -42,9 +42,17 @@ const AudioPlayer = () => {
     return () => {
       if (audioElement) {
         audioElement.pause();
+        setCurrentTime(audioElement.currentTime);  // Сохраняем текущее время перед размонтированием
       }
     };
   }, []);
+
+  // Обновляем текущее время на каждой паузе/проигрывании
+  const handleTimeUpdate = () => {
+    if (audioRef.current) {
+      setCurrentTime(audioRef.current.currentTime);
+    }
+  };
 
   // Управление проигрыванием/паузой
   const handlePlayPause = () => {
@@ -65,6 +73,7 @@ const AudioPlayer = () => {
         ref={audioRef}
         onPlay={() => setIsPlaying(true)}  // Обновляем состояние, если звук играет
         onPause={() => setIsPlaying(false)} // Обновляем состояние, если звук на паузе
+        onTimeUpdate={handleTimeUpdate}    // Обновляем текущее время на каждом изменении
         controls
       >
         <source src={narrators.find(n => n.name === currentNarrator)?.file} type="audio/mp3" />
