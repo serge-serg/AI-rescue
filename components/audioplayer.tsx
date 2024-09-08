@@ -15,8 +15,40 @@ const AudioPlayer = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const narrators = [
-    'Winston', 'Tanor', 'Marry', 'Sophia', 'Jessica', 'Tanner', 'Jamie', 'Lisa', 'Nate'
+    'Winston', 'Tanor', 'Marry', 'Sophia', 'John', 'Jessica', 'Tanner', 'Jamie', 'Lisa', 'Nate'
   ].map(narrator => ({ name: narrator, file: `/audio${path}/${narrator}.mp3` }))
+
+
+  // Проверяем наличие файлов для каждого чтеца
+  const checkFileExists = async (url: string): Promise<boolean> => {
+    try {
+      const response = await fetch(url, { method: 'HEAD' })
+      //console.log('check file response', response)
+      return response.ok // Вернёт true, если статус 200-299, иначе false
+    } catch (error) {
+      console.error('Error checking file:', error)
+      return false;
+    }
+  };
+  // useEffect для фильтрации чтецов
+  const [availableNarrators, setAvailableNarrators] = useState(narrators);
+  useEffect(() => {
+    const checkNarratorFiles = async () => {
+      const filteredNarrators = [];
+      for (const narrator of narrators) {
+        const fileExists = await checkFileExists(narrator.file);
+        if (fileExists) {
+          filteredNarrators.push(narrator);
+        }
+      }
+      console.log('Filtered Narrators:', filteredNarrators);
+      if (filteredNarrators.length === 0) {
+        console.warn('No available audio files found.');
+      }
+      setAvailableNarrators(filteredNarrators);
+    };
+    checkNarratorFiles();
+  }, [path]);
 
   // switching a narrator with storing time
   const switchNarrator = (newNarrator: string) => {
@@ -33,8 +65,8 @@ const AudioPlayer = () => {
   // handle
   useEffect(() => {
     const audioElement = audioRef.current;
-    if (audioElement) {
-      const narratorFile = narrators.find(n => n.name === currentNarrator)?.file || '';
+    if (audioElement && availableNarrators.length > 0) {
+      const narratorFile = availableNarrators.find(n => n.name === currentNarrator)?.file || '';
       audioElement.src = narratorFile;
       // set stored time
       audioElement.currentTime = currentTimeRef.current; // take time from ref
@@ -43,8 +75,10 @@ const AudioPlayer = () => {
       }
       // preload metadata
       audioElement.preload = 'metadata';
+    } else {
+      console.warn('No available narrator files to play.');
     }
-  }, [currentNarrator, isPlaying]);
+  }, [currentNarrator, isPlaying, availableNarrators]);
 
   let audioStops: { [key: string]: string } = {}
 
@@ -68,7 +102,7 @@ const AudioPlayer = () => {
         audioElement.pause()
       }
     };
-  }, []);
+  }, [path]);
 
   // update current time
   const handleTimeUpdate = () => {
@@ -86,23 +120,31 @@ const AudioPlayer = () => {
         onTimeUpdate={handleTimeUpdate}
         controls
       >
-        <source src={narrators.find(n => n.name === currentNarrator)?.file} type="audio/mp3" />
+        {availableNarrators.length > 0 && (
+          <source
+            src={availableNarrators.find(n => n.name === currentNarrator)?.file}
+            type="audio/mp3"
+          />
+        )}
         Your browser does not support the audio element.
       </audio>
-      <div>
-        <select
-          id="narrator-select"
-          onChange={(e) => switchNarrator(e.target.value)}
-          value={currentNarrator}
-          style={{ color: '#ddd', backgroundColor: '#121212' }}
-        >
-          {narrators.map(narrator => (
-            <option key={narrator.name} value={narrator.name}>
-              &raquo; {narrator.name}
-            </option>
-          ))}
-        </select>
-      </div>
+      {availableNarrators.length > 1 && (
+        <div>
+          <select
+            id="narrator-select"
+            onChange={(e) => switchNarrator(e.target.value)}
+            value={currentNarrator}
+            style={{ color: '#ddd', backgroundColor: '#121212' }}
+          >
+            {/* <option>Choose...</option> */}
+            {availableNarrators.map(narrator => (
+              <option key={narrator.name} value={narrator.name}>
+                &raquo; {narrator.name}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
     </div>
   );
 };
