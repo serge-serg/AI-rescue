@@ -112,7 +112,7 @@ export default function Home() {
       <p>
         The unpleasant assumption from this is that we have no guarantee of survival. Our planning horizon regarding Superintelligence is objectively limited. In the equation of reality with its presence, there are many more unknown variables than those we can operate with. So far, we don&apos;t have reliable approaches to predict its intentions and protect ourselves from those that may pose a threat to us. Thus, we must realize that if we fail to develop such approaches, everything could go according to the worst-case scenario for us.
       </p>
-      <h2>How We Should Respond to the Challenge of Superintelligence?</h2>
+      <h2>How Should We Respond to the Challenge of Superintelligence?</h2>
       <p>
         The good news is that humanity has many brilliant minds ready to work on this issue, vast knowledge, and experience in successfully solving incredibly complex problems. Of course, the problem of Superintelligence is extraordinary in all senses, but this doesn&apos;t mean it&apos;s unsolvable in principle. Besides, our mind has a saving feature of maximum mobilization of its resources in situations of existential challenge.
       </p>
