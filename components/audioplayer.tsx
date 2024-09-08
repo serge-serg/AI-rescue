@@ -15,12 +15,8 @@ const AudioPlayer = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const narrators = [
-    { name: 'Winston', file: `/audio${path}/default.mp3` },
-    { name: 'Tanor', file: `/audio${path}/tanor.mp3` },
-    { name: 'Marry', file: `/audio${path}/marry.mp3` },
-    { name: 'Sophia', file: `/audio${path}/sophia.mp3` },
-    { name: 'Jessica', file: `/audio${path}/jessica.mp3` },
-  ];
+    'Winston', 'Tanor', 'Marry', 'Sophia', 'Jessica', 'Tanner', 'Jamie', 'Lisa', 'Nate'
+  ].map(narrator => ({ name: narrator, file: `/audio${path}/${narrator}.mp3` }))
 
   // switching a narrator with storing time
   const switchNarrator = (newNarrator: string) => {
