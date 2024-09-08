@@ -122,7 +122,7 @@ export default function WillSuperintelligenceBecomeTheGreatFilterForHumanity() {
       <p>China is not a democracy. It is a quasi-totalitarian state striving to become fully totalitarian. To achieve this, it relies on high technology, particularly the so-called &quot;Social Credit&quot; system<Tooltip content={<>
         <em>Social Credit System</em>&mdash;A system of controlling and managing the population by evaluating its behavior, as implemented, for example, in China.
       </>} />. This system, of course, does not threaten the West. Still, it clearly demonstrates the intentions of the Chinese leadership, which has effectively already become Xi Jinping&apos;s sole rule. This intention is very simple&mdash;the acquisition of maximum power and control over everyone else.</p>
-      <p>Moreover, China remembers well the &quot;Century of Humiliation&quot;<Tooltip content={<>
+      <div>Moreover, China remembers well the &quot;Century of Humiliation&quot;<Tooltip content={<>
         <p>The &quot;Century of Humiliation&quot; is a term used in China to describe a period roughly spanning from the mid-19th century to the mid-20th century, during which China faced significant foreign intervention and internal turmoil. This period began with the First Opium War (1839-1842) and is considered to have ended with the founding of the People&apos;s Republic of China in 1949.</p>
         <p><strong>Historical Context</strong></p>
         <p>The Century of Humiliation includes events like the Opium Wars with Britain, unequal treaties with several Western powers, and parts of China being colonized or controlled by foreign powers. The Treaty of Nanjing (1842), which concluded the First Opium War, is one such example where China was forced to cede Hong Kong to Britain and open up several ports to foreign trade under unfavorable conditions. This era encapsulated a series of military defeats and concessions to foreign powers, including Japan, which further exacerbated the sense of national decline and victimization.</p>
@@ -144,7 +144,7 @@ export default function WillSuperintelligenceBecomeTheGreatFilterForHumanity() {
         <p>USCC: <a href="https://www.uscc.gov/sites/default/files/3.10.11Kaufman.pdf">The &quot;Century of Humiliation&quot; and China&apos;s National Narratives</a></p>
         <p>Stanford SCCEI: <a href="https://sccei.fsi.stanford.edu/china-briefs/how-do-narratives-historical-victimization-china-shape-national-identity-and-regime">How Do Narratives of Historical Victimization in China Shape National Identity and Regime Support?</a></p>
         <p>Georgetown University: <a href="https://uschinadialogue.georgetown.edu/podcasts/revisiting-china-s-historical-narratives">Revisiting China&apos;s Historical Narratives</a></p>
-      </>} /> it suffered from the West in the 19th&nbsp;century and does not hide its desire to &quot;restore justice.&quot;</p>
+      </>} /> it suffered from the West in the 19th&nbsp;century and does not hide its desire to &quot;restore justice.&quot;</div>
       <figure>
         <div style={{ width: '460px', margin: 'auto' }}>
           <Image src={picCenturyHumiliation} className="img-wide" alt="Century of Humiliation" title="Century of Humiliation" />

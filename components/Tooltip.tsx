@@ -5,6 +5,9 @@ interface TooltipProps {
   content: React.ReactNode;
 }
 
+//-----------------------------
+
+
 const Tooltip: React.FC<TooltipProps> = ({ content }) => {
   const [isVisible, setVisible] = useState(false);
   type Position = [VerticalPosition, HorizontalPosition];
@@ -16,7 +19,74 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
   const closeIconRef = useRef<HTMLSpanElement>(null);
   const containerRef = useRef<HTMLSpanElement>(null);
 
+  const tooltipRef = useRef<HTMLDivElement>(null);
+
+  //function isSafariOrFirefox() {
+  const ua = navigator.userAgent.toLowerCase();
+  //return (ua.indexOf('safari') > -1 || ua.indexOf('firefox') > -1) && ua.indexOf('chrome') === -1;
+  const isSafariOrFirefox = (ua.indexOf('safari') > -1 || ua.indexOf('firefox') > -1) && ua.indexOf('chrome') === -1;
+  //}
+
+  function recalculateTooltipSize(tooltipElement: HTMLDivElement) {
+    if (!isSafariOrFirefox) return;
+
+    // Сохраняем текущие стили
+    const originalStyles = {
+      width: tooltipElement.style.width,
+      height: tooltipElement.style.height,
+      maxHeight: tooltipElement.style.maxHeight,
+      overflow: tooltipElement.style.overflow
+    };
+
+    // Убираем ограничения для измерения полного размера
+    tooltipElement.style.width = 'auto';
+    tooltipElement.style.height = 'auto';
+    tooltipElement.style.maxHeight = 'none';
+    tooltipElement.style.overflow = 'visible';
+
+    // Измеряем полный размер
+    const fullWidth = tooltipElement.offsetWidth;
+    const fullHeight = tooltipElement.offsetHeight;
+
+    // Рассчитываем новые размеры
+    const area = fullWidth * fullHeight;
+    let newWidth = Math.sqrt(area * 1.5);
+    let newHeight = newWidth / 1.5;
+
+    // Проверяем, не превышает ли ширина 90% от ширины экрана
+    const maxWidth = window.innerWidth * 0.9;
+    if (newWidth > maxWidth) {
+      newWidth = maxWidth;
+      newHeight = area / newWidth;
+    }
+
+    // Применяем новые размеры
+    tooltipElement.style.width = `${newWidth}px`
+    tooltipElement.style.height = `${newHeight}px`
+    tooltipElement.style.maxHeight = `${newHeight}px`
+    tooltipElement.style.overflow = 'auto'
+    tooltipElement.style.opacity = '1'
+
+    // Возвращаем оригинальные стили
+    return originalStyles;
+  }
+
+  //-----------------------------
+
   useEffect(() => {
+    console.log('isVisible?', isVisible,)
+    if (isVisible && tooltipRef.current && isSafariOrFirefox) {
+      const originalStyles = recalculateTooltipSize(tooltipRef.current);
+      console.log('check tooltip params', { originalStyles, isSafariOrFirefox })
+
+      // Возвращаем оригинальные стили при скрытии тултипа
+      return () => {
+        if (tooltipRef.current) {
+          Object.assign(tooltipRef.current.style, originalStyles);
+        }
+      };
+    }
+    //-----------------------------
     if (isVisible && closeIconRef.current && containerRef.current) {
       const iconRect = closeIconRef.current.getBoundingClientRect()
       const spaceTop = iconRect.top + iconRect.height / 2
@@ -75,11 +145,12 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
             display: 'block',
             minWidth: '200px',
             aspectRatio: '15 / 1',
-            opacity: isAnimating ? 1 : 0.5,
+            opacity: isSafariOrFirefox ? 1 : isAnimating ? 1 : 0.5,
             transform: `scale(${isAnimating ? 1 : 0.85})`,
             transformOrigin: getTransformOrigin(),
             left: '0px !important',
             right: '0px !important',
+            width: 'max-content !important',
           }}
         >
           <span
@@ -103,8 +174,8 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
           >
             &times;
           </span>
-          <span className="relative pr-6 block" style={{
-            maxHeight: '50vh',
+          <span ref={tooltipRef} className="relative pr-6 block" style={{
+            maxHeight: isSafariOrFirefox? 'none' : '50vh',
             transform: 'translateY(-3px)',
             overflow: 'hidden auto',
             fontStyle: 'normal',
