@@ -56,7 +56,6 @@ const Navigation = () => {
     }
   }
 
-
   const wideWindowValue = 1200
   const windowIsWide = window.innerWidth > wideWindowValue
   const [isOpen, setIsOpen] = useState(windowIsWide)

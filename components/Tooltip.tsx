@@ -78,7 +78,6 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
             opacity: isAnimating ? 1 : 0.5,
             transform: `scale(${isAnimating ? 1 : 0.85})`,
             transformOrigin: getTransformOrigin(),
-            width: 'max-content !',
             left: '0px !important',
             right: '0px !important',
           }}

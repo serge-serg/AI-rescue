@@ -82,13 +82,13 @@ export default function Home() {
           className="float-to-right obscured"
         />
       </h2>
-      <p>
+      <div>
         So, we have reason to believe that we are approaching an event that will be a point of no return in human history. The creation of Superintelligence will cause what British mathematician I.J.&nbsp;Good
         <Tooltip content={
           <>
             <p><strong>Irving John Good</strong>&nbsp;(1916-2009), a British mathematician, statistician, and cryptographer, played a significant role in the development of ideas related to artificial intelligence (AI). His contributions to this field are impressive, especially considering his pioneering work in the mid-20th century.</p>
             <figure>
-              <Image width="300" src={imgGood} alt="Irving John Good" height="300" />
+              <Image style={{ width: "300px", height: "auto" }} src={imgGood} alt="Irving John Good" />
               <figcaption>Irving John Good</figcaption>
             </figure>
 
@@ -105,7 +105,7 @@ export default function Home() {
         defined as an &quot;intelligence explosion&quot;
         <Tooltip content={<>In his article <a target='_blank' href='https://ouci.dntb.gov.ua/en/works/4aXrrna7/'><em>Speculations Concerning the First Ultraintelligent Machine</em></a>, he described the hypothesis that the creation of an &apos;ultra-intelligent machine&apos; could initiate explosive growth in intelligence, surpassing human capabilities and leading to rapid and uncontrolled technological development.</>} />
         back in the mid-1960s. This term refers to a hypothetical scenario in which an AI, once it reaches a certain level of intelligence, can rapidly improve its intelligence, leading to an exponential increase in its cognitive abilities.
-      </p>
+      </div>
       <p>
         At that time, it looked like an indefinitely distant or completely unrealistic prospect. But now it&apos;s not so. The famous inventor, futurist writer, Principal Researcher, and AI Visionary at Google, R.&nbsp;Kurzweil, in his book <em>The&nbsp;Singularity&nbsp;Is&nbsp;Near&nbsp;</em>(2005), predicted the creation of Superintelligence around 2045, and his forecast is now far from the most radical. If this indeed happens, then for the first time in Earth&apos;s history, there will be more than one intelligent species on it, and one of them will be far smarter than the other.
       </p>
