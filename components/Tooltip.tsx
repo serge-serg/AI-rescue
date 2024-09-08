@@ -5,7 +5,9 @@ interface TooltipProps {
   content: React.ReactNode;
 }
 
+
 const Tooltip: React.FC<TooltipProps> = ({ content }) => {
+  const breakPoint = 1200
   const [isVisible, setVisible] = useState(false);
   type Position = [VerticalPosition, HorizontalPosition];
   type VerticalPosition = 'top' | 'bottom';
@@ -51,7 +53,7 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
 
   useEffect(() => {
     console.log('isVisible?', isVisible,)
-    if (isVisible && tooltipRef.current && isSafariOrFirefox) {
+    if (isVisible && tooltipRef.current && isSafariOrFirefox && window.innerWidth >= breakPoint) {
       recalculateTooltipSize(tooltipRef.current);
     }
     
@@ -77,7 +79,7 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
 
   const getPositionStyles = () => {
 
-    if (window.innerWidth < 1200) return 'offset-mobile'
+    if (window.innerWidth < breakPoint) return 'offset-mobile'
 
     const [vertical, horizontal] = position;
 
