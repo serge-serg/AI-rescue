@@ -1,6 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
 
 const AudioPlayer = () => {
+
+  const path = usePathname()
+  const router = useRouter()
+  console.log('router', {router, path})
+
   const [currentNarrator, setCurrentNarrator] = useState<string>(() => {
     // Получаем чтеца из localStorage при загрузке страницы
     return localStorage.getItem('selectedNarrator') || 'Winston';
@@ -47,6 +53,7 @@ const AudioPlayer = () => {
       if (audioElement) {
         audioElement.pause();
         setCurrentTime(audioElement.currentTime);  // Сохраняем текущее время перед размонтированием
+
       }
     };
   }, []);
