@@ -1,8 +1,8 @@
 'use client';
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import pageMetadata from '@/app/pageMetadata';
+import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import pageMetadata from '@/app/pageMetadata'
 import { getPagePath } from '@/utils/getPagePath';
 import iconPdf from '@/assets/images/icons/pdf-24.png'
 import iconConnect from '@/assets/images/icons/connect.svg'

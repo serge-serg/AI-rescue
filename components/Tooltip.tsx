@@ -5,9 +5,6 @@ interface TooltipProps {
   content: React.ReactNode;
 }
 
-//-----------------------------
-
-
 const Tooltip: React.FC<TooltipProps> = ({ content }) => {
   const [isVisible, setVisible] = useState(false);
   type Position = [VerticalPosition, HorizontalPosition];
@@ -21,72 +18,43 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
 
   const tooltipRef = useRef<HTMLDivElement>(null);
 
-  //function isSafariOrFirefox() {
   const ua = navigator.userAgent.toLowerCase();
-  //return (ua.indexOf('safari') > -1 || ua.indexOf('firefox') > -1) && ua.indexOf('chrome') === -1;
   const isSafariOrFirefox = (ua.indexOf('safari') > -1 || ua.indexOf('firefox') > -1) && ua.indexOf('chrome') === -1;
-  //}
-
+  
   function recalculateTooltipSize(tooltipElement: HTMLDivElement) {
     if (!isSafariOrFirefox) return;
-
-    // Сохраняем текущие стили
-    const originalStyles = {
-      width: tooltipElement.style.width,
-      height: tooltipElement.style.height,
-      maxHeight: tooltipElement.style.maxHeight,
-      overflow: tooltipElement.style.overflow
-    };
-
-    // Убираем ограничения для измерения полного размера
+    // remove limitations
     tooltipElement.style.width = 'auto';
     tooltipElement.style.height = 'auto';
     tooltipElement.style.maxHeight = 'none';
     tooltipElement.style.overflow = 'visible';
-
-    // Измеряем полный размер
+    // measure the full size
     const fullWidth = tooltipElement.offsetWidth;
     const fullHeight = tooltipElement.offsetHeight;
-
-    // Рассчитываем новые размеры
+    // calculate new sizes
     const area = fullWidth * fullHeight;
     let newWidth = Math.sqrt(area * 1.5);
     let newHeight = newWidth / 1.5;
-
-    // Проверяем, не превышает ли ширина 90% от ширины экрана
+    // check limit in 90% from screen width compliance
     const maxWidth = window.innerWidth * 0.9;
     if (newWidth > maxWidth) {
       newWidth = maxWidth;
       newHeight = area / newWidth;
     }
-
-    // Применяем новые размеры
-    tooltipElement.style.width = `${newWidth}px`
-    tooltipElement.style.height = `${newHeight}px`
-    tooltipElement.style.maxHeight = `${newHeight}px`
-    tooltipElement.style.overflow = 'auto'
-    tooltipElement.style.opacity = '1'
-
-    // Возвращаем оригинальные стили
-    return originalStyles;
+    // apply new params
+    tooltipElement.style.width = `${newWidth}px`;
+    tooltipElement.style.height = `${newHeight}px`;
+    tooltipElement.style.maxHeight = `${newHeight}px`;
+    tooltipElement.style.overflow = 'auto';
+    tooltipElement.style.opacity = '1';
   }
-
-  //-----------------------------
 
   useEffect(() => {
     console.log('isVisible?', isVisible,)
     if (isVisible && tooltipRef.current && isSafariOrFirefox) {
-      const originalStyles = recalculateTooltipSize(tooltipRef.current);
-      console.log('check tooltip params', { originalStyles, isSafariOrFirefox })
-
-      // Возвращаем оригинальные стили при скрытии тултипа
-      return () => {
-        if (tooltipRef.current) {
-          Object.assign(tooltipRef.current.style, originalStyles);
-        }
-      };
+      recalculateTooltipSize(tooltipRef.current);
     }
-    //-----------------------------
+    
     if (isVisible && closeIconRef.current && containerRef.current) {
       const iconRect = closeIconRef.current.getBoundingClientRect()
       const spaceTop = iconRect.top + iconRect.height / 2
