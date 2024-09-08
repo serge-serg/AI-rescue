@@ -46,11 +46,11 @@ function PageContents({ filename }: PageContentsProps) {
       <fieldset>
         {(
           partToShow === 'text' &&
-          <section>
+          <section style={{ paddingTop: '1rem' }}>
             {
               setUnderHeaderBlock({ filename })
             }
-            <div style={{ margin: '2rem auto', width: '440px', maxWidth: '90%' }}>
+            <div style={{ margin: '2rem auto', maxWidth: '440px', width: 'auto' }}>
               <div>
                 <h3 style={{ textAlign: 'center' }}>Etymology of the meaning &quot;Matrix&quot;</h3>
               </div>

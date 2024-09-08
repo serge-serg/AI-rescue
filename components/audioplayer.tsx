@@ -4,31 +4,29 @@ import { usePathname } from 'next/navigation'
 
 const AudioPlayer = () => {
 
-  const path = usePathname()
-  //const router = useRouter()
-  //console.log('router', path)
+  let path = usePathname()
+  if (path === '/') path = '/toward-the-point-of-no-return'
 
   const [currentNarrator, setCurrentNarrator] = useState<string>(() => {
-    // Получаем чтеца из localStorage при загрузке страницы
     return localStorage.getItem('selectedNarrator') || 'Winston';
   });
-  const [currentTime, setCurrentTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const currentTimeRef = useRef(0); // store current time at Ref
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const narrators = [
-    { name: 'Winston', file: '/audio/toward-the-point-of-no-return/default.mp3' },
-    { name: 'Tanor', file: '/audio/toward-the-point-of-no-return/tanor.mp3' },
-    { name: 'Marry', file: '/audio/toward-the-point-of-no-return/marry.mp3' },
-    { name: 'Sophia', file: '/audio/toward-the-point-of-no-return/sophia.mp3' },
-    { name: 'Jessica', file: '/audio/toward-the-point-of-no-return/jessica.mp3' },
+    { name: 'Winston', file: `/audio${path}/default.mp3` },
+    { name: 'Tanor', file: `/audio${path}/tanor.mp3` },
+    { name: 'Marry', file: `/audio${path}/marry.mp3` },
+    { name: 'Sophia', file: `/audio${path}/sophia.mp3` },
+    { name: 'Jessica', file: `/audio${path}/jessica.mp3` },
   ];
 
   // switching a narrator with storing time
   const switchNarrator = (newNarrator: string) => {
     if (audioRef.current) {
       // save current time
-      setCurrentTime(audioRef.current.currentTime);
+      currentTimeRef.current = audioRef.current.currentTime; // store current time at Ref
       // set a new narrator
       setCurrentNarrator(newNarrator);
       // write a new narrator down into localStorage
@@ -36,14 +34,14 @@ const AudioPlayer = () => {
     }
   };
 
-  // handle 
+  // handle
   useEffect(() => {
     const audioElement = audioRef.current;
     if (audioElement) {
       const narratorFile = narrators.find(n => n.name === currentNarrator)?.file || '';
       audioElement.src = narratorFile;
       // set stored time
-      audioElement.currentTime = currentTime;
+      audioElement.currentTime = currentTimeRef.current; // take time from ref
       if (isPlaying) {
         audioElement.play();
       }
@@ -60,8 +58,11 @@ const AudioPlayer = () => {
     const localAudioStops = localStorage.getItem('audio-stops')
     if (localAudioStops) {
       audioStops = JSON.parse(localAudioStops)
-      if (audioElement) {
-        audioElement.currentTime = Number(audioStops[path])
+      if (audioElement && audioStops[path]) {
+        const savedTime = Number(audioStops[path]);
+        if (!isNaN(savedTime) && savedTime > 0) {
+          audioElement.currentTime = savedTime;
+        }
       }
     }
     return () => {
@@ -76,26 +77,13 @@ const AudioPlayer = () => {
   // update current time
   const handleTimeUpdate = () => {
     if (audioRef.current) {
-      setCurrentTime(audioRef.current.currentTime);
-    }
-  };
-
-  // manage play / pause
-  const handlePlayPause = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
+      currentTimeRef.current = audioRef.current.currentTime; // update ref instead of state
     }
   };
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+    <div className="audio-wrapper-inner" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
       <audio
-        style={{ width: '300px', height: '35px', opacity: '0.75' }}
         ref={audioRef}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
@@ -119,9 +107,6 @@ const AudioPlayer = () => {
           ))}
         </select>
       </div>
-      <button onClick={handlePlayPause} style={{ marginLeft: '10px' }}>
-        {isPlaying ? 'Pause' : 'Play'}
-      </button>
     </div>
   );
 };

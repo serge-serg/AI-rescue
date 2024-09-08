@@ -78,7 +78,7 @@ const Navigation = () => {
 
   useEffect(() => {
     if (windowIsWide) setIsOpen(true)
-    localStorage.setItem('menuIsOpen', (true).toString())
+    localStorage.setItem('menuIsOpen', (isOpen).toString())
   }, [isOpen])
 
   const handleMenuPosition = () => {

@@ -46,7 +46,7 @@ main {
 }
 
 h1 {
-  @apply text-[2.3rem] mb-4 -mt-2;
+  @apply text-[2.3rem] mb-6 -mt-2;
   color: var(--color-grey-light);
   letter-spacing: 1px;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
@@ -76,6 +76,12 @@ h4 {
 
 a {
   @apply text-[#9999ff];
+}
+
+audio {
+  width: 300px;
+  height: 35px; 
+  opacity: 0.75;
 }
 
 blockquote {
@@ -302,11 +308,17 @@ ol.decimal {
   padding: 0.75rem 5vw;
 }
 
+.under-header-inside {
+  margin-top: 0.75rem;
+}
+
 /* combined classes */
 
 .tab.active {
   background-color: var(--color-grey-blue);
 }
+
+/* media queries */
 
 @media screen and (max-width: 1303px) {
   .float-to-right {
@@ -330,6 +342,7 @@ ol.decimal {
     overflow: initial;
   }
   main {
+    padding-left: 5vw;
     width: 100%;
   }
   .container {
@@ -388,6 +401,9 @@ ol.decimal {
 }
 
 @media screen and (max-width: 768px) {
+  audio {
+    width: 60vw;
+  }
   .float-to-right,
   .float-to-left {
     @apply w-full mt-4 mb-4 mr-auto ml-auto float-none;
@@ -413,4 +429,37 @@ ol.decimal {
 
 .hamburger-icon:hover span {
   background-color: #fff;
+}
+
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 6vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .audio-wrapper {
+    width: 100%;
+  }
+  .audio-wrapper-inner {
+    flex-wrap: wrap;
+  }
+  audio {
+    width: 100%;
+  }
+  h1 {
+    font-size: 7vw;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  h1 {
+    font-size: 8vw;
+  }
+}
+
+@media screen and (max-width: 344px) {
+  h1 {
+    font-size: 9vw;
+  }
 }
