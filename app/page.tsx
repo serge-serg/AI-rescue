@@ -133,9 +133,9 @@ export default function Home() {
         <li>
           Understand the details of the <Link href="/deep-dive-into-fundamental-ai-risks">fundamental risks coming from AI</Link>;
         </li>
-        {<li>
+        {/*<li>
           Imagine Superintelligence not as a threat to our existence, but as <Link href="/can-superintelligence-be-inherently-friendly">our partner and friend</Link>;
-        </li>}
+        </li>*/}
       </ul>
       <p>In addition to this information, you will find sections devoted to the vision of the AI problem through the prism of modern&nbsp;art <Link href="/why-hal-9000-intended-to-kill-all-astronauts-aboard-discovery">[1]</Link> <Link href="/why-could-not-the-matrix-exist-without-humans">[2]</Link>. Finally, we hope to learn your opinion on the most pressing issues related to this problem.</p>
       <p>Good luck in exploring the challenge of Superintelligence!</p>
