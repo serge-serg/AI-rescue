@@ -36,7 +36,13 @@ export default function LetsConnect() {
 
   return (
     <PageWrapper filename={__filename} underHeaderBlock={false}>
-      <hr style={{ marginBottom: '1.5rem' }} />
+      <hr style={{ 
+        border: 'none',
+        borderTop: 'solid 1.5px #fff',
+        borderBottom: 'solid 1.5px #666',
+        marginBottom: '1.5rem',
+        opacity: 0.75,
+      }} />
       <section className='two-column-wrapper'>
         <div className="two-column-left">
           <h3 style={{ fontWeight: '500' }}>This site has been created by:</h3>
