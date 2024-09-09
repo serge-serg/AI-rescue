@@ -18,19 +18,17 @@ const AudioPlayer = () => {
     'Winston', 'Tanor', 'Marry', 'Sophia', 'John', 'Jessica', 'Tanner', 'Jamie', 'Lisa', 'Nate'
   ].map(narrator => ({ name: narrator, file: `/audio${path}/${narrator}.mp3` }))
 
-
-  // Проверяем наличие файлов для каждого чтеца
   const checkFileExists = async (url: string): Promise<boolean> => {
     try {
       const response = await fetch(url, { method: 'HEAD' })
-      //console.log('check file response', response)
-      return response.ok // Вернёт true, если статус 200-299, иначе false
+      //TODO: remove after testing period: //console.log('check file response', response)
+      return response.ok // true if the status is 200-299, otherwise — false
     } catch (error) {
       console.error('Error checking file:', error)
       return false;
     }
   };
-  // useEffect для фильтрации чтецов
+  // useEffect for filtering narrators
   const [availableNarrators, setAvailableNarrators] = useState(narrators);
   useEffect(() => {
     const checkNarratorFiles = async () => {
@@ -41,7 +39,7 @@ const AudioPlayer = () => {
           filteredNarrators.push(narrator);
         }
       }
-      console.log('Filtered Narrators:', filteredNarrators);
+      // TODO: remove after testing period: console.log('Filtered Narrators:', filteredNarrators);
       if (filteredNarrators.length === 0) {
         console.warn('No available audio files found.');
       }
@@ -136,7 +134,6 @@ const AudioPlayer = () => {
             value={currentNarrator}
             style={{ color: '#ddd', backgroundColor: '#121212' }}
           >
-            {/* <option>Choose...</option> */}
             {availableNarrators.map(narrator => (
               <option key={narrator.name} value={narrator.name}>
                 &raquo; {narrator.name}
