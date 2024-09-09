@@ -1,42 +1,10 @@
-'use client';
 import React from 'react'
-import Link from 'next/link'
-import { useSearchParams } from 'next/navigation';
-import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import pageMetadata from '@/app/pageMetadata'
 import { getPagePath } from '@/utils/getPagePath';
-import iconPdf from '@/assets/images/icons/pdf-24.png'
-import iconConnect from '@/assets/images/icons/connect.svg'
-import AudioPlayer from "@/components/audioplayer"
+import ClientSideUnderHeaderBlock from '@/components/сlientSideUnderHeaderBlock'
 
-const UnderHeaderBlock = ({ pageIndex, filenamePDF }: { pageIndex: number, filenamePDF: string }) => {
-  const searchParams = useSearchParams()
-  const paramValue = searchParams.get('test-audio')
-  return (
-  <section style={{
-    display: 'flex',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginBottom: '1rem',
-    paddingBottom: '1.15rem',
-    borderBottom: 'solid 1px #999',
-  }}>
-    {paramValue && <div className="audio-wrapper under-header-inside">
-      <AudioPlayer />
-    </div>}
-    <div className="under-header-inside" style={{ display: 'flex', gap: '2rem' }}>
-      <div className="under-header-block">
-        <a href={`https://serge-serg.github.io/superintelligence-challenge/${pageIndex}. ${filenamePDF}/${filenamePDF}.pdf`} target="_blank">
-          <Image src={iconPdf} alt="Download PDF" style={{ display: 'inline-block', marginBottom: '4px', marginRight: '4px' }} />Download PDF</a>
-      </div>
-      <div className="under-header-block">
-        <Link href="/lets-connect">
-          <Image width={24} height={24} src={iconConnect} alt="Let's connect" style={{ display: 'inline-block', marginBottom: '4px', marginRight: '4px', }} />Let&apos;s Connect!</Link>
-      </div>
-    </div>
-  </section>)
-}
+//const ClientSideUnderHeaderBlock = dynamic(() => import('./ClientSideUnderHeaderBlock'), { ssr: false });
 
 type PageWrapperProps = {
   children?: React.ReactNode;
@@ -44,7 +12,7 @@ type PageWrapperProps = {
   filenamePDF?: string;
   underHeaderBlock?: boolean;
 };
-// get path
+
 const getPageWrapperData = ({ filename }: PageWrapperProps) => {
   const path = getPagePath(filename)
   const { heading } = pageMetadata[path]
@@ -62,7 +30,7 @@ const PageWrapper = ({ children, filename, underHeaderBlock = true }: PageWrappe
   return (
     <div style={{ paddingBottom: '3rem' }}>
       <h1>{heading}</h1>
-      {underHeaderBlock !== false && <UnderHeaderBlock pageIndex={pageIndex} filenamePDF={filenamePDF} />}
+      {underHeaderBlock !== false && <ClientSideUnderHeaderBlock pageIndex={pageIndex} filenamePDF={filenamePDF} />}
       {children}
     </div>
   );
@@ -70,7 +38,7 @@ const PageWrapper = ({ children, filename, underHeaderBlock = true }: PageWrappe
 
 const setUnderHeaderBlock = ({ children = <></>, filename }: PageWrapperProps) => {
   const { pageIndex, filenamePDF } = getPageWrapperData({ children, filename })
-  return <UnderHeaderBlock pageIndex={pageIndex} filenamePDF={filenamePDF} />
+  return <ClientSideUnderHeaderBlock pageIndex={pageIndex} filenamePDF={filenamePDF} />
 }
 
 export default PageWrapper;
