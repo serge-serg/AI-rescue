@@ -5,7 +5,6 @@ interface TooltipProps {
   content: React.ReactNode;
 }
 
-
 const Tooltip: React.FC<TooltipProps> = ({ content }) => {
   const breakPoint = 1200
   const [isVisible, setVisible] = useState(false);
@@ -20,8 +19,9 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
 
   const tooltipRef = useRef<HTMLDivElement>(null);
 
-  const ua = navigator.userAgent.toLowerCase();
-  const isSafariOrFirefox = (ua.indexOf('safari') > -1 || ua.indexOf('firefox') > -1) && ua.indexOf('chrome') === -1;
+  const isClient = typeof window !== 'undefined'; // Проверка на клиентскую среду
+  const ua = isClient ? navigator.userAgent.toLowerCase() : '';
+  const isSafariOrFirefox = isClient && (ua.indexOf('safari') > -1 || ua.indexOf('firefox') > -1) && ua.indexOf('chrome') === -1;
   
   function recalculateTooltipSize(tooltipElement: HTMLDivElement) {
     if (!isSafariOrFirefox) return;
@@ -52,8 +52,7 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
   }
 
   useEffect(() => {
-    console.log('isVisible?', isVisible,)
-    if (isVisible && tooltipRef.current && isSafariOrFirefox && window.innerWidth >= breakPoint) {
+    if (isClient && isVisible && tooltipRef.current && isSafariOrFirefox && window.innerWidth >= breakPoint) {
       recalculateTooltipSize(tooltipRef.current);
     }
     
@@ -69,8 +68,7 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
     } else {
       setIsAnimating(false)
     }
-  }, [isVisible])
-
+  }, [isVisible, isClient]);
 
   const getTransformOrigin = () => {
     const [vertical, horizontal] = position
@@ -78,11 +76,9 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
   };
 
   const getPositionStyles = () => {
-
-    if (window.innerWidth < breakPoint) return 'offset-mobile'
+    if (!isClient || window.innerWidth < breakPoint) return 'offset-mobile';
 
     const [vertical, horizontal] = position;
-
     let classes = '';
 
     if (vertical === 'top') {
@@ -145,7 +141,7 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
             &times;
           </span>
           <span ref={tooltipRef} className="relative pr-6 block" style={{
-            maxHeight: isSafariOrFirefox? 'none' : '50vh',
+            maxHeight: isSafariOrFirefox ? 'none' : '50vh',
             transform: 'translateY(-3px)',
             overflow: 'hidden auto',
             fontStyle: 'normal',
