@@ -102,7 +102,7 @@ export default function DeepDiveIntoFundamentalAIRisks() {
 
       <h3 id="the-question-of-immutability">The Question of Immutability of Goal-Setting</h3>
 
-      <p>Other scenarios are possible in which AI's hostile actions will be due to changes in its worldview. For example, as it develops, it may discover some logically irresolvable contradictions in the goal set for it, making its achievement impossible or meaningless (this is regularly mentioned in the works and public speeches of N. Bostrom, E. Yudkowsky, S. Russell, S. Omohundro, M. Tegmark, and others).</p>
+      <p>Other scenarios are possible in which AI&apos;s hostile actions will be due to changes in its worldview. For example, as it develops, it may discover some logically irresolvable contradictions in the goal set for it, making its achievement impossible or meaningless (this is regularly mentioned in the works and public speeches of N. Bostrom, E. Yudkowsky, S. Russell, S. Omohundro, M. Tegmark, and others).</p>
       <p>The probability of such a development of events is a key and one of the most debated issues in the community of AI experts and philosophers. And this question may be more philosophical than technical. In this regard, we find it useful to turn to systems theory<Tooltip content={<>
         <em>Systems theory</em>&mdash;A framework for analyzing and designing complex systems, including AI, by understanding their components, relationships, and overall behavior.
       </>} />. Its approaches and developments are widely used not only in theory as such but also in practical human activities in creating complex systems. AI is one such system, and the provisions of this theory are fully applicable to it, although they will have their own peculiarities.</p>
