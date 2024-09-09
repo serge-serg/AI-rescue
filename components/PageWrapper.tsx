@@ -1,10 +1,7 @@
-import React from 'react'
-import dynamic from 'next/dynamic'
+import React, { Suspense } from 'react'
 import pageMetadata from '@/app/pageMetadata'
 import { getPagePath } from '@/utils/getPagePath';
-import ClientSideUnderHeaderBlock from '@/components/сlientSideUnderHeaderBlock'
-
-//const ClientSideUnderHeaderBlock = dynamic(() => import('./ClientSideUnderHeaderBlock'), { ssr: false });
+import ClientSideUnderHeaderBlock from '@/components/clientSideUnderHeaderBlock'
 
 type PageWrapperProps = {
   children?: React.ReactNode;
@@ -30,7 +27,11 @@ const PageWrapper = ({ children, filename, underHeaderBlock = true }: PageWrappe
   return (
     <div style={{ paddingBottom: '3rem' }}>
       <h1>{heading}</h1>
-      {underHeaderBlock !== false && <ClientSideUnderHeaderBlock pageIndex={pageIndex} filenamePDF={filenamePDF} />}
+      {underHeaderBlock !== false && (
+        <Suspense fallback="...Loading...">
+          <ClientSideUnderHeaderBlock pageIndex={pageIndex} filenamePDF={filenamePDF} />
+        </Suspense>
+      )}
       {children}
     </div>
   );

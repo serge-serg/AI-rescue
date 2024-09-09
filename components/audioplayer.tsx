@@ -3,16 +3,21 @@ import { useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 
 const AudioPlayer = () => {
-
   let path = usePathname()
   if (path === '/') path = '/toward-the-point-of-no-return'
 
-  const [currentNarrator, setCurrentNarrator] = useState<string>(() => {
-    return localStorage.getItem('selectedNarrator') || 'Winston';
-  });
+  const [currentNarrator, setCurrentNarrator] = useState<string>('Winston');  // Начальное значение
   const [isPlaying, setIsPlaying] = useState(false);
-  const currentTimeRef = useRef(0); // store current time at Ref
+  const currentTimeRef = useRef(0);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  // Загружаем чтеца из localStorage при первом рендере
+  useEffect(() => {
+    const savedNarrator = localStorage.getItem('selectedNarrator');
+    if (savedNarrator) {
+      setCurrentNarrator(savedNarrator);
+    }
+  }, []);
 
   const narrators = [
     'Winston', 'Tanor', 'Marry', 'Sophia', 'John', 'Jessica', 'Tanner', 'Jamie', 'Lisa', 'Nate'
@@ -20,15 +25,14 @@ const AudioPlayer = () => {
 
   const checkFileExists = async (url: string): Promise<boolean> => {
     try {
-      const response = await fetch(url, { method: 'HEAD' })
-      //TODO: remove after testing period: //console.log('check file response', response)
-      return response.ok // true if the status is 200-299, otherwise — false
+      const response = await fetch(url, { method: 'HEAD' });
+      return response.ok;
     } catch (error) {
-      console.error('Error checking file:', error)
+      console.error('Error checking file:', error);
       return false;
     }
   };
-  // useEffect for filtering narrators
+
   const [availableNarrators, setAvailableNarrators] = useState(narrators);
   useEffect(() => {
     const checkNarratorFiles = async () => {
@@ -39,53 +43,39 @@ const AudioPlayer = () => {
           filteredNarrators.push(narrator);
         }
       }
-      // TODO: remove after testing period: console.log('Filtered Narrators:', filteredNarrators);
-      if (filteredNarrators.length === 0) {
-        console.warn('No available audio files found.');
-      }
       setAvailableNarrators(filteredNarrators);
     };
     checkNarratorFiles();
   }, [path]);
 
-  // switching a narrator with storing time
   const switchNarrator = (newNarrator: string) => {
     if (audioRef.current) {
-      // save current time
-      currentTimeRef.current = audioRef.current.currentTime; // store current time at Ref
-      // set a new narrator
+      currentTimeRef.current = audioRef.current.currentTime;
       setCurrentNarrator(newNarrator);
-      // write a new narrator down into localStorage
       localStorage.setItem('selectedNarrator', newNarrator);
     }
   };
 
-  // handle
   useEffect(() => {
     const audioElement = audioRef.current;
     if (audioElement && availableNarrators.length > 0) {
       const narratorFile = availableNarrators.find(n => n.name === currentNarrator)?.file || '';
       audioElement.src = narratorFile;
-      // set stored time
-      audioElement.currentTime = currentTimeRef.current; // take time from ref
+      audioElement.currentTime = currentTimeRef.current;
       if (isPlaying) {
         audioElement.play();
       }
-      // preload metadata
       audioElement.preload = 'metadata';
-    } else {
-      console.warn('No available narrator files to play.');
     }
   }, [currentNarrator, isPlaying, availableNarrators]);
 
   let audioStops: { [key: string]: string } = {}
 
-  // stop audio
   useEffect(() => {
     const audioElement = audioRef.current;
-    const localAudioStops = localStorage.getItem('audio-stops')
+    const localAudioStops = localStorage.getItem('audio-stops');
     if (localAudioStops) {
-      audioStops = JSON.parse(localAudioStops)
+      audioStops = JSON.parse(localAudioStops);
       if (audioElement && audioStops[path]) {
         const savedTime = Number(audioStops[path]);
         if (!isNaN(savedTime) && savedTime > 0) {
@@ -95,17 +85,16 @@ const AudioPlayer = () => {
     }
     return () => {
       if (audioElement) {
-        audioStops[path] = String(audioElement?.currentTime)
-        localStorage.setItem('audio-stops', JSON.stringify(audioStops))
-        audioElement.pause()
+        audioStops[path] = String(audioElement.currentTime);
+        localStorage.setItem('audio-stops', JSON.stringify(audioStops));
+        audioElement.pause();
       }
     };
   }, [path]);
 
-  // update current time
   const handleTimeUpdate = () => {
     if (audioRef.current) {
-      currentTimeRef.current = audioRef.current.currentTime; // update ref instead of state
+      currentTimeRef.current = audioRef.current.currentTime;
     }
   };
 
