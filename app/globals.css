@@ -80,7 +80,7 @@ a {
 
 audio {
   width: 300px;
-  height: 35px; 
+  height: 35px;
   opacity: 0.75;
 }
 
@@ -182,7 +182,6 @@ nav ul {
   margin-right: 0.5rem;
 }
 
-
 /* classified tags */
 
 a:hover {
@@ -199,7 +198,7 @@ a.regular:hover {
 }
 
 div.video-wrapper {
-  display: flex; 
+  display: flex;
   justify-content: center;
   padding: 1rem 0 1.5rem;
 }
@@ -258,7 +257,8 @@ ol.decimal {
   @apply float-left mb-8 mr-8 -ml-16;
 }
 
-.img-wide, .img-wider {
+.img-wide,
+.img-wider {
   margin: 1rem auto;
 }
 
@@ -308,6 +308,18 @@ ol.decimal {
   padding: 0.75rem 5vw;
 }
 
+.two-column-left {
+  width: 46%;
+}
+
+.two-column-right {
+  width: 54%;
+}
+
+.two-column-wrapper {
+  display: flex;
+}
+
 .under-header-inside {
   margin-top: 0.75rem;
 }
@@ -330,27 +342,33 @@ ol.decimal {
   }
 }
 
-.width42 {
-  height: auto;
-  object-fit: cover;
-  width: 42%;
-}
-
 @media screen and (max-width: 1200px) {
   aside nav {
     max-height: none;
     overflow: initial;
   }
+
+  .float-to-right,
+  .float-to-left {
+    @apply opacity-100;
+    max-width: 400px;
+  }
+
   main {
     padding-left: 5vw;
     width: 100%;
   }
+
   .container {
     @apply flex-col;
   }
 
   .cursor-pointer {
     right: 6px;
+  }
+
+  .logo-text {
+    margin: auto;
   }
 
   .sidebar {
@@ -370,16 +388,6 @@ ol.decimal {
     @apply h-full;
     background-color: var(--color-grey-dark);
     padding: 0 1rem;
-  }
-
-  .logo-text {
-    margin: auto;
-  }
-
-  .float-to-right,
-  .float-to-left {
-    @apply opacity-100;
-    max-width: 400px;
   }
 }
 
@@ -404,10 +412,22 @@ ol.decimal {
   audio {
     width: 60vw;
   }
+
   .float-to-right,
   .float-to-left {
     @apply w-full mt-4 mb-4 mr-auto ml-auto float-none;
     max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 768px),
+  (min-width: 1200px) and (max-width: 1600px) {
+  .two-column-left,
+  .two-column-right {
+    width: 100%;
+  }
+  .two-column-wrapper {
+    display: block;
   }
 }
 
