@@ -15,18 +15,26 @@ const getPageWrapperData = ({ filename }: PageWrapperProps) => {
   const { heading } = pageMetadata[path]
   let filenamePDF = heading;
   if (filenamePDF.endsWith("?")) {
-    filenamePDF = filenamePDF.slice(0, -1);
+    filenamePDF = filenamePDF.slice(0, -1)
   }
   const keys = Object.keys(pageMetadata);
-  const pageIndex = keys.indexOf(path) + 1;
-  return { heading, pageIndex, filenamePDF }
+  const pageIndex = keys.indexOf(path) + 1
+  let headerID = '';
+  if (path) {
+    const parts = path.split('/');
+    if (parts.length > 0) {
+      parts.shift()
+      headerID = parts.join('-') || 'homepage'
+    }
+  }
+  return { headerID, heading, pageIndex, filenamePDF }
 }
 
 const PageWrapper = ({ children, filename, underHeaderBlock = true }: PageWrapperProps) => {
-  const { heading, pageIndex, filenamePDF } = getPageWrapperData({ children, filename })
+  const { headerID, heading, pageIndex, filenamePDF } = getPageWrapperData({ children, filename })
   return (
     <div style={{ paddingBottom: '3rem' }}>
-      <h1>{heading}</h1>
+      <h1 id={`title-${headerID}`}>{heading}</h1>
       {underHeaderBlock !== false && (
         <Suspense fallback="...Loading...">
           <ClientSideUnderHeaderBlock pageIndex={pageIndex} filenamePDF={filenamePDF} />

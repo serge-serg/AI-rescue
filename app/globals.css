@@ -184,6 +184,12 @@ nav ul {
 
 /* classified tags */
 
+h1#title-lets-connect {
+  background: url("../assets/images/icons/connect.svg") no-repeat 0;
+  background-size: 32px;
+  padding-left: 3rem;
+}
+
 a:hover {
   text-decoration: underline;
 }
