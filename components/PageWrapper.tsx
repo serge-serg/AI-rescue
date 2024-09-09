@@ -1,6 +1,7 @@
 'use client';
 import React from 'react'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation';
 import Image from 'next/image'
 import pageMetadata from '@/app/pageMetadata'
 import { getPagePath } from '@/utils/getPagePath';
@@ -8,7 +9,10 @@ import iconPdf from '@/assets/images/icons/pdf-24.png'
 import iconConnect from '@/assets/images/icons/connect.svg'
 import AudioPlayer from "@/components/audioplayer"
 
-const UnderHeaderBlock = ({ pageIndex, filenamePDF }: { pageIndex: number, filenamePDF: string }) => (
+const UnderHeaderBlock = ({ pageIndex, filenamePDF }: { pageIndex: number, filenamePDF: string }) => {
+  const searchParams = useSearchParams()
+  const paramValue = searchParams.get('test-audio')
+  return (
   <section style={{
     display: 'flex',
     flexWrap: 'wrap',
@@ -18,9 +22,9 @@ const UnderHeaderBlock = ({ pageIndex, filenamePDF }: { pageIndex: number, filen
     paddingBottom: '1.15rem',
     borderBottom: 'solid 1px #999',
   }}>
-    <div className="audio-wrapper under-header-inside">
+    {paramValue && <div className="audio-wrapper under-header-inside">
       <AudioPlayer />
-    </div>
+    </div>}
     <div className="under-header-inside" style={{ display: 'flex', gap: '2rem' }}>
       <div className="under-header-block">
         <a href={`https://serge-serg.github.io/superintelligence-challenge/${pageIndex}. ${filenamePDF}/${filenamePDF}.pdf`} target="_blank">
@@ -32,6 +36,7 @@ const UnderHeaderBlock = ({ pageIndex, filenamePDF }: { pageIndex: number, filen
       </div>
     </div>
   </section>)
+}
 
 type PageWrapperProps = {
   children?: React.ReactNode;
