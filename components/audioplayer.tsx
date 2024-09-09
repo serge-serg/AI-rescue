@@ -3,25 +3,85 @@ import { useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 
 const AudioPlayer = () => {
+  const defaultNarrator = 'Lisa'
   let path = usePathname()
   if (path === '/') path = '/toward-the-point-of-no-return'
 
-  const [currentNarrator, setCurrentNarrator] = useState<string>('Winston');  // Начальное значение
-  const [isPlaying, setIsPlaying] = useState(false);
-  const currentTimeRef = useRef(0);
+  const narrators = [
+    'Winston',
+    'Tanor',
+    'Marry',
+    'Sophia',
+    'John',
+    'Jessica',
+    'Tanner',
+    'Jamie',
+    defaultNarrator,
+    'Nate',
+    'Kristy',
+  ].map(narrator => ({ name: narrator, file: `/audio${path}/${narrator}.mp3` }))
+
+  const [currentNarrator, setCurrentNarrator] = useState<string>('')
+  const [isPlaying, setIsPlaying] = useState(false)
+  const currentTimeRef = useRef(0)
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  // Загружаем чтеца из localStorage при первом рендере
+  // upload a narrator from localStorage while an initial render
   useEffect(() => {
-    const savedNarrator = localStorage.getItem('selectedNarrator');
-    if (savedNarrator) {
-      setCurrentNarrator(savedNarrator);
+    const savedNarrator = localStorage.getItem('selectedNarrator')
+    
+    const checkSavedNarrator = async (narratorName: string) => {
+      const narratorAudioFile = narrators?.find(narrator => narrator?.name === narratorName)?.file
+  
+      if (narratorAudioFile) {
+        const fileExists = await checkFileExists(narratorAudioFile)
+        return fileExists
+      }
+      return false
     }
-  }, []);
-
-  const narrators = [
-    'Winston', 'Tanor', 'Marry', 'Sophia', 'John', 'Jessica', 'Tanner', 'Jamie', 'Lisa', 'Nate'
-  ].map(narrator => ({ name: narrator, file: `/audio${path}/${narrator}.mp3` }))
+  
+    const setAvailableNarrator = async () => {
+      if (savedNarrator) {
+        // Check if the file for the saved narrator exists
+        const fileExists = await checkSavedNarrator(savedNarrator)
+        if (fileExists) {
+          // If the saved narrator file exists, install it
+          setCurrentNarrator(savedNarrator)
+          return
+        }
+      }
+  
+      // If there is no saved narrator or its file does not exist, check defaultNarrator
+      const defaultFileExists = await checkSavedNarrator(defaultNarrator)
+      
+      if (defaultFileExists) {
+        setCurrentNarrator(defaultNarrator)
+        localStorage.setItem('selectedNarrator', defaultNarrator)
+      } else {
+        // If defaultNarrator does not have a file, look for an available narrator
+        const availableNarrator = await findNextAvailableNarrator()
+        if (availableNarrator) {
+          setCurrentNarrator(availableNarrator.name)
+          localStorage.setItem('selectedNarrator', availableNarrator.name)
+        } else {
+          console.warn('No available narrator files found.')
+          setCurrentNarrator('') // set an empty narrator as a fallback
+        }
+      }
+    }
+  
+    setAvailableNarrator()
+  }, [narrators])
+  
+    const findNextAvailableNarrator = async () => {
+    for (const narrator of narrators) {
+      const fileExists = await checkFileExists(narrator.file)
+      if (fileExists) {
+        return narrator
+      }
+    }
+    return null
+  }
 
   const checkFileExists = async (url: string): Promise<boolean> => {
     try {
@@ -38,7 +98,7 @@ const AudioPlayer = () => {
     const checkNarratorFiles = async () => {
       const filteredNarrators = [];
       for (const narrator of narrators) {
-        const fileExists = await checkFileExists(narrator.file);
+        const fileExists = await checkFileExists(narrator.file)
         if (fileExists) {
           filteredNarrators.push(narrator);
         }

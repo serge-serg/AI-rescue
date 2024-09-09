@@ -10,7 +10,7 @@ import iconConnect from '@/assets/images/icons/connect.svg'
 const ClientSideUnderHeaderBlock = ({ pageIndex, filenamePDF }: { pageIndex: number, filenamePDF: string }) => {
   const searchParams = useSearchParams()
   const paramValue = searchParams.get('test-audio')
-
+  if (paramValue) console.log('url param?', paramValue)
   return (
     <section style={{
       display: 'flex',
@@ -21,9 +21,9 @@ const ClientSideUnderHeaderBlock = ({ pageIndex, filenamePDF }: { pageIndex: num
       paddingBottom: '1.15rem',
       borderBottom: 'solid 1px #999',
     }}>
-      {paramValue && <div className="audio-wrapper under-header-inside">
+      <div className="audio-wrapper under-header-inside">
         <AudioPlayer />
-      </div>}
+      </div>
       <div className="under-header-inside" style={{ display: 'flex', gap: '2rem' }}>
         <div className="under-header-block">
           <a href={`https://serge-serg.github.io/superintelligence-challenge/${pageIndex}. ${filenamePDF}/${filenamePDF}.pdf`} target="_blank">
