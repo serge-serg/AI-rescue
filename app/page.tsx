@@ -15,6 +15,8 @@ export default function Home() {
       <h2>Why Everything <span className='accent'>Has Changed</span> So Much</h2>
       <p>
         With the emergence of ChatGPT at the close of 2022, AI transitioned from the realm of science fiction to a rapidly approaching reality. The consensus among AI specialists is now firm-the creation of machines capable of human-level thinking, and even surpassing it, is not a matter of if, but when.
+      </p>
+      <p>
         <Image
           alt="Bostrom"
           title='Nick Bøstrom, "Superintelligence: Paths, Dangers, Strategies"'
@@ -22,8 +24,6 @@ export default function Home() {
           width="394"
           className="float-to-right obscured"
         />
-        With the emergence of ChatGPT at the close of 2022, AI transitioned from the realm of science fiction to a rapidly approaching reality. The consensus among AI specialists is now firm-the creation of machines capable of human-level thinking, and even surpassing it, is not a matter of if, but when.</p>
-      <p>
         AI that has reached such a level of development is called Superintelligence. This term was popularized by Swedish philosopher N.&nbsp;Bostrom in his 2014&nbsp;book
         <em><strong>Superintelligence: Paths, Dangers, Strategies</strong></em>.
         He and many other thinkers believe that Superintelligence will be capable of recursive self-improvement, and this process will be impossible to control externally.
