@@ -22,7 +22,7 @@ const ClientSideUnderHeaderBlock = ({ pageIndex, filenamePDF, underHeaderBlock =
       borderBottom: 'solid 1px #999',
     }}>
       <div className="audio-wrapper under-header-inside">
-        {!(Array.isArray(underHeaderBlock) && underHeaderBlock.includes('no-audio')) && <AudioPlayer />}
+        {(!Array.isArray(underHeaderBlock) || !underHeaderBlock.includes('no-audio')) && <AudioPlayer />}
       </div>
       <div className="under-header-inside" style={{ display: 'flex', gap: '2rem' }}>
         <div className="under-header-block">
