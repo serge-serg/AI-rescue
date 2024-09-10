@@ -20,7 +20,7 @@ const menuItems: MenuItems[] = [
       <span key="superAI" style={textColorMainBold}>
         Superintelligence
       </span>,
-      <>Become the <span style={textBoldDarkRed}>Great Filter</span> for Humanity?</>,
+      <> Become the <span style={textBoldDarkRed}>Great Filter</span> for Humanity?</>,
     ],
     key: "great-filter",
   },
@@ -62,7 +62,7 @@ const menuItems: MenuItems[] = [
     text: [
       <>
         Why <span style={textColorMainBold}>Hal&nbsp;9000</span> Intended to 
-        <span style={textBoldDarkRed}>Kill </span>All Astronauts Aboard Discovery
+        <span style={textBoldDarkRed}> Kill </span>All Astronauts Aboard Discovery
       </>,
     ],
     key: "hal-9000",
