@@ -15,8 +15,6 @@ export default function Home() {
       <h2>Why Everything <span className='accent'>Has Changed</span> So Much</h2>
       <p>
         With the emergence of ChatGPT at the close of 2022, AI transitioned from the realm of science fiction to a rapidly approaching reality. The consensus among AI specialists is now firm-the creation of machines capable of human-level thinking, and even surpassing it, is not a matter of if, but when.
-      </p>
-      <p>
         <Image
           alt="Bostrom"
           title='Nick Bøstrom, "Superintelligence: Paths, Dangers, Strategies"'
