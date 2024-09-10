@@ -25,21 +25,22 @@ const AudioPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false)
   const currentTimeRef = useRef(0)
   const audioRef = useRef<HTMLAudioElement>(null);
+  const [availableNarrators, setAvailableNarrators] = useState([{ name: '', file: '' }]);
 
   // upload a narrator from localStorage while an initial render
   useEffect(() => {
     const savedNarrator = localStorage.getItem('selectedNarrator')
-    
+
     const checkSavedNarrator = async (narratorName: string) => {
       const narratorAudioFile = narrators?.find(narrator => narrator?.name === narratorName)?.file
-  
+
       if (narratorAudioFile) {
         const fileExists = await checkFileExists(narratorAudioFile)
         return fileExists
       }
       return false
     }
-  
+
     const setAvailableNarrator = async () => {
       if (savedNarrator) {
         // Check if the file for the saved narrator exists
@@ -50,10 +51,10 @@ const AudioPlayer = () => {
           return
         }
       }
-  
+
       // If there is no saved narrator or its file does not exist, check defaultNarrator
       const defaultFileExists = await checkSavedNarrator(defaultNarrator)
-      
+
       if (defaultFileExists) {
         setCurrentNarrator(defaultNarrator)
         localStorage.setItem('selectedNarrator', defaultNarrator)
@@ -69,11 +70,11 @@ const AudioPlayer = () => {
         }
       }
     }
-  
+
     setAvailableNarrator()
   }, [narrators])
-  
-    const findNextAvailableNarrator = async () => {
+
+  const findNextAvailableNarrator = async () => {
     for (const narrator of narrators) {
       const fileExists = await checkFileExists(narrator.file)
       if (fileExists) {
@@ -93,7 +94,6 @@ const AudioPlayer = () => {
     }
   };
 
-  const [availableNarrators, setAvailableNarrators] = useState(narrators);
   useEffect(() => {
     const checkNarratorFiles = async () => {
       const filteredNarrators = [];
@@ -175,22 +175,24 @@ const AudioPlayer = () => {
         )}
         Your browser does not support the audio element.
       </audio>
-      {availableNarrators.length > 1 && (
-        <div>
-          <select
-            id="narrator-select"
-            onChange={(e) => switchNarrator(e.target.value)}
-            value={currentNarrator}
-            style={{ color: '#ddd', backgroundColor: '#121212' }}
-          >
-            {availableNarrators.map(narrator => (
+      <div>
+        <select
+          id="narrator-select"
+          onChange={(e) => switchNarrator(e.target.value)}
+          value={currentNarrator}
+          style={{ color: '#ddd', backgroundColor: '#121212' }}
+        >
+          {
+            (availableNarrators.length > 1 && availableNarrators.map(narrator => (
               <option key={narrator.name} value={narrator.name}>
                 &raquo; {narrator.name}
               </option>
-            ))}
-          </select>
-        </div>
-      )}
+            ))) || 
+              <option selected value="">Loading...</option>
+          }
+        </select>
+      </div>
+
     </div>
   );
 };
