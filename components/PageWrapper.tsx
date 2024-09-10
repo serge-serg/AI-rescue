@@ -7,7 +7,7 @@ type PageWrapperProps = {
   children?: React.ReactNode;
   filename: string;
   filenamePDF?: string;
-  underHeaderBlock?: boolean;
+  underHeaderBlock?: boolean | string[];
 };
 
 const getPageWrapperData = ({ filename }: PageWrapperProps) => {
@@ -37,7 +37,7 @@ const PageWrapper = ({ children, filename, underHeaderBlock = true }: PageWrappe
       <h1 id={`title-${headerID}`}>{heading}</h1>
       {underHeaderBlock !== false && (
         <Suspense fallback="...Loading...">
-          <ClientSideUnderHeaderBlock pageIndex={pageIndex} filenamePDF={filenamePDF} />
+          <ClientSideUnderHeaderBlock pageIndex={pageIndex} filenamePDF={filenamePDF} underHeaderBlock={underHeaderBlock as string[]} />
         </Suspense>
       )}
       {children}
@@ -45,9 +45,9 @@ const PageWrapper = ({ children, filename, underHeaderBlock = true }: PageWrappe
   );
 };
 
-const setUnderHeaderBlock = ({ children = <></>, filename }: PageWrapperProps) => {
-  const { pageIndex, filenamePDF } = getPageWrapperData({ children, filename })
-  return <ClientSideUnderHeaderBlock pageIndex={pageIndex} filenamePDF={filenamePDF} />
+const setUnderHeaderBlock = ({ children = <></>, filename, underHeaderBlock = true }: PageWrapperProps) => {
+  const { pageIndex, filenamePDF, } = getPageWrapperData({ children, filename })
+  return <ClientSideUnderHeaderBlock pageIndex={pageIndex} filenamePDF={filenamePDF} underHeaderBlock={underHeaderBlock} />
 }
 
 export default PageWrapper;

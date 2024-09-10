@@ -35,7 +35,7 @@ const pageMetadata: Record<string, PageMetadata> = {
     heading: 'Why Couldn\'t The Matrix Exist Without Humans?',
     description: 'Exploring the philosophical and technological reasons behind the human-machine symbiosis in The Matrix',
   },
-  '/can-superintelligence-be-inherently-friendly': {
+  '/can-we-create-inherently-friendly-superintelligence': {
     title: 'Can Superintelligence Be Inherently Friendly?',
     heading: 'Can Superintelligence Be Inherently Friendly?',
     description: 'Exploring the possibility of creating an AI that is fundamentally aligned with human values',

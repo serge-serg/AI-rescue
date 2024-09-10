@@ -45,7 +45,7 @@ const menuItems: MenuItems[] = [
     key: "deep-dive",
   },
   /* {
-    href: "/can-superintelligence-be-inherently-friendly",
+    href: "/can-we-create-inherently-friendly-superintelligence",
     text: [
       "Can ",
       <>

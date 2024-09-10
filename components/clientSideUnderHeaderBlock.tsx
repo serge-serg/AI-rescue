@@ -7,7 +7,7 @@ import AudioPlayer from "@/components/audioplayer"
 import iconPdf from '@/assets/images/icons/pdf-24.png'
 import iconConnect from '@/assets/images/icons/connect.svg'
 
-const ClientSideUnderHeaderBlock = ({ pageIndex, filenamePDF }: { pageIndex: number, filenamePDF: string }) => {
+const ClientSideUnderHeaderBlock = ({ pageIndex, filenamePDF, underHeaderBlock = [] }: { pageIndex: number, filenamePDF: string, underHeaderBlock: string[] }) => {
   const searchParams = useSearchParams()
   const paramValue = searchParams.get('test-audio')
   if (paramValue) console.log('url param?', paramValue)
@@ -22,7 +22,7 @@ const ClientSideUnderHeaderBlock = ({ pageIndex, filenamePDF }: { pageIndex: num
       borderBottom: 'solid 1px #999',
     }}>
       <div className="audio-wrapper under-header-inside">
-        <AudioPlayer />
+        {!(Array.isArray(underHeaderBlock) && underHeaderBlock.includes('no-audio')) && <AudioPlayer />}
       </div>
       <div className="under-header-inside" style={{ display: 'flex', gap: '2rem' }}>
         <div className="under-header-block">
