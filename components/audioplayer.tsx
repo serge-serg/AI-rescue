@@ -3,12 +3,12 @@ import { useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 
 const AudioPlayer = () => {
-  const defaultNarrator = 'Lisa'
+  const defaultNarrator = 'Winston'
   let path = usePathname()
   if (path === '/') path = '/toward-the-point-of-no-return'
 
   const narrators = [
-    'Winston',
+    defaultNarrator,
     'Tanor',
     'Marry',
     'Sophia',
@@ -16,7 +16,7 @@ const AudioPlayer = () => {
     'Jessica',
     'Tanner',
     'Jamie',
-    defaultNarrator,
+    'Lisa',
     'Nate',
     'Kristy',
   ].map(narrator => ({ name: narrator, file: `/audio${path}/${narrator}.mp3` }))
