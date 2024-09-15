@@ -16,7 +16,6 @@ import imgLetsConnect from '@/assets/images/view-pix/lets-call.jpg'
 
 const Navigation = () => {
   const currentPath = usePathname()
-
   /*
     background-position: right -80px;
     Rendered size: 691 x 857 px
@@ -64,7 +63,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
   const navRef = useRef<HTMLElement>(null)
   const asideRef = useRef<HTMLElement>(null)
-
+  
   const handleResize = useCallback(() => {
     if (typeof window !== 'undefined') {
       const newIsOpen = window.innerWidth > wideWindowValue
@@ -73,11 +72,19 @@ const Navigation = () => {
     }
   }, [])
 
+  const setInitialWindow = () => {
+    let windowIsWideInitial = false
+    if (typeof window !== 'undefined') {
+      windowIsWideInitial = window.innerWidth > wideWindowValue
+      setWindowIsWide(windowIsWideInitial)
+    }
+    return windowIsWideInitial
+  }
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const savedIsOpen = localStorage.getItem('menuIsOpen')
-      const windowIsWideInitial = window.innerWidth > wideWindowValue
-      setWindowIsWide(windowIsWideInitial)
+      const windowIsWideInitial = setInitialWindow()
       setIsOpen(savedIsOpen === 'true' || windowIsWideInitial)
       window.addEventListener('resize', handleResize)
       return () => window.removeEventListener('resize', handleResize)
@@ -85,11 +92,26 @@ const Navigation = () => {
   }, [handleResize])
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && windowIsWide) {
-      setIsOpen(true)
+    const windowIsWideInitial = setInitialWindow()
+    if (typeof window !== 'undefined') {
+      setIsOpen(windowIsWideInitial)
+      console.log('isOpen initial', {isOpen, windowIsWideInitial})
     }
     localStorage.setItem('menuIsOpen', (isOpen).toString())
-  }, [windowIsWide])
+  }, [])
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsOpen(windowIsWide)
+      console.log('isOpen currentPath', {isOpen, windowIsWide})
+    }
+    localStorage.setItem('menuIsOpen', (isOpen).toString())    
+  }, [currentPath])
+
+  const toggleMobileMenu = () => {
+    setIsOpen(!isOpen)
+    localStorage.setItem('menuIsOpen', (isOpen).toString())
+  }
 
   const handleMenuPosition = () => {
     if (typeof window !== 'undefined' && navRef.current !== null && asideRef.current !== null) {
@@ -179,7 +201,7 @@ const Navigation = () => {
       <div className="lg+:hidden p-4 flex justify-between items-center bg-[#333]">
         <LogoText />
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={toggleMobileMenu}
           className="text-white"
         >
           <div className="hamburger-icon">
