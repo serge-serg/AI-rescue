@@ -1,6 +1,5 @@
 'use client'
 import React, { ReactNode, useCallback, useRef } from 'react'
-import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
@@ -197,4 +196,4 @@ const Navigation = () => {
   )
 }
 
-export default dynamic(() => Promise.resolve(Navigation), { ssr: false })
+export default Navigation
