@@ -124,6 +124,10 @@ figure img {
   margin: auto;
 }
 
+main div.p {
+  line-height: 1.625;
+}
+
 main ul {
   list-style: square;
 }

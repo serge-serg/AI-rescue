@@ -80,7 +80,7 @@ export default function Home() {
           className="float-to-right obscured"
         />
       </h2>
-      <div>
+      <div className='p'>
         So, we have reason to believe that we are approaching an event that will be a point of no return in human history. The creation of Superintelligence will cause what British mathematician I.J.&nbsp;Good
         <Tooltip content={
           <>
