@@ -3,7 +3,6 @@ import { ReactNode } from "react";
 const fontBold = { fontWeight: 700 };
 const textColorMain = { color: "var(--color-dark-rose)" };
 const textColorMainBold = { ...textColorMain, ...fontBold };
-//const textBoldOpacity = { opacity: 0.6, ...fontBold };
 const textBoldLightGreen = { color: "lightgreen", ...fontBold };
 const textBoldDarkRed = { color: "#f00", opacity: 0.5, ...fontBold };
 interface MenuItems {
@@ -44,19 +43,6 @@ const menuItems: MenuItems[] = [
     ],
     key: "deep-dive",
   },
-  /* {
-    href: "/can-we-create-inherently-friendly-superintelligence",
-    text: [
-      "Can ",
-      <>
-        <span style={textColorMainBold}>Superintelligence</span>
-      </>,
-      <>
-        Be <span style={textBoldLightGreen}>Friendly</span>?
-      </>,
-    ],
-    key: "friendly",
-  }, */
   {
     href: "/why-hal-9000-intended-to-kill-all-astronauts-aboard-discovery",
     text: [
@@ -76,6 +62,19 @@ const menuItems: MenuItems[] = [
       </>
     ),
     key: "the-matrix",
+  },
+  {
+    href: "/can-we-create-inherently-friendly-superintelligence",
+    text: [
+      "Can We Create Inherently ",
+      <>
+        <span style={textBoldLightGreen}> Friendly</span>
+      </>,
+      <>
+        <span style={textColorMainBold}> Superintelligence</span>?
+      </>,
+    ],
+    key: "friendly",
   },
   { href: "/we-need-your-opinion", 
     text: "We need your opinion!",

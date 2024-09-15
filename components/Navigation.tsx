@@ -11,6 +11,7 @@ import imgAiRisks from '@/assets/images/view-pix/ai-risks-dark.jpg'
 import imgGreatFilter from '@/assets/images/view-pix/great-filter-monolith.jpg'
 import imgHalVsHuman from '@/assets/images/view-pix/HALvsHuman.jpg'
 import imgMatrixIncubator from '@/assets/images/view-pix/matrix-incubator.jpg'
+import imgFriendlyAI from '@/assets/images/view-pix/friendly-ai.jpg'
 import imgSurvey from '@/assets/images/view-pix/survey.jpg'
 import imgLetsConnect from '@/assets/images/view-pix/lets-call.jpg'
 
@@ -39,6 +40,9 @@ const Navigation = () => {
       break
     case '/why-could-not-the-matrix-exist-without-humans':
       bgImg = imgMatrixIncubator
+      break
+    case '/can-we-create-inherently-friendly-superintelligence':
+      bgImg = imgFriendlyAI
       break
     case '/we-need-your-opinion':
       bgImg = imgSurvey

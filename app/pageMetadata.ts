@@ -36,8 +36,8 @@ const pageMetadata: Record<string, PageMetadata> = {
     description: 'Exploring the philosophical and technological reasons behind the human-machine symbiosis in The Matrix',
   },
   '/can-we-create-inherently-friendly-superintelligence': {
-    title: 'Can Superintelligence Be Inherently Friendly?',
-    heading: 'Can Superintelligence Be Inherently Friendly?',
+    title: 'Can We Create Inherently Friendly Superintelligence?',
+    heading: 'Can We Create Inherently Friendly Superintelligence?',
     description: 'Exploring the possibility of creating an AI that is fundamentally aligned with human values',
   },
   '/survey-results': {

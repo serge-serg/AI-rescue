@@ -138,6 +138,12 @@ nav ul {
   @apply mb-4;
 }
 
+/* folded classes inside tags*/
+
+main li {
+  line-height: 1.625;
+}
+
 /* folded tags inside classes */
 
 .component-tooltip h2,
@@ -216,6 +222,10 @@ img.obscured {
 
 img.img-offset-top {
   @apply mt-2;
+}
+
+img.img-offset-vertical {
+  @apply mb-4 mt-4;
 }
 
 ol.decimal {
