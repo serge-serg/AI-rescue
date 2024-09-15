@@ -315,7 +315,7 @@ ol.decimal {
 
 .sidebar-header {
   @apply hidden lg+:flex items-end justify-center pt-16;
-  height: 590px;
+  height: 560px;
 }
 
 .tab {
