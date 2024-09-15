@@ -1,7 +1,6 @@
 'use client'
-import React, { ReactNode, useCallback, useRef } from 'react'
+import React, { ReactNode, useCallback, useRef, useEffect, useState } from 'react'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import menuItems, { MenuItems } from '@/components/menuItems'
 import img13Floor from '@/assets/images/view-pix/13th-floor.png'
@@ -22,7 +21,6 @@ const Navigation = () => {
   */
 
   let bgImg = img13Floor
-
   switch (currentPath) {
     case '/why-we-will-not-refuse-creating-superintelligence':
       bgImg = imgRobotAndPeople
@@ -63,7 +61,8 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
   const navRef = useRef<HTMLElement>(null)
   const asideRef = useRef<HTMLElement>(null)
-  
+
+  // Function to handle resize events
   const handleResize = useCallback(() => {
     if (typeof window !== 'undefined') {
       const newIsOpen = window.innerWidth > wideWindowValue
@@ -72,6 +71,7 @@ const Navigation = () => {
     }
   }, [])
 
+  // Set the initial window width and isOpen state
   const setInitialWindow = () => {
     let windowIsWideInitial = false
     if (typeof window !== 'undefined') {
@@ -81,6 +81,7 @@ const Navigation = () => {
     return windowIsWideInitial
   }
 
+  // Effect to handle initialization and listening to resize events
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const savedIsOpen = localStorage.getItem('menuIsOpen')
@@ -91,28 +92,22 @@ const Navigation = () => {
     }
   }, [handleResize])
 
+  // Effect to handle currentPath changes and window resizing
   useEffect(() => {
-    const windowIsWideInitial = setInitialWindow()
     if (typeof window !== 'undefined') {
+      const windowIsWideInitial = setInitialWindow()
       setIsOpen(windowIsWideInitial)
-      console.log('isOpen initial', {isOpen, windowIsWideInitial})
     }
-    localStorage.setItem('menuIsOpen', (isOpen).toString())
-  }, [])
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsOpen(windowIsWide)
-      console.log('isOpen currentPath', {isOpen, windowIsWide})
-    }
-    localStorage.setItem('menuIsOpen', (isOpen).toString())    
+    localStorage.setItem('menuIsOpen', isOpen.toString())
   }, [currentPath])
 
+  // Function to toggle mobile menu
   const toggleMobileMenu = () => {
     setIsOpen(!isOpen)
-    localStorage.setItem('menuIsOpen', (isOpen).toString())
+    localStorage.setItem('menuIsOpen', isOpen.toString())
   }
 
+  // Handle menu position for wide screens
   const handleMenuPosition = () => {
     if (typeof window !== 'undefined' && navRef.current !== null && asideRef.current !== null) {
       const asideTop = asideRef.current.getBoundingClientRect().top
@@ -130,6 +125,7 @@ const Navigation = () => {
     }
   }
 
+  // Effect to handle scrolling and resizing for menu positioning
   useEffect(() => {
     if (typeof window === 'undefined' || window.innerWidth <= wideWindowValue) return
     
