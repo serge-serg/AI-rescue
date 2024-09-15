@@ -60,72 +60,80 @@ const Navigation = () => {
   }
 
   const wideWindowValue = 1200
-  const windowIsWide = window.innerWidth > wideWindowValue
-  const [isOpen, setIsOpen] = useState(windowIsWide)
+  const [windowIsWide, setWindowIsWide] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   const navRef = useRef<HTMLElement>(null)
   const asideRef = useRef<HTMLElement>(null)
 
   const handleResize = useCallback(() => {
-    const newIsOpen = window.innerWidth > wideWindowValue
-    setIsOpen(newIsOpen)
-    localStorage.setItem('menuIsOpen', newIsOpen.toString())
+    if (typeof window !== 'undefined') {
+      const newIsOpen = window.innerWidth > wideWindowValue
+      setIsOpen(newIsOpen)
+      localStorage.setItem('menuIsOpen', newIsOpen.toString())
+    }
   }, [])
 
   useEffect(() => {
-    const savedIsOpen = localStorage.getItem('menuIsOpen')
-    setIsOpen(savedIsOpen === 'true' || windowIsWide)
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
+    if (typeof window !== 'undefined') {
+      const savedIsOpen = localStorage.getItem('menuIsOpen')
+      const windowIsWideInitial = window.innerWidth > wideWindowValue
+      setWindowIsWide(windowIsWideInitial)
+      setIsOpen(savedIsOpen === 'true' || windowIsWideInitial)
+      window.addEventListener('resize', handleResize)
+      return () => window.removeEventListener('resize', handleResize)
+    }
   }, [handleResize])
 
   useEffect(() => {
-    if (windowIsWide) setIsOpen(true)
+    if (typeof window !== 'undefined' && windowIsWide) {
+      setIsOpen(true)
+    }
     localStorage.setItem('menuIsOpen', (isOpen).toString())
-  }, [isOpen])
+  }, [windowIsWide])
 
   const handleMenuPosition = () => {
-    if (navRef.current !== null && asideRef.current !== null) {
-      const asideTop = asideRef.current.getBoundingClientRect().top;
-      const navRect = navRef.current.getBoundingClientRect();
-      let topLimit = (window.innerHeight - navRect.height) / 2;
-      
-      if ((asideTop) * -1 > topLimit) { // after sticky
-        if (navRef.current.style.position !== 'fixed') navRef.current.style.position = 'fixed';
+    if (typeof window !== 'undefined' && navRef.current !== null && asideRef.current !== null) {
+      const asideTop = asideRef.current.getBoundingClientRect().top
+      const navRect = navRef.current.getBoundingClientRect()
+      let topLimit = (window.innerHeight - navRect.height) / 2
+
+      if ((asideTop) * -1 > topLimit) {
+        if (navRef.current.style.position !== 'fixed') navRef.current.style.position = 'fixed'
         if (topLimit < 10) topLimit = 10
         navRef.current.style.top = `${topLimit}px`
-      } else { // before sticky
-        if (navRef.current.style.position !== 'fixed') return;
-        navRef.current.style.position = 'static';
+      } else {
+        if (navRef.current.style.position !== 'fixed') return
+        navRef.current.style.position = 'static'
       }
     }
-  };
+  }
 
   useEffect(() => {
-    if (window.innerWidth <= wideWindowValue) return;
+    if (typeof window === 'undefined' || window.innerWidth <= wideWindowValue) return
     
-    handleMenuPosition();
-    
+    handleMenuPosition()
+
     const addMultipleListeners = (
       element: Window | HTMLElement,
       events: (keyof DocumentEventMap)[],
       handler: EventListener
     ) => {
-      events.forEach(event => element.addEventListener(event, handler));
-    };
+      events.forEach(event => element.addEventListener(event, handler))
+    }
 
     const removeMultipleListeners = (
       element: Window | HTMLElement,
       events: (keyof DocumentEventMap)[],
       handler: EventListener
     ) => {
-      events.forEach(event => element.removeEventListener(event, handler));
-    };
+      events.forEach(event => element.removeEventListener(event, handler))
+    }
 
-    addMultipleListeners(window, ['scroll', 'resize'], handleMenuPosition);
+    addMultipleListeners(window, ['scroll', 'resize'], handleMenuPosition)
 
     return () => {
-      removeMultipleListeners(window, ['scroll', 'resize'], handleMenuPosition);
-    };
+      removeMultipleListeners(window, ['scroll', 'resize'], handleMenuPosition)
+    }
   }, [])
 
   const LogoText = () => <Link href="/" className="logo-text">/ <span style={{ fontWeight: 600 }}>Super-AI Challenge</span> /</Link>
