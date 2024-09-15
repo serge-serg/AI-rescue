@@ -25,10 +25,10 @@ const ClientSideUnderHeaderBlock = ({ pageIndex, filenamePDF, underHeaderBlock =
         {(!Array.isArray(underHeaderBlock) || !underHeaderBlock.includes('no-audio')) && <AudioPlayer />}
       </div>
       <div className="under-header-inside" style={{ display: 'flex', gap: '2rem' }}>
-        <div className="under-header-block">
+        {(!Array.isArray(underHeaderBlock) || !underHeaderBlock.includes('no-pdf')) && <div className="under-header-block">
           <a href={`https://serge-serg.github.io/superintelligence-challenge/${pageIndex}. ${filenamePDF}/${filenamePDF}.pdf`} target="_blank">
             <Image src={iconPdf} alt="Download PDF" style={{ display: 'inline-block', marginBottom: '4px', marginRight: '4px' }} />Download PDF</a>
-        </div>
+        </div>}
         <div className="under-header-block">
           <Link href="/lets-connect">
             <Image width={24} height={24} src={iconConnect} alt="Let's connect" style={{ display: 'inline-block', marginBottom: '4px', marginRight: '4px', }} />Let&apos;s Connect!</Link>

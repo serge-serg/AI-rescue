@@ -9,7 +9,7 @@ import imgAiJoi from './illustrations/joi.jpg'
 import imgTwoLevelCognitiveArchitecture from './illustrations/two-level-cognitive-architecture.png'
 export default function CanWeCreateInherentlyFriendlySuperintelligence() {
   return (
-    <PageWrapper filename={__filename} underHeaderBlock={['no-audio']}>
+    <PageWrapper filename={__filename} underHeaderBlock={['no-pdf', 'no-audio']}>
       <h2>Common goal</h2>
       <p><strong>The problem behind this question is unprecedentedly complex</strong>. We have never before attempted to create an entity capable of challenging us in the quality that determines our superiority over all other living beings. It is impossible to predict with certainty what this entity will be like; we can only theorize about the difficulties that may arise during its creation and subsequent interactions. Still, it is unlikely that we will guess much with certainty. It&apos;s not surprising that expert opinions often disagree and sometimes contradict each other. Nevertheless, they are united by the same goal&mdash;to ensure that AI turns out to be friendly to us humans.</p>
       <p>This common goal makes all disagreements secondary. Those who are responsible for what AI will be like will have to find common ground to empirically (or, if you prefer, <em>dialectically</em>) develop effective ways to achieve the common goal. This involves an iterative deepening of understanding of the problem in the mode of not moving according to schedule but of a journey. The end date of the journey and its outcome are unknown, but it is obvious that this journey has already begun.</p>
