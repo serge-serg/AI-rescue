@@ -1,0 +1,221 @@
+/* folded tags inside classes */
+
+.component-tooltip h2,
+.component-tooltip h3,
+.component-tooltip h4,
+.component-tooltip h5 {
+  color: initial;
+  font-weight: 600;
+}
+.component-tooltip h4 {
+  font-size: 1rem;
+}
+
+.sidebar-container,
+.sidebar nav {
+  background-color: var(--color-grey-dark);
+  width: var(--sidebar-width);
+}
+
+.sidebar ul {
+  @apply list-none text-right mb-8;
+}
+
+.sidebar nav ul li {
+  @apply py-2 hover:bg-[rgba(255,255,255,0.1)];
+}
+
+.sidebar nav ul li.selected {
+  @apply bg-[var(--color-darkest)];
+  /* margin-top: 0.625rem;
+  margin-bottom: 0.625rem; */
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+.sidebar nav ul li a {
+  @apply text-[var(--color-grey-light)] pl-8 pr-12  no-underline block w-full;
+}
+
+.tab img {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+/* classified tags */
+
+h1#title-lets-connect {
+  background: url("../assets/images/icons/connect.svg") no-repeat 0;
+  background-size: 32px;
+  padding-left: 3rem;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.tell-me-more {
+  margin-left: 1rem;
+}
+
+a.tell-me-more:hover,
+a.regular:hover {
+  text-decoration: underline;
+}
+
+div.video-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0 1.5rem;
+}
+
+img.obscured {
+  @apply border-none opacity-65 hover:opacity-100;
+  transition: 0.3s;
+}
+
+img.img-offset-top {
+  @apply mt-2;
+}
+
+img.img-offset-vertical {
+  @apply mb-4 mt-4;
+}
+
+ol.decimal {
+  list-style: decimal;
+}
+
+/* classes */
+
+.accent {
+  color: var(--color-dark-rose);
+}
+
+.container {
+  @apply flex min-h-screen;
+  max-width: none;
+}
+.container::after {
+  content: " ";
+  background-image: url("../assets/images/right-bg-translucent.jpg");
+  background-position: right;
+  width: 16vw;
+  /* opacity: 0.75; */
+  position: fixed;
+  top: -20vw;
+  z-index: -1;
+  bottom: -20vw;
+  right: 0;
+  box-shadow: inset 220px 0px 180px 40px rgba(18, 18, 18, 1);
+}
+
+.cursor-pointer {
+  right: -13px;
+}
+
+.float-to-left,
+.float-to-right {
+  @apply mt-2 mb-4;
+}
+
+.float-to-right {
+  @apply float-right mb-8 lg++:-mr-16 ml-8 -mr-16;
+}
+
+.float-to-left {
+  @apply float-left mb-8 mr-8 -ml-16;
+}
+
+.hamburger-icon {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.hamburger-icon span {
+  background-color: var(--color-grey-light);
+  border-bottom: solid 1px #ccc;
+  display: block;
+  width: 30px;
+  height: 2px;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+.hamburger-icon:hover span {
+  background-color: #fff;
+}
+
+.img-wide,
+.img-wider {
+  margin: 1rem auto;
+}
+
+.img-wide {
+  width: 800px;
+}
+
+.logo-text {
+  @apply text-[var(--color-dark-rose)] relative pr-4;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 2.5rem;
+  margin-bottom: auto;
+  text-align: center;
+}
+
+.logo-text::after {
+  content: "Inquiry About the Upcoming Game-Changing Future";
+  display: block;
+  font-size: 1rem;
+  color: #ccc;
+  text-align: center;
+  line-height: 2;
+}
+
+.offset-mobile {
+  left: 4px;
+  width: calc(100% - 4px);
+}
+
+.sidebar {
+  @apply h-screen /*flex flex-col justify-between*/;
+  background-size: var(--sidebar-max-width);
+  background-position: right -80px;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.sidebar-header {
+  @apply hidden lg+:flex items-end justify-center pt-16;
+  height: 560px;
+}
+
+.tab {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.75rem 5vw;
+}
+
+.two-column-left {
+  width: 46%;
+}
+
+.two-column-right {
+  width: 54%;
+}
+
+.two-column-wrapper {
+  display: flex;
+}
+
+.under-header-inside {
+  margin-top: 0.75rem;
+}
+
+/* combined classes */
+
+.tab.active {
+  background-color: var(--color-grey-blue);
+}

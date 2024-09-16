@@ -188,7 +188,7 @@ const AudioPlayer = () => {
                 &raquo; {narrator.name}
               </option>
             ))) || 
-              <option selected value="">Loading...</option>
+              <option defaultValue="">Loading...</option>
           }
         </select>
       </div>

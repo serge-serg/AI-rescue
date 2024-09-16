@@ -1,0 +1,133 @@
+/* media queries */
+
+@media screen and (max-width: 1303px) {
+  .float-to-right {
+    @apply mr-0;
+  }
+
+  .float-to-left {
+    @apply ml-0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  aside nav {
+    max-height: none;
+    overflow: initial;
+  }
+
+  .float-to-right,
+  .float-to-left {
+    @apply opacity-100;
+    max-width: 400px;
+  }
+
+  main {
+    padding-left: 5vw;
+    width: 100%;
+  }
+
+  .container {
+    @apply flex-col;
+  }
+
+  .cursor-pointer {
+    right: 6px;
+  }
+
+  .logo-text {
+    margin: auto;
+  }
+
+  .sidebar {
+    @apply w-full;
+    background-size: cover;
+    background-position: center -183px;
+    height: fit-content;
+    padding: 0;
+  }
+
+  .sidebar-container,
+  .sidebar nav {
+    @apply w-full;
+  }
+
+  .sidebar nav {
+    @apply h-full;
+    background-color: var(--color-grey-dark);
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .tab {
+    width: 33%;
+  }
+}
+
+/* Surface Pro 7 */
+@media screen and (max-width: 912px) {
+  section .width42 {
+    width: 100% !important;
+  }
+  .tab {
+    text-align: center;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  audio {
+    width: 60vw;
+  }
+
+  .float-to-right,
+  .float-to-left {
+    @apply w-full mt-4 mb-4 mr-auto ml-auto float-none;
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 768px),
+  (min-width: 1200px) and (max-width: 1600px) {
+  .two-column-left,
+  .two-column-right {
+    width: 100%;
+  }
+  .two-column-wrapper {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 6vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .audio-wrapper {
+    width: 100%;
+  }
+  .audio-wrapper-inner {
+    flex-wrap: wrap;
+  }
+  audio {
+    width: 100%;
+  }
+  h1 {
+    font-size: 7vw;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  h1 {
+    font-size: 8vw;
+  }
+}
+
+@media screen and (max-width: 344px) {
+  h1 {
+    font-size: 9vw;
+  }
+}
