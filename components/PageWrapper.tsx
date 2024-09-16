@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import pageMetadata from '@/app/pageMetadata'
 import { getPagePath } from '@/utils/getPagePath'
-import ClientSideUnderHeaderBlock from '@/components/clientSideUnderHeaderBlock'
+import ClientSideUnderHeaderBlock from '@/components/ClientSideUnderHeaderBlock'
 
 type PageWrapperProps = {
   children?: React.ReactNode

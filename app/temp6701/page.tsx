@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import Tooltip from "@/components/Tooltip"
 import Link from "next/link"
 import ContentPage from "./contentPage"
-import AudioPlayer from "@/components/audioplayer"
+import AudioPlayer from "@/components/Audioplayer"
 
 const Temp: React.FC = () => {
   function speak(text: string | undefined) {

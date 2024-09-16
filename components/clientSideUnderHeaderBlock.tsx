@@ -3,7 +3,8 @@ import React from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image'
-import AudioPlayer from "@/components/audioplayer"
+import DynamicMenu from './DynamicMenu';
+import AudioPlayer from "@/components/Audioplayer"
 import iconPdf from '@/assets/images/icons/pdf-24.png'
 import iconConnect from '@/assets/images/icons/connect.svg'
 
@@ -21,6 +22,9 @@ const ClientSideUnderHeaderBlock = ({ pageIndex, filenamePDF, underHeaderBlock =
       paddingBottom: '1.15rem',
       borderBottom: 'solid 1px #999',
     }}>
+      <div className="under-header-inside">
+        {(!Array.isArray(underHeaderBlock) || !underHeaderBlock.includes('no-menu')) && <DynamicMenu />}
+      </div>
       <div className="audio-wrapper under-header-inside">
         {(!Array.isArray(underHeaderBlock) || !underHeaderBlock.includes('no-audio')) && <AudioPlayer />}
       </div>

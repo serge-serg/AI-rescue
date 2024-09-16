@@ -1,0 +1,31 @@
+ul.dynamic-menu {
+  background-color: var(--color-grey-light); 
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 1.25rem 2rem 1.65rem 1.5rem;
+  position: absolute;
+  top: 50px;
+  z-index: 1;
+  transition: height 0.5s ease, opacity 0.5s ease, padding 0.3s ease;
+}
+ul.dynamic-menu li {
+  list-style-type: none; 
+}
+ul.dynamic-menu span {
+  cursor: pointer;
+  color: var(--color-darkest);
+  white-space: nowrap;
+}
+ul.dynamic-menu span:hover {
+  text-decoration: underline;
+}
+
+ul.dynamic-menu.open {
+  height: auto;
+  opacity: 1;
+}
+
+ul.dynamic-menu li {
+  line-height: 2rem;
+}
