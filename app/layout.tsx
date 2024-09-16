@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import './tooltip.css'
+import './sidebar.css'
 import './classes.css'
 import './media.css'
 import Navigation from '@/components/Navigation';

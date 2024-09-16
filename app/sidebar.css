@@ -1,0 +1,39 @@
+
+.sidebar-container,
+.sidebar nav {
+  background-color: var(--color-grey-dark);
+  width: var(--sidebar-width);
+}
+
+.sidebar ul {
+  @apply list-none text-right mb-8;
+}
+
+.sidebar nav ul li {
+  @apply py-2 hover:bg-[rgba(255,255,255,0.1)];
+}
+
+.sidebar nav ul li.selected {
+  @apply bg-[var(--color-darkest)];
+  /* margin-top: 0.625rem;
+  margin-bottom: 0.625rem; */
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+.sidebar nav ul li a {
+  @apply text-[var(--color-grey-light)] pl-8 pr-12  no-underline block w-full;
+}
+
+.sidebar {
+  @apply h-screen /*flex flex-col justify-between*/;
+  background-size: var(--sidebar-max-width);
+  background-position: right -80px;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.sidebar-header {
+  @apply hidden lg+:flex items-end justify-center pt-16;
+  height: 560px;
+}

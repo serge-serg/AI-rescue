@@ -1,0 +1,10 @@
+.component-tooltip h2,
+.component-tooltip h3,
+.component-tooltip h4,
+.component-tooltip h5 {
+  color: initial;
+  font-weight: 600;
+}
+.component-tooltip h4 {
+  font-size: 1rem;
+}
