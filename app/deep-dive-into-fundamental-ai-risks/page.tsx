@@ -1,14 +1,13 @@
 import Link from "next/link"
 import Image, { StaticImageData } from "next/image"
-import imgVernonMountcastle from '@/assets/images/Vernon-Mountcastle2.jpg'
-import imgJeffHawkins from '@/assets/images/Jeff-Hawkins.jpg'
 import { generateMetadata } from '@/utils/generateMetadata';
 export const metadata = generateMetadata(__filename);
 import PageWrapper from '@/components/PageWrapper';
 import { Asterisks } from "@/components/Separators";
 import imgHalVsHuman from '@/assets/images/view-pix/HALvsHuman.jpg'
 import imgMatrixIncubator from '@/assets/images/view-pix/matrix-incubator.jpg'
-import picFearOfAI from './illustrations/fear-of-ai.jpg'
+import picVernonMountcastle from './illustrations/Vernon-Mountcastle2.jpg'
+import picJeffHawkins from './illustrations/Jeff-Hawkins.jpg'
 import picOppressiveAI from './illustrations/oppressiveAI.jpg'
 import picPaperClipsMaximizer from './illustrations/paper-clips-maximizer.jpg'
 import picAgentSmithAndMorpheus from './illustrations/agent-smith-and-morpheus.png'
@@ -182,11 +181,11 @@ export default function DeepDiveIntoFundamentalAIRisks() {
         <p>This connection to Mountcastle&apos;s work is crucial as it links the theory to established neuroscientific principles, providing a biological basis for creating AI systems that might more closely mimic human intelligence.</p>
         <div style={{ display: 'flex', justifyContent: 'space-around' }}>
           <figure>
-            <Image height="230" src={imgVernonMountcastle} alt="Vernon Mountcastle" />
+            <Image height="230" src={picVernonMountcastle} alt="Vernon Mountcastle" />
             <figcaption>Vernon Mountcastle</figcaption>
           </figure>
           <figure>
-            <Image height="230" src={imgJeffHawkins} alt="Jeff Hawkins" />
+            <Image height="230" src={picJeffHawkins} alt="Jeff Hawkins" />
             <figcaption>Jeff Hawkins</figcaption>
           </figure>
         </div>

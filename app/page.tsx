@@ -4,10 +4,10 @@ import { generateMetadata } from '@/utils/generateMetadata';
 export const metadata = generateMetadata(__filename);
 import PageWrapper from '@/components/PageWrapper';
 import Tooltip from '@/components/Tooltip';
-import imgBostrom from '@/assets/images/bostrom.jpg'
-import imgMusk from '@/assets/images/musk-3.jpg'
-import imgKurzweil from '@/assets/images/kurzweil.jpg'
-import imgGood from '@/assets/images/IJ-Good.png'
+import imgBostrom from '@/assets/images/illustrations/bostrom.jpg'
+import imgMusk from '@/assets/images/illustrations/musk-3.jpg'
+import imgKurzweil from '@/assets/images/illustrations/kurzweil.jpg'
+import imgGood from '@/assets/images/illustrations/IJ-Good.png'
 
 export default function Home() {
   return (

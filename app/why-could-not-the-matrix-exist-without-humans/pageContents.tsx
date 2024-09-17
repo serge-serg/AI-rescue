@@ -3,19 +3,18 @@ import { useState } from "react"
 import Image, { StaticImageData } from "next/image";
 import { setUnderHeaderBlock } from '@/components/PageWrapper';
 import Tooltip from '@/components/Tooltip';
-import { Asterisks } from '@/components/Separators';
-import imgIconVideoPlayer from '@/assets/images/icons/video-player.svg'
-import imgIconBook from '@/assets/images/icons/book.svg'
-import imgVideoPoster from '@/assets/images/video-poster.jpg'
-import imgMatrixOrigin from '@/assets/images/matrix-origin.png'
-import imgBlondeInRed from '@/assets/images/blonde-in-red.png'
-import imgPeople from '@/assets/images/ordinary-people.png'
-import imgNeoMeetsTheArchitect from '@/assets/images/neo-meets-the-Architect.jpg'
-import imgMachineAmbassadorInUn from '@/assets/images/machine-ambassador-at-un.png'
-import imgMerovingian from '@/assets/images/Merovingian.png'
-import imgNeoAndRobot from '@/assets/images/neo-and-robot.png'
-import imgHegelCunningOfReason from '@/assets/images/hegel-cunning-of-reason.jpg'
-import imgMatrixSunset from '@/assets/images/matrix-sunset.jpg'
+import iconVideoPlayer from '@/assets/images/icons/video-player.svg'
+import iconBook from '@/assets/images/icons/book.svg'
+import imgBlondeInRed from './illustrations/blonde-in-red.png'
+import imgHegelCunningOfReason from './illustrations/hegel-cunning-of-reason.jpg'
+import imgMachineAmbassadorInUn from './illustrations/machine-ambassador-at-un.png'
+import imgMatrixOrigin from './illustrations/matrix-origin.png'
+import imgMatrixSunset from './illustrations/matrix-sunset.jpg'
+import imgMerovingian from './illustrations/Merovingian.png'
+import imgNeoAndRobot from './illustrations/neo-and-robot.png'
+import imgNeoMeetsTheArchitect from './illustrations/neo-meets-the-Architect.jpg'
+import imgPeople from './illustrations/ordinary-people.png'
+import imgVideoPoster from './illustrations/video-poster.jpg'
 
 interface PageContentsProps {
   filename: string;
@@ -40,8 +39,8 @@ function PageContents({ filename }: PageContentsProps) {
   return (
     <>
       <section style={{ display: 'flex', borderBottom: 'solid 2px rgba(255,255,255,0.55)' }}>
-        <Label tabType="video" icon={imgIconVideoPlayer} title="Video" width={25} height={25} />
-        <Label tabType="text" icon={imgIconBook} title="Story" width={22} height={22} />
+        <Label tabType="video" icon={iconVideoPlayer} title="Video" width={25} height={25} />
+        <Label tabType="text" icon={iconBook} title="Story" width={22} height={22} />
       </section>
       <fieldset>
         {(

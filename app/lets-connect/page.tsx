@@ -4,7 +4,7 @@ export const metadata = generateMetadata(__filename);
 import Image from "next/image";
 import PageWrapper from '@/components/PageWrapper';
 import MakeContactData from './contact-data';
-import imgCreators from '@/assets/images/Pluto&Rabbit.jpg'
+import imgCreators from './illustrations/Pluto&Rabbit.jpg'
 import imgTelegram from '@/assets/images/icons/telegram.svg'
 
 export default function LetsConnect() {

@@ -4,10 +4,10 @@ export const metadata = generateMetadata(__filename);
 import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
 import Tooltip from '@/components/Tooltip';
-import imgMonolith from '@/assets/images/floyd-monolith.jpg'
-import imgCollusion from '@/assets/images/pull-bowman-collusion.jpg'
-import imgLifeTerminated from '@/assets/images/life-terminated.jpg'
-import imgMobiusAnts from '@/assets/images/mobius-ants.jpg'
+import imgMonolith from './illustrations/floyd-monolith.jpg'
+import imgCollusion from './illustrations/pull-bowman-collusion.jpg'
+import imgLifeTerminated from './illustrations/life-terminated.jpg'
+import imgMobiusAnts from './illustrations/mobius-ants.jpg'
 
 export default function WhyDidHalDecideToKillAllTheDiscoveryAstronauts() {
   return (
