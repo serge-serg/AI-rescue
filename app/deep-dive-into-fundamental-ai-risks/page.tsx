@@ -4,8 +4,6 @@ import { generateMetadata } from '@/utils/generateMetadata';
 export const metadata = generateMetadata(__filename);
 import PageWrapper from '@/components/PageWrapper';
 import { Asterisks } from "@/components/Separators";
-import imgHalVsHuman from '@/assets/images/view-pix/HALvsHuman.jpg'
-import imgMatrixIncubator from '@/assets/images/view-pix/matrix-incubator.jpg'
 import picVernonMountcastle from './illustrations/Vernon-Mountcastle2.jpg'
 import picJeffHawkins from './illustrations/Jeff-Hawkins.jpg'
 import picOppressiveAI from './illustrations/oppressiveAI.jpg'
@@ -18,6 +16,8 @@ import picEvolution from './illustrations/cetacean-evolution.png'
 import picAiAsGod from './illustrations/ai-as-god.jpg'
 import picBrokenCage from './illustrations/broken-cage.png'
 import picAiEthics from './illustrations/ai-ethics.jpg'
+import picHalVsHuman from './illustrations/HALvsHuman.jpg'
+import picMatrixIncubator from './illustrations/matrix-incubator.jpg'
 import Tooltip from "@/components/Tooltip";
 
 const ImageColumn = (
@@ -211,8 +211,8 @@ export default function DeepDiveIntoFundamentalAIRisks() {
       <p>As is fitting for works of such caliber, they are multilayered and invite thoughtful interpretations. And although these works remain fictional, it would be too reckless not to consider the plausibility of their plots. Now, as the advent of AI looms on the horizon, we have every reason to revisit these stories.</p>
       <p>Some of us may find them too grim. But let us not forget that one of the purposes of art is to serve as a warning against making fatal mistakes. After all, we believe that no outcome is predestined. If we have the courage to admit that the future may not be what we would like it to be, then we must do everything possible to prevent undesirable developments.</p>
       <div style={{ display: 'flex', justifyContent: 'space-between', margin: '2rem auto', maxWidth: '700px' }}>
-        <ImageColumn imgSrc={imgHalVsHuman} link="/why-hal-9000-intended-to-kill-all-astronauts-aboard-discovery" header="Why HAL-9000 Intended to Kill All Astronauts Aboard Discovery" />
-        <ImageColumn imgSrc={imgMatrixIncubator} headerWidth="9vw" link="/why-could-not-the-matrix-exist-without-humans" header="Why Couldn't The Matrix Exist Without Humans?" />
+        <ImageColumn imgSrc={picHalVsHuman} link="/why-hal-9000-intended-to-kill-all-astronauts-aboard-discovery" header="Why HAL-9000 Intended to Kill All Astronauts Aboard Discovery" />
+        <ImageColumn imgSrc={picMatrixIncubator} headerWidth="9vw" link="/why-could-not-the-matrix-exist-without-humans" header="Why Couldn't The Matrix Exist Without Humans?" />
       </div>
     </PageWrapper>
   );
