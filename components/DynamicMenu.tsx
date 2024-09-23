@@ -61,7 +61,7 @@ const DynamicMenu = () => {
         height: '35px',
         borderRadius: '35px',
         padding: '0 28px 0 17px',
-        backgroundColor: '#7d7d7d',
+        backgroundColor: '#4e4e4e',
       }} onClick={() => setMenuIsOpen(!menuItemsIsOpen)}>
         <span style={{ marginRight: '8px', transform: `rotate(${menuItemsIsOpen ? 0 : -90}deg)`, transition: 'transform 0.3s ease' }}>
           &#9662;
