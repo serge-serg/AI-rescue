@@ -61,7 +61,7 @@ export default function Home() {
         3. Geopolitical Rivalry of States Capable of Creating Superintelligence
       </h3>
       <p>
-        A regime intolerant of its ideological opponents may be tempted to use AI to eliminate them. The opposing side, in turn, will take retaliatory measures. Thus, the AI race will be escalated to an international level. This will not only complicate the solution of the safe AI problem but will significantly complicate it.
+        A regime intolerant of its ideological opponents may be tempted to use AI to eliminate them. The opposing side, in turn, will take retaliatory measures. Thus, the AI race will be escalated to an international level. This will not only complicate the solution of the safe AI problem but will significantly exacerbate it.
       </p>
       <p>
         Formal agreement between parties not to use AI as a weapon may prove ineffective. Its observance requires transparency not only of the parties&apos; intentions but also of the state of their developments. This is difficult to control technically and institutionally due to the clash of interests of various parties within societies themselves.
