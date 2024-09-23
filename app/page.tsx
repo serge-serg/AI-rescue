@@ -102,7 +102,7 @@ export default function Home() {
         />
         defined as an &quot;intelligence explosion&quot;
         <Tooltip content={<>In his article <a target='_blank' href='https://ouci.dntb.gov.ua/en/works/4aXrrna7/'><em>Speculations Concerning the First Ultraintelligent Machine</em></a>, he described the hypothesis that the creation of an &apos;ultra-intelligent machine&apos; could initiate explosive growth in intelligence, surpassing human capabilities and leading to rapid and uncontrolled technological development.</>} />
-        back in the mid-1960s. This term refers to a hypothetical scenario in which an AI, once it reaches a certain level of intelligence, can rapidly improve its intelligence, leading to an exponential increase in its cognitive abilities.
+        back in the mid-1960s. This term refers to a hypothetical scenario in which an AI, once it reaches a certain level of intelligence, can rapidly self-improve, leading to an exponential increase in its cognitive abilities.
       </div>
       <p>
         At that time, it looked like an indefinitely distant or completely unrealistic prospect. But now it&apos;s not so. The famous inventor, futurist writer, Principal Researcher, and AI Visionary at Google, R.&nbsp;Kurzweil, in his book <em>The&nbsp;Singularity&nbsp;Is&nbsp;Near&nbsp;</em>(2005), predicted the creation of Superintelligence around 2045, and his forecast is now far from the most radical. If this indeed happens, then for the first time in Earth&apos;s history, there will be more than one intelligent species on it, and one of them will be far smarter than the other.
