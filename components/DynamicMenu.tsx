@@ -53,7 +53,16 @@ const DynamicMenu = () => {
 
   return (
     <div style={{ position: 'relative' }}>
-      <div style={{ cursor: 'pointer', fontWeight: '600', display: 'flex', alignItems: 'center' }} onClick={() => setMenuIsOpen(!menuItemsIsOpen)}>
+      <div style={{
+        cursor: 'pointer',
+        fontWeight: '600',
+        display: 'flex',
+        alignItems: 'center',
+        height: '35px',
+        borderRadius: '35px',
+        padding: '0 28px 0 17px',
+        backgroundColor: '#7d7d7d',
+      }} onClick={() => setMenuIsOpen(!menuItemsIsOpen)}>
         <span style={{ marginRight: '8px', transform: `rotate(${menuItemsIsOpen ? 0 : -90}deg)`, transition: 'transform 0.3s ease' }}>
           &#9662;
         </span>
