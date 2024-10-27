@@ -12,6 +12,7 @@ type PageWrapperProps = {
 
 const getPageWrapperData = ({ filename }: PageWrapperProps) => {
   const path = getPagePath(filename)
+  console.log('filename', filename)
   const { heading } = pageMetadata[path]
   let filenamePDF = heading
   if (filenamePDF.endsWith("?")) {

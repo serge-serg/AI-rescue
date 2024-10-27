@@ -1,18 +1,14 @@
-import { join, sep } from 'path';
+import { sep } from 'path';
 
 export function getPagePath(filename: string): string {
-  console.log('Filename received:', filename);
-  console.log('Current working directory:', process.cwd());
-  
   const relativePath = filename.replace(process.cwd(), '');
-  console.log('Relative path:', relativePath);
-
-  const path = '/' + relativePath
-    .split(sep + 'app')[1]
-    .replace(/\\page\.(js|ts)x?$/, '')
-    .replace(/\/page\.(js|ts)x?$/, '')
-    .replace(/^\//, '');
-
-  console.log('Generated path:', path);
+  let path = relativePath
+    .split(sep + 'app')[1] // Разделим по директории "app", независимо от OS-разделителя
+    .replace(/\\+/g, '/')  // Заменим все обратные слэши на прямые, чтобы путь был Unix-совместимым
+    .replace(/\/page\.(js|ts)x?$/, '')  // Удалим "page.js" или "page.tsx" в конце
+    .replace(/^\//, '');  // Удалим начальный слэш, если есть
+  
+  path = `/${path}`;  // Добавим ведущий слэш для совместимости с ключами `pageMetadata`
+  console.log('Generated path:', path); // Выводим для отладки
   return path;
 }
